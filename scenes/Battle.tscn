@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3]
+
+; Instantiated by SceneRouter.enter_battle() into Main/BattleHolder, which then
+; calls setup(Dictionary) on this root with the EventBus.battle_started payload.
+;
+; The root is a bare Control on purpose: src/battle/battle_screen.gd builds the
+; backdrop, sprites, HUD, move list, party chooser and message box in code, so
+; there is no Theme or StyleBox resource that has to survive an --import pass
+; before a headless test can instance the scene.
+
+[ext_resource type="Script" path="res://src/battle/battle_screen.gd" id="1_battle"]
+
+[node name="Battle" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_battle")

@@ -1,0 +1,110 @@
+{
+ "_comment": "HAND-AUTHORED TEST FIXTURE for src/systems/encounters.gd. Not ROM-derived.",
+ "test_arena": {
+  "grassRate": 30,
+  "grass": [
+   {
+    "species": 396,
+    "min": 2,
+    "max": 3,
+    "weight": 50
+   },
+   {
+    "species": 399,
+    "min": 2,
+    "max": 3,
+    "weight": 40
+   },
+   {
+    "species": 401,
+    "min": 3,
+    "max": 3,
+    "weight": 10
+   }
+  ],
+  "surf": [
+   {
+    "species": 55,
+    "min": 20,
+    "max": 30,
+    "weight": 100
+   }
+  ],
+  "oldRod": [],
+  "goodRod": [],
+  "superRod": [],
+  "curated": [
+   {
+    "species": 915,
+    "name": "Lechonk",
+    "min": 3,
+    "max": 3,
+    "weight": 10,
+    "gen": 9,
+    "table": "grass"
+   },
+   {
+    "species": 659,
+    "name": "Bunnelby",
+    "min": 3,
+    "max": 3,
+    "weight": 5,
+    "gen": 6,
+    "table": "grass"
+   },
+   {
+    "species": 163,
+    "name": "Hoothoot",
+    "min": 4,
+    "max": 4,
+    "weight": 4,
+    "gen": 2,
+    "table": "grass",
+    "time": "night"
+   },
+   {
+    "species": 833,
+    "name": "Chewtle",
+    "min": 20,
+    "max": 25,
+    "weight": 20,
+    "gen": 8,
+    "table": "surf"
+   }
+  ],
+  "rates": {
+   "surf": 10,
+   "oldRod": 25,
+   "goodRod": 50,
+   "superRod": 75
+  }
+ },
+ "test_overcap": {
+  "_comment": "every level here is far above the starting cap on purpose",
+  "grassRate": 255,
+  "grass": [
+   {
+    "species": 400,
+    "min": 30,
+    "max": 40,
+    "weight": 100
+   }
+  ],
+  "surf": [],
+  "oldRod": [],
+  "goodRod": [],
+  "superRod": [],
+  "curated": [],
+  "rates": {}
+ },
+ "test_empty": {
+  "grassRate": 30,
+  "grass": [],
+  "surf": [],
+  "oldRod": [],
+  "goodRod": [],
+  "superRod": [],
+  "curated": [],
+  "rates": {}
+ }
+}

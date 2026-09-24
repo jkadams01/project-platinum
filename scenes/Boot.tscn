@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3]
+
+; The project's main scene (project.godot run/main_scene).
+;
+; ONE PERSISTENT ROOT, TWO SLOTS. WorldHolder keeps the loaded map alive for the
+; whole session; BattleHolder is empty except while a battle is running. The
+; overworld is SUSPENDED (process_mode = DISABLED + hidden) during a battle rather
+; than switched away from, so no map state has to be serialised and restored --
+; see src/autoload/scene_router.gd's header.
+;
+; The node shape is declared here so it is inspectable in the editor; src/boot.gd
+; fills the slots (Overworld instance, camera, UI widgets) at runtime.
+
+[ext_resource type="Script" path="res://src/boot.gd" id="1_boot"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_boot")
+
+[node name="WorldHolder" type="Node2D" parent="."]
+
+[node name="BattleHolder" type="Node" parent="."]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="TransitionLayer" type="CanvasLayer" parent="."]
+layer = 20

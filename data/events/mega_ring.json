@@ -1,0 +1,152 @@
+{
+ "schema": "events/1",
+ "documentedIn": "docs/DATA_CONTRACT.md 12",
+ "notes": [
+  "The Mega Ring handover. DECIDED BY THE OWNER: the player's NPC counterpart (Dawn if",
+  "the player is Lucas, Lucas if the player is Dawn) gives the Mega Ring in Hearthome",
+  "City after Fantina, gym 3. This supersedes docs/research/mega-design.md 2.4, which",
+  "had proposed Cynthia as the giver; the checkpoint itself (after Fantina,",
+  "mega_unlocked_at = badge:relic) is unchanged from that document.",
+  "The Mega button is gated on GameState.has_key_stone() AND GameState.mega_unlocked(),",
+  "so granting the Key Stone here is what actually turns it on. flag:mega_ring_received",
+  "is the story flag: it makes the event idempotent and lets later scripts and the UI",
+  "tutorial test for the handover without inspecting the bag.",
+  "The lopunnite is the one usable Mega Stone in the world at this moment",
+  "(mega-design.md 2.1). Remove that one give-item step if the stone tiering changes.",
+  "requiresMapObjects lists the object ids data/maps/hearthome_city.json must declare;",
+  "the event addresses positions by object id, never by raw coordinates."
+ ],
+ "requiresMapObjects": {
+  "hearthome_city": [
+   "mega_ring_trigger",
+   "mega_ring_counterpart_spawn",
+   "mega_ring_counterpart_stand"
+  ]
+ },
+ "events": [
+  {
+   "id": "mega_ring_hearthome",
+   "name": "The Mega Ring",
+   "map": "hearthome_city",
+   "once": true,
+   "priority": 10,
+   "trigger": {
+    "type": "map-enter",
+    "at": {"mapObject": "mega_ring_trigger"}
+   },
+   "requires": [
+    {"flag": "fantina_defeated"},
+    {"badge": "relic"},
+    {"flag": "mega_ring_received", "value": false}
+   ],
+   "actors": [
+    {
+     "id": "counterpart",
+     "role": "player-counterpart",
+     "sprite": "counterpart",
+     "nameToken": "counterpart",
+     "spawnAt": {"mapObject": "mega_ring_counterpart_spawn"}
+    }
+   ],
+   "steps": [
+    {"op": "lock-player"},
+    {"op": "spawn-actor", "actor": "counterpart"},
+    {"op": "walk-actor", "actor": "counterpart", "to": {"mapObject": "mega_ring_counterpart_stand"}, "speed": "run"},
+    {"op": "face", "actor": "counterpart", "target": "player"},
+    {"op": "face", "actor": "player", "target": "counterpart"},
+    {"op": "emote", "actor": "counterpart", "emote": "exclaim"},
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: {player}! There you are!",
+      "I just came from the Gym. Fantina told me you beat her.",
+      "So... you saw it too, then. Her Gengar."
+     ]
+    },
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: The way it changed. That light.",
+      "Professor Rowan calls it Mega Evolution. He has been trying to explain it since Veilstone.",
+      "That whole city is built on meteorite. One impact, one shower of fragments, scattered right across Sinnoh."
+     ]
+    },
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: The big fragments became Mega Stones. A Pokemon holds one and it can answer.",
+      "But it cannot answer nothing. Something has to be calling.",
+      "That is what this is."
+     ]
+    },
+    {"op": "emote", "actor": "counterpart", "emote": "heart"},
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: The Professor had two made. One for me, one for you.",
+      "Here. Take it."
+     ]
+    },
+    {"op": "grant-key-stone"},
+    {"op": "fanfare", "sound": "key-item-obtained"},
+    {
+     "op": "dialogue",
+     "speaker": "system",
+     "lines": [
+      "{player} received the MEGA RING!",
+      "The Key Stone set into the band catches the light and holds it."
+     ]
+    },
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: Wear it and your bond does the rest.",
+      "In a battle you will see the option. One Pokemon, one time per battle — that is all the stone will give you.",
+      "And it has to be holding its own Mega Stone. The right one. They only pair one way."
+     ]
+    },
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: Which is the problem. Rowan only had the one spare stone.",
+      "Take it. It is for Lopunny — and there are Buneary all through Eterna Forest, so you have no excuse."
+     ]
+    },
+    {"op": "give-item", "item": "lopunnite", "count": 1},
+    {"op": "fanfare", "sound": "item-obtained"},
+    {
+     "op": "dialogue",
+     "speaker": "system",
+     "lines": ["{player} received the LOPUNNITE!"]
+    },
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: One more thing, and I am not being dramatic.",
+      "Fantina had a stone. The next Leader will have a stone. All of them will, now.",
+      "They are not going to hold back on you just because you only just got yours."
+     ]
+    },
+    {
+     "op": "dialogue",
+     "speaker": "counterpart",
+     "lines": [
+      "{counterpart}: So go and find the rest. Every Leader you beat hands one over.",
+      "I will see you at the next Gym. Do not keep me waiting!"
+     ]
+    },
+    {"op": "set-flag", "flag": "mega_ring_received", "value": true},
+    {"op": "walk-actor", "actor": "counterpart", "to": {"mapObject": "mega_ring_counterpart_spawn"}, "speed": "run"},
+    {"op": "despawn-actor", "actor": "counterpart"},
+    {"op": "unlock-player"}
+   ]
+  }
+ ]
+}

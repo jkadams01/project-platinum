@@ -1,0 +1,62 @@
+# ── Copyrighted material — NEVER commit ────────────────────────────
+# Commercial ROMs supplied locally by the owner, and anything extracted
+# from them. The build pipeline regenerates all of this on demand.
+References/Roms/
+*.nds
+*.nds.log
+*.gba
+*.srm
+*.sav
+*.dsv
+
+# Data extracted from ROMs (regenerate: python tools/build_gamedata.py)
+# data/level_caps.json is a design table, not ROM art, and IS committed.
+data/rom/
+# data/maps/ is NOT ignored. CLAUDE.md "Hard rules" lists `data/maps/**`
+# (hand-authored) in the Committed column, and the maps in there are drawn by
+# hand in tools/build_maps.py -- no ROM is read to produce them, exactly like the
+# committed tests/fixtures/maps/*.json. See data/maps/README.md for the rule that
+# keeps it that way: ROM-EXTRACTED map geometry must never be written here.
+
+# Assets extracted from ROMs (regenerate: python tools/extract_all.py)
+assets/generated/
+assets/sprites/
+assets/tilesets/
+assets/audio/
+extracted/
+
+# ROM-derived data + the Godot resources built on top of it.
+# DATA_CONTRACT.md sections 6, 7 and 10. Regenerate: python tools/build_tilesets.py
+data/rom/
+data/tilesets/
+resources/outdoor_sinnoh.tres
+resources/outdoor_sinnoh.tres.uid
+
+# ── Godot ──────────────────────────────────────────────────────────
+.godot/
+.import/
+export.cfg
+export_presets.cfg
+*.translation
+android/
+builds/
+
+# ── Python tooling ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+tools/.cache/
+tools/_work/
+
+# ── OS / editor ────────────────────────────────────────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# ── Pipeline backups (regenerated; never commit) ───────────────────
+*.bak
+*.orig
+*.tmp

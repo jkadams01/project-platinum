@@ -1,0 +1,96 @@
+; Project Platinum — a Pokémon Platinum remake in Gen 5 style
+; Engine configuration for Godot 4.7.2
+
+config_version=5
+
+[application]
+
+config/name="Project Platinum"
+config/description="A Pokémon Platinum remake with Gen 5 visuals, boss level caps, HM-free traversal, and species from Generations 1-9."
+run/main_scene="res://scenes/Boot.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/ui/icon.svg"
+
+[autoload]
+
+; NOTE: the autoload is named Log, NOT Logger. `Logger` is a native class in
+; Godot 4.7 (ClassDB.class_exists("Logger") == true) and the native global wins
+; the name lookup, so `Logger.info(...)` fails to parse. Write `Log.info(...)`.
+Log="*res://src/autoload/logger.gd"
+DataRegistry="*res://src/autoload/data_registry.gd"
+EventBus="*res://src/autoload/event_bus.gd"
+GameState="*res://src/autoload/game_state.gd"
+SaveSystem="*res://src/autoload/save_system.gd"
+SceneRouter="*res://src/autoload/scene_router.gd"
+
+[display]
+
+; The DS screen is 256x192. We render at native res and integer-scale up
+; so Gen 5 pixel art stays crisp.
+window/size/viewport_width=256
+window/size/viewport_height=192
+window/size/window_width_override=1024
+window/size/window_height_override=768
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "orange",
+"res://data/": "green",
+"res://docs/": "gray",
+"res://src/": "blue",
+"res://tools/": "purple"
+}
+
+[importer_defaults]
+
+texture={
+"compress/mode": 0,
+"detect_3d/compress_to": 0,
+"mipmaps/generate": false,
+"process/fix_alpha_border": false
+}
+
+[input]
+
+ui_up={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+ui_down={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+ui_left={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+ui_right={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+game_run={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194325,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+game_menu={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=0
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

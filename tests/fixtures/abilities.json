@@ -1,0 +1,205 @@
+[
+ {
+  "hook": "onWeather",
+  "id": 8,
+  "name": "Sand-Veil",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onContactHit",
+  "id": 9,
+  "name": "Static",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onSwitchIn",
+  "id": 22,
+  "name": "Intimidate",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onContactHit",
+  "id": 24,
+  "name": "Rough-Skin",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onRedirect",
+  "id": 31,
+  "name": "Lightning-Rod",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onWeather",
+  "id": 34,
+  "name": "Chlorophyll",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onFlinch",
+  "id": 39,
+  "name": "Inner-Focus",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onWeather",
+  "id": 44,
+  "name": "Rain-Dish",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onModifyDamage",
+  "id": 47,
+  "name": "Thick-Fat",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onFleeCheck",
+  "id": 50,
+  "name": "Run-Away",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onBoostChange",
+  "id": 51,
+  "name": "Keen-Eye",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": null,
+  "id": 62,
+  "name": "Guts",
+  "text": "",
+  "tier": 3
+ },
+ {
+  "hook": "onModifyAtk",
+  "id": 65,
+  "name": "Overgrow",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onModifyAtk",
+  "id": 66,
+  "name": "Blaze",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onModifyAtk",
+  "id": 67,
+  "name": "Torrent",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onCritCheck",
+  "id": 75,
+  "name": "Shell-Armor",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": null,
+  "id": 79,
+  "name": "Rivalry",
+  "text": "",
+  "tier": 3
+ },
+ {
+  "hook": "onFlinch",
+  "id": 80,
+  "name": "Steadfast",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onBerryCheck",
+  "id": 82,
+  "name": "Gluttony",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onModifyAtk",
+  "id": 89,
+  "name": "Iron-Fist",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": null,
+  "id": 91,
+  "name": "Adaptability",
+  "text": "",
+  "tier": 3
+ },
+ {
+  "hook": "onWeather",
+  "id": 94,
+  "name": "Solar-Power",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onSwitchIn",
+  "id": 104,
+  "name": "Mold-Breaker",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": null,
+  "id": 107,
+  "name": "Anticipation",
+  "text": "",
+  "tier": 3
+ },
+ {
+  "hook": "onModifyAtk",
+  "id": 120,
+  "name": "Reckless",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onModifyMove",
+  "id": 125,
+  "name": "Sheer-Force",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onDamageTaken",
+  "id": 154,
+  "name": "Justified",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": "onStatusImmune",
+  "id": 165,
+  "name": "Aroma-Veil",
+  "text": "",
+  "tier": 1
+ },
+ {
+  "hook": null,
+  "id": 172,
+  "name": "Competitive",
+  "text": "",
+  "tier": 3
+ }
+]

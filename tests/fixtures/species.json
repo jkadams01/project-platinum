@@ -1,0 +1,655 @@
+[
+ {
+  "abilities": [
+   "overgrow"
+  ],
+  "baseExp": 64,
+  "catchRate": 45,
+  "eggGroups": [
+   "monster",
+   "grass"
+  ],
+  "evolutions": [
+   {
+    "level": 16,
+    "method": "level-up",
+    "to": 2
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 1,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 7,
+  "hiddenAbility": "chlorophyll",
+  "id": 1,
+  "name": "Bulbasaur",
+  "sprite": {
+   "back": "pkmn/back/001.png",
+   "front": "pkmn/001.png",
+   "icon": "icon/001.png"
+  },
+  "stats": {
+   "atk": 49,
+   "def": 49,
+   "hp": 45,
+   "spa": 65,
+   "spd": 65,
+   "spe": 45
+  },
+  "types": [
+   "grass",
+   "poison"
+  ],
+  "weight": 69
+ },
+ {
+  "abilities": [
+   "blaze"
+  ],
+  "baseExp": 62,
+  "catchRate": 45,
+  "eggGroups": [
+   "monster",
+   "dragon"
+  ],
+  "evolutions": [
+   {
+    "level": 16,
+    "method": "level-up",
+    "to": 5
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 1,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 6,
+  "hiddenAbility": "solar-power",
+  "id": 4,
+  "name": "Charmander",
+  "sprite": {
+   "back": "pkmn/back/004.png",
+   "front": "pkmn/004.png",
+   "icon": "icon/004.png"
+  },
+  "stats": {
+   "atk": 52,
+   "def": 43,
+   "hp": 39,
+   "spa": 60,
+   "spd": 50,
+   "spe": 65
+  },
+  "types": [
+   "fire"
+  ],
+  "weight": 85
+ },
+ {
+  "abilities": [
+   "torrent"
+  ],
+  "baseExp": 63,
+  "catchRate": 45,
+  "eggGroups": [
+   "monster",
+   "water1"
+  ],
+  "evolutions": [
+   {
+    "level": 16,
+    "method": "level-up",
+    "to": 8
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 1,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 5,
+  "hiddenAbility": "rain-dish",
+  "id": 7,
+  "name": "Squirtle",
+  "sprite": {
+   "back": "pkmn/back/007.png",
+   "front": "pkmn/007.png",
+   "icon": "icon/007.png"
+  },
+  "stats": {
+   "atk": 48,
+   "def": 65,
+   "hp": 44,
+   "spa": 50,
+   "spd": 64,
+   "spe": 43
+  },
+  "types": [
+   "water"
+  ],
+  "weight": 90
+ },
+ {
+  "abilities": [
+   "static"
+  ],
+  "baseExp": 112,
+  "catchRate": 190,
+  "eggGroups": [
+   "field",
+   "fairy"
+  ],
+  "evolutions": [
+   {
+    "item": "thunder-stone",
+    "method": "use-item",
+    "to": 26
+   }
+  ],
+  "evolvesFrom": 172,
+  "genderRate": 4,
+  "generation": 1,
+  "growthRate": "medium-fast",
+  "hatchCounter": 10,
+  "height": 4,
+  "hiddenAbility": "lightning-rod",
+  "id": 25,
+  "name": "Pikachu",
+  "sprite": {
+   "back": "pkmn/back/025.png",
+   "front": "pkmn/025.png",
+   "icon": "icon/025.png"
+  },
+  "stats": {
+   "atk": 55,
+   "def": 40,
+   "hp": 35,
+   "spa": 50,
+   "spd": 50,
+   "spe": 90
+  },
+  "types": [
+   "electric"
+  ],
+  "weight": 60
+ },
+ {
+  "abilities": [
+   "run-away",
+   "adaptability"
+  ],
+  "baseExp": 65,
+  "catchRate": 45,
+  "eggGroups": [
+   "field"
+  ],
+  "evolutions": [
+   {
+    "item": "water-stone",
+    "method": "use-item",
+    "to": 134
+   },
+   {
+    "item": "thunder-stone",
+    "method": "use-item",
+    "to": 135
+   },
+   {
+    "item": "fire-stone",
+    "method": "use-item",
+    "to": 136
+   },
+   {
+    "method": "level-up",
+    "to": 196
+   },
+   {
+    "method": "level-up",
+    "to": 197
+   },
+   {
+    "method": "level-up",
+    "to": 470
+   },
+   {
+    "item": "leaf-stone",
+    "method": "use-item",
+    "to": 470
+   },
+   {
+    "method": "level-up",
+    "to": 471
+   },
+   {
+    "item": "ice-stone",
+    "method": "use-item",
+    "to": 471
+   },
+   {
+    "method": "level-up",
+    "to": 700
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 1,
+  "growthRate": "medium-fast",
+  "hatchCounter": 35,
+  "height": 3,
+  "hiddenAbility": "anticipation",
+  "id": 133,
+  "name": "Eevee",
+  "sprite": {
+   "back": "pkmn/back/133.png",
+   "front": "pkmn/133.png",
+   "icon": "icon/133.png"
+  },
+  "stats": {
+   "atk": 55,
+   "def": 50,
+   "hp": 55,
+   "spa": 45,
+   "spd": 65,
+   "spe": 55
+  },
+  "types": [
+   "normal"
+  ],
+  "weight": 65
+ },
+ {
+  "abilities": [
+   "overgrow"
+  ],
+  "baseExp": 64,
+  "catchRate": 45,
+  "eggGroups": [
+   "monster",
+   "grass"
+  ],
+  "evolutions": [
+   {
+    "level": 18,
+    "method": "level-up",
+    "to": 388
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 4,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 4,
+  "hiddenAbility": "shell-armor",
+  "id": 387,
+  "name": "Turtwig",
+  "sprite": {
+   "back": "pkmn/back/387.png",
+   "front": "pkmn/387.png",
+   "icon": "icon/387.png"
+  },
+  "stats": {
+   "atk": 68,
+   "def": 64,
+   "hp": 55,
+   "spa": 45,
+   "spd": 55,
+   "spe": 31
+  },
+  "types": [
+   "grass"
+  ],
+  "weight": 102
+ },
+ {
+  "abilities": [
+   "blaze"
+  ],
+  "baseExp": 62,
+  "catchRate": 45,
+  "eggGroups": [
+   "field",
+   "human-like"
+  ],
+  "evolutions": [
+   {
+    "level": 14,
+    "method": "level-up",
+    "to": 391
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 4,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 5,
+  "hiddenAbility": "iron-fist",
+  "id": 390,
+  "name": "Chimchar",
+  "sprite": {
+   "back": "pkmn/back/390.png",
+   "front": "pkmn/390.png",
+   "icon": "icon/390.png"
+  },
+  "stats": {
+   "atk": 58,
+   "def": 44,
+   "hp": 44,
+   "spa": 58,
+   "spd": 44,
+   "spe": 61
+  },
+  "types": [
+   "fire"
+  ],
+  "weight": 62
+ },
+ {
+  "abilities": [
+   "torrent"
+  ],
+  "baseExp": 63,
+  "catchRate": 45,
+  "eggGroups": [
+   "water1",
+   "field"
+  ],
+  "evolutions": [
+   {
+    "level": 16,
+    "method": "level-up",
+    "to": 394
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 4,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 4,
+  "hiddenAbility": "competitive",
+  "id": 393,
+  "name": "Piplup",
+  "sprite": {
+   "back": "pkmn/back/393.png",
+   "front": "pkmn/393.png",
+   "icon": "icon/393.png"
+  },
+  "stats": {
+   "atk": 51,
+   "def": 53,
+   "hp": 53,
+   "spa": 61,
+   "spd": 56,
+   "spe": 40
+  },
+  "types": [
+   "water"
+  ],
+  "weight": 52
+ },
+ {
+  "abilities": [
+   "keen-eye"
+  ],
+  "baseExp": 49,
+  "catchRate": 255,
+  "eggGroups": [
+   "flying"
+  ],
+  "evolutions": [
+   {
+    "level": 14,
+    "method": "level-up",
+    "to": 397
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 4,
+  "generation": 4,
+  "growthRate": "medium-slow",
+  "hatchCounter": 15,
+  "height": 3,
+  "hiddenAbility": "reckless",
+  "id": 396,
+  "name": "Starly",
+  "sprite": {
+   "back": "pkmn/back/396.png",
+   "front": "pkmn/396.png",
+   "icon": "icon/396.png"
+  },
+  "stats": {
+   "atk": 55,
+   "def": 30,
+   "hp": 40,
+   "spa": 30,
+   "spd": 30,
+   "spe": 60
+  },
+  "types": [
+   "normal",
+   "flying"
+  ],
+  "weight": 20
+ },
+ {
+  "abilities": [
+   "rivalry",
+   "intimidate"
+  ],
+  "baseExp": 53,
+  "catchRate": 235,
+  "eggGroups": [
+   "field"
+  ],
+  "evolutions": [
+   {
+    "level": 15,
+    "method": "level-up",
+    "to": 404
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 4,
+  "generation": 4,
+  "growthRate": "medium-slow",
+  "hatchCounter": 20,
+  "height": 5,
+  "hiddenAbility": "guts",
+  "id": 403,
+  "name": "Shinx",
+  "sprite": {
+   "back": "pkmn/back/403.png",
+   "front": "pkmn/403.png",
+   "icon": "icon/403.png"
+  },
+  "stats": {
+   "atk": 65,
+   "def": 34,
+   "hp": 45,
+   "spa": 40,
+   "spd": 34,
+   "spe": 45
+  },
+  "types": [
+   "electric"
+  ],
+  "weight": 95
+ },
+ {
+  "abilities": [
+   "mold-breaker"
+  ],
+  "baseExp": 70,
+  "catchRate": 45,
+  "eggGroups": [
+   "monster"
+  ],
+  "evolutions": [
+   {
+    "level": 30,
+    "method": "level-up",
+    "to": 409
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 1,
+  "generation": 4,
+  "growthRate": "erratic",
+  "hatchCounter": 30,
+  "height": 9,
+  "hiddenAbility": "sheer-force",
+  "id": 408,
+  "name": "Cranidos",
+  "sprite": {
+   "back": "pkmn/back/408.png",
+   "front": "pkmn/408.png",
+   "icon": "icon/408.png"
+  },
+  "stats": {
+   "atk": 125,
+   "def": 40,
+   "hp": 67,
+   "spa": 30,
+   "spd": 30,
+   "spe": 58
+  },
+  "types": [
+   "rock"
+  ],
+  "weight": 315
+ },
+ {
+  "abilities": [
+   "sand-veil"
+  ],
+  "baseExp": 60,
+  "catchRate": 45,
+  "eggGroups": [
+   "monster",
+   "dragon"
+  ],
+  "evolutions": [
+   {
+    "level": 24,
+    "method": "level-up",
+    "to": 444
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 4,
+  "generation": 4,
+  "growthRate": "slow",
+  "hatchCounter": 40,
+  "height": 7,
+  "hiddenAbility": "rough-skin",
+  "id": 443,
+  "name": "Gible",
+  "sprite": {
+   "back": "pkmn/back/443.png",
+   "front": "pkmn/443.png",
+   "icon": "icon/443.png"
+  },
+  "stats": {
+   "atk": 70,
+   "def": 45,
+   "hp": 58,
+   "spa": 40,
+   "spd": 45,
+   "spe": 42
+  },
+  "types": [
+   "dragon",
+   "ground"
+  ],
+  "weight": 205
+ },
+ {
+  "abilities": [
+   "steadfast",
+   "inner-focus"
+  ],
+  "baseExp": 184,
+  "catchRate": 45,
+  "eggGroups": [
+   "field",
+   "human-like"
+  ],
+  "evolutions": [],
+  "evolvesFrom": 447,
+  "genderRate": 1,
+  "generation": 4,
+  "growthRate": "medium-slow",
+  "hatchCounter": 25,
+  "height": 12,
+  "hiddenAbility": "justified",
+  "id": 448,
+  "name": "Lucario",
+  "sprite": {
+   "back": "pkmn/back/448.png",
+   "front": "pkmn/448.png",
+   "icon": "icon/448.png"
+  },
+  "stats": {
+   "atk": 110,
+   "def": 70,
+   "hp": 70,
+   "spa": 115,
+   "spd": 70,
+   "spe": 90
+  },
+  "types": [
+   "fighting",
+   "steel"
+  ],
+  "weight": 540
+ },
+ {
+  "abilities": [
+   "aroma-veil",
+   "gluttony"
+  ],
+  "baseExp": 51,
+  "catchRate": 255,
+  "eggGroups": [
+   "field"
+  ],
+  "evolutions": [
+   {
+    "level": 18,
+    "method": "level-up",
+    "to": 916
+   }
+  ],
+  "evolvesFrom": null,
+  "genderRate": 4,
+  "generation": 9,
+  "growthRate": "medium-fast",
+  "hatchCounter": 15,
+  "height": 5,
+  "hiddenAbility": "thick-fat",
+  "id": 915,
+  "name": "Lechonk",
+  "sprite": {
+   "back": "pkmn/back/915.png",
+   "front": "pkmn/915.png",
+   "icon": "icon/915.png"
+  },
+  "stats": {
+   "atk": 45,
+   "def": 40,
+   "hp": 54,
+   "spa": 35,
+   "spd": 45,
+   "spe": 35
+  },
+  "types": [
+   "normal"
+  ],
+  "weight": 102
+ }
+]

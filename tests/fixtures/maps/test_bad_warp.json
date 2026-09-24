@@ -1,0 +1,135 @@
+{
+ "id": "test_bad_warp",
+ "name": "Test Bad Warp",
+ "_comment": "HAND-AUTHORED TEST FIXTURE.",
+ "width": 4,
+ "height": 4,
+ "tileSize": 16,
+ "tileset": "outdoor_sinnoh",
+ "layers": {
+  "ground": [
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0
+   ],
+   [
+    0,
+    0,
+    0,
+    0
+   ]
+  ],
+  "overlay": [
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  ],
+  "above": [
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ],
+   [
+    -1,
+    -1,
+    -1,
+    -1
+   ]
+  ]
+ },
+ "collision": [
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0
+  ],
+  [
+   0,
+   0,
+   0,
+   0
+  ]
+ ],
+ "traversal": [],
+ "encounterZone": "test_bad_warp",
+ "warps": [
+  {
+   "x": 1,
+   "y": 1,
+   "to": "no_such_map",
+   "toX": 0,
+   "toY": 0
+  },
+  {
+   "x": 2,
+   "y": 2,
+   "to": "test_hut",
+   "toX": 2,
+   "toY": 0
+  }
+ ],
+ "objects": [],
+ "connections": {}
+}

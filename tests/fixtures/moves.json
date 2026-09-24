@@ -1,0 +1,4736 @@
+[
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 1,
+  "name": "Pound",
+  "power": 40,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-5",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect",
+   "punch"
+  ],
+  "generation": 1,
+  "id": 7,
+  "name": "Fire-Punch",
+  "power": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-6",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect",
+   "punch"
+  ],
+  "generation": 1,
+  "id": 8,
+  "name": "Ice-Punch",
+  "power": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ice"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-7",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect",
+   "punch"
+  ],
+  "generation": 1,
+  "id": 9,
+  "name": "Thunder-Punch",
+  "power": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 10,
+  "name": "Scratch",
+  "power": 40,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-51",
+  "effectChance": null,
+  "flags": [
+   "dance",
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 14,
+  "name": "Swords-Dance",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 17,
+  "name": "Wing-Attack",
+  "power": 60,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-29",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 18,
+  "name": "Whirlwind",
+  "power": null,
+  "pp": 20,
+  "priority": -6,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-156",
+  "effectChance": null,
+  "flags": [
+   "charge",
+   "contact",
+   "distance",
+   "gravity",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 19,
+  "name": "Fly",
+  "power": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 75,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 21,
+  "name": "Slam",
+  "power": 80,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 22,
+  "name": "Vine-Whip",
+  "power": 45,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-24",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 28,
+  "name": "Sand-Attack",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 29,
+  "name": "Headbutt",
+  "power": 70,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 85,
+  "category": "physical",
+  "effect": "effect-30",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 31,
+  "name": "Fury-Attack",
+  "power": 15,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 33,
+  "name": "Tackle",
+  "power": 40,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-7",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 34,
+  "name": "Body-Slam",
+  "power": 85,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 85,
+  "category": "physical",
+  "effect": "effect-49",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 36,
+  "name": "Take-Down",
+  "power": 90,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-199",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 38,
+  "name": "Double-Edge",
+  "power": 120,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-20",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 39,
+  "name": "Tail-Whip",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-20",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 43,
+  "name": "Leer",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 30,
+  "flags": [
+   "bite",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 44,
+  "name": "Bite",
+  "power": 60,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-19",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "reflectable",
+   "sound"
+  ],
+  "generation": 1,
+  "id": 45,
+  "name": "Growl",
+  "power": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-29",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "reflectable",
+   "sound"
+  ],
+  "generation": 1,
+  "id": 46,
+  "name": "Roar",
+  "power": null,
+  "pp": 20,
+  "priority": -6,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-5",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 52,
+  "name": "Ember",
+  "power": 40,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-5",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 53,
+  "name": "Flamethrower",
+  "power": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-47",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 54,
+  "name": "Mist",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "users-field",
+  "type": "ice"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 55,
+  "name": "Water-Gun",
+  "power": 40,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 80,
+  "category": "special",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 56,
+  "name": "Hydro-Pump",
+  "power": 110,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-258",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 57,
+  "name": "Surf",
+  "power": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-other-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-6",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 58,
+  "name": "Ice-Beam",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ice"
+ },
+ {
+  "accuracy": 70,
+  "category": "special",
+  "effect": "effect-261",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 59,
+  "name": "Blizzard",
+  "power": 110,
+  "pp": 5,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "ice"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-71",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 61,
+  "name": "Bubble-Beam",
+  "power": 65,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 90,
+  "category": "special",
+  "effect": "effect-81",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "recharge"
+  ],
+  "generation": 1,
+  "id": 63,
+  "name": "Hyper-Beam",
+  "power": 150,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 64,
+  "name": "Peck",
+  "power": 35,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 65,
+  "name": "Drill-Peck",
+  "power": 80,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-197",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 67,
+  "name": "Low-Kick",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-90",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 68,
+  "name": "Counter",
+  "power": null,
+  "pp": 20,
+  "priority": -5,
+  "target": "specific-move",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-4",
+  "effectChance": null,
+  "flags": [
+   "heal",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 71,
+  "name": "Absorb",
+  "power": 20,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-4",
+  "effectChance": null,
+  "flags": [
+   "heal",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 72,
+  "name": "Mega-Drain",
+  "power": 40,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 90,
+  "category": "status",
+  "effect": "effect-85",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 73,
+  "name": "Leech-Seed",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-317",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 74,
+  "name": "Growth",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-44",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 75,
+  "name": "Razor-Leaf",
+  "power": 55,
+  "pp": 25,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-152",
+  "effectChance": null,
+  "flags": [
+   "charge",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 76,
+  "name": "Solar-Beam",
+  "power": 120,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 75,
+  "category": "status",
+  "effect": "effect-67",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "powder",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 77,
+  "name": "Poison-Powder",
+  "power": null,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 75,
+  "category": "status",
+  "effect": "effect-2",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "powder",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 79,
+  "name": "Sleep-Powder",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 85,
+  "category": "special",
+  "effect": "effect-43",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 83,
+  "name": "Fire-Spin",
+  "power": 35,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-7",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 84,
+  "name": "Thunder-Shock",
+  "power": 40,
+  "pp": 30,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-7",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 85,
+  "name": "Thunderbolt",
+  "power": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 90,
+  "category": "status",
+  "effect": "effect-68",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 86,
+  "name": "Thunder-Wave",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 70,
+  "category": "special",
+  "effect": "effect-153",
+  "effectChance": 30,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 87,
+  "name": "Thunder",
+  "power": 110,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-148",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 89,
+  "name": "Earthquake",
+  "power": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "all-other-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-257",
+  "effectChance": null,
+  "flags": [
+   "charge",
+   "contact",
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 91,
+  "name": "Dig",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 90,
+  "category": "status",
+  "effect": "effect-34",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 92,
+  "name": "Toxic",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-73",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 94,
+  "name": "Psychic",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "psychic"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-53",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 97,
+  "name": "Agility",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "user",
+  "type": "psychic"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-104",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 98,
+  "name": "Quick-Attack",
+  "power": 40,
+  "pp": 30,
+  "priority": 1,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 85,
+  "category": "status",
+  "effect": "effect-60",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "reflectable",
+   "sound"
+  ],
+  "generation": 1,
+  "id": 103,
+  "name": "Screech",
+  "power": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-17",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 104,
+  "name": "Double-Team",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-24",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 108,
+  "name": "Smokescreen",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-50",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 1,
+  "id": 109,
+  "name": "Confuse-Ray",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ghost"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-12",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 110,
+  "name": "Withdraw",
+  "power": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "user",
+  "type": "water"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-36",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 113,
+  "name": "Light-Screen",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "users-field",
+  "type": "psychic"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-26",
+  "effectChance": null,
+  "flags": [
+   "authentic"
+  ],
+  "generation": 1,
+  "id": 114,
+  "name": "Haze",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "ice"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-66",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 115,
+  "name": "Reflect",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "users-field",
+  "type": "psychic"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-48",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 116,
+  "name": "Focus-Energy",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-84",
+  "effectChance": null,
+  "flags": [],
+  "generation": 1,
+  "id": 118,
+  "name": "Metronome",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 85,
+  "category": "special",
+  "effect": "effect-5",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 126,
+  "name": "Fire-Blast",
+  "power": 110,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 20,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 127,
+  "name": "Waterfall",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": null,
+  "category": "special",
+  "effect": "effect-18",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 129,
+  "name": "Swift",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-55",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 133,
+  "name": "Amnesia",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "psychic"
+ },
+ {
+  "accuracy": 80,
+  "category": "physical",
+  "effect": "effect-30",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 154,
+  "name": "Fury-Swipes",
+  "power": 18,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-38",
+  "effectChance": null,
+  "flags": [
+   "heal",
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 156,
+  "name": "Rest",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "user",
+  "type": "psychic"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 30,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 157,
+  "name": "Rock-Slide",
+  "power": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "rock"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-41",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 162,
+  "name": "Super-Fang",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-44",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 1,
+  "id": 163,
+  "name": "Slash",
+  "power": 70,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-80",
+  "effectChance": null,
+  "flags": [
+   "non-sky-battle",
+   "snatch"
+  ],
+  "generation": 1,
+  "id": 164,
+  "name": "Substitute",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-106",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 168,
+  "name": "Thief",
+  "power": 60,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-126",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "defrost",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 172,
+  "name": "Flame-Wheel",
+  "power": 60,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-110",
+  "effectChance": null,
+  "flags": [
+   "authentic"
+  ],
+  "generation": 2,
+  "id": 174,
+  "name": "Curse",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "specific-move",
+  "type": "ghost"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-100",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 179,
+  "name": "Reversal",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-112",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 182,
+  "name": "Protect",
+  "power": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-61",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 2,
+  "id": 184,
+  "name": "Scary-Face",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 75,
+  "category": "status",
+  "effect": "effect-50",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 2,
+  "id": 186,
+  "name": "Sweet-Kiss",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fairy"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-3",
+  "effectChance": 30,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 188,
+  "name": "Sludge-Bomb",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-74",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 189,
+  "name": "Mud-Slap",
+  "power": 20,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-71",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 196,
+  "name": "Icy-Wind",
+  "power": 55,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "ice"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-112",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 197,
+  "name": "Detect",
+  "power": null,
+  "pp": 5,
+  "priority": 4,
+  "target": "user",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-30",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 198,
+  "name": "Bone-Rush",
+  "power": 25,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-28",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 200,
+  "name": "Outrage",
+  "power": 120,
+  "pp": 10,
+  "priority": 0,
+  "target": "random-opponent",
+  "type": "dragon"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-116",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 201,
+  "name": "Sandstorm",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "rock"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-4",
+  "effectChance": null,
+  "flags": [
+   "heal",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 202,
+  "name": "Giga-Drain",
+  "power": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-117",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 203,
+  "name": "Endure",
+  "power": null,
+  "pp": 10,
+  "priority": 4,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-59",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 2,
+  "id": 204,
+  "name": "Charm",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fairy"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-102",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 206,
+  "name": "False-Swipe",
+  "power": 40,
+  "pp": 40,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 85,
+  "category": "status",
+  "effect": "effect-119",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 2,
+  "id": 207,
+  "name": "Swagger",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-7",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 209,
+  "name": "Spark",
+  "power": 65,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-98",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 214,
+  "name": "Sleep-Talk",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-7",
+  "effectChance": 30,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 225,
+  "name": "Dragon-Breath",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-128",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 226,
+  "name": "Baton-Pass",
+  "power": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-91",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mental",
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 2,
+  "id": 227,
+  "name": "Encore",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-130",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 229,
+  "name": "Rapid-Spin",
+  "power": 50,
+  "pp": 40,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-25",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 2,
+  "id": 230,
+  "name": "Sweet-Scent",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "normal"
+ },
+ {
+  "accuracy": 75,
+  "category": "physical",
+  "effect": "effect-70",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 231,
+  "name": "Iron-Tail",
+  "power": 100,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-140",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 232,
+  "name": "Metal-Claw",
+  "power": 50,
+  "pp": 35,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-133",
+  "effectChance": null,
+  "flags": [
+   "heal",
+   "snatch"
+  ],
+  "generation": 2,
+  "id": 235,
+  "name": "Synthesis",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "user",
+  "type": "grass"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-137",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 240,
+  "name": "Rain-Dance",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "water"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-138",
+  "effectChance": null,
+  "flags": [],
+  "generation": 2,
+  "id": 241,
+  "name": "Sunny-Day",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-70",
+  "effectChance": 20,
+  "flags": [
+   "bite",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 242,
+  "name": "Crunch",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-144",
+  "effectChance": null,
+  "flags": [
+   "authentic"
+  ],
+  "generation": 2,
+  "id": 244,
+  "name": "Psych-Up",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-104",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 245,
+  "name": "Extreme-Speed",
+  "power": 80,
+  "pp": 5,
+  "priority": 2,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-141",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 246,
+  "name": "Ancient-Power",
+  "power": 60,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "rock"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-73",
+  "effectChance": 20,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 247,
+  "name": "Shadow-Ball",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ghost"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-70",
+  "effectChance": 50,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 249,
+  "name": "Rock-Smash",
+  "power": 40,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 85,
+  "category": "special",
+  "effect": "effect-262",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 2,
+  "id": 250,
+  "name": "Whirlpool",
+  "power": 35,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-160",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "sound"
+  ],
+  "generation": 3,
+  "id": 253,
+  "name": "Uproar",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "random-opponent",
+  "type": "normal"
+ },
+ {
+  "accuracy": 90,
+  "category": "special",
+  "effect": "effect-5",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 257,
+  "name": "Heat-Wave",
+  "power": 95,
+  "pp": 10,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-166",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mental",
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 3,
+  "id": 259,
+  "name": "Torment",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 85,
+  "category": "status",
+  "effect": "effect-168",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 3,
+  "id": 261,
+  "name": "Will-O-Wisp",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-170",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 263,
+  "name": "Facade",
+  "power": 70,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-171",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "protect",
+   "punch"
+  ],
+  "generation": 3,
+  "id": 264,
+  "name": "Focus-Punch",
+  "power": 150,
+  "pp": 20,
+  "priority": -3,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-175",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 3,
+  "id": 268,
+  "name": "Charge",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-176",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mental",
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 3,
+  "id": 269,
+  "name": "Taunt",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-177",
+  "effectChance": null,
+  "flags": [
+   "authentic"
+  ],
+  "generation": 3,
+  "id": 270,
+  "name": "Helping-Hand",
+  "power": null,
+  "pp": 20,
+  "priority": 5,
+  "target": "ally",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-187",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 280,
+  "name": "Brick-Break",
+  "power": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-188",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 3,
+  "id": 281,
+  "name": "Yawn",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-189",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 282,
+  "name": "Knock-Off",
+  "power": 65,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-190",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 283,
+  "name": "Endeavor",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-59",
+  "effectChance": null,
+  "flags": [
+   "dance",
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 3,
+  "id": 297,
+  "name": "Feather-Dance",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-33",
+  "effectChance": null,
+  "flags": [
+   "heal",
+   "snatch"
+  ],
+  "generation": 3,
+  "id": 303,
+  "name": "Slack-Off",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "sound"
+  ],
+  "generation": 3,
+  "id": 304,
+  "name": "Hyper-Voice",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "normal"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-140",
+  "effectChance": 20,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect",
+   "punch"
+  ],
+  "generation": 3,
+  "id": 309,
+  "name": "Meteor-Mash",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-204",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 311,
+  "name": "Weather-Ball",
+  "power": 50,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-63",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 3,
+  "id": 313,
+  "name": "Fake-Tears",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-44",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 314,
+  "name": "Air-Cutter",
+  "power": 60,
+  "pp": 25,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "flying"
+ },
+ {
+  "accuracy": 90,
+  "category": "special",
+  "effect": "effect-205",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 315,
+  "name": "Overheat",
+  "power": 130,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-71",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 317,
+  "name": "Rock-Tomb",
+  "power": 60,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "rock"
+ },
+ {
+  "accuracy": 85,
+  "category": "status",
+  "effect": "effect-63",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "reflectable",
+   "sound"
+  ],
+  "generation": 3,
+  "id": 319,
+  "name": "Metal-Sound",
+  "power": null,
+  "pp": 40,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 85,
+  "category": "physical",
+  "effect": "effect-43",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 328,
+  "name": "Sand-Tomb",
+  "power": 35,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 85,
+  "category": "special",
+  "effect": "effect-74",
+  "effectChance": 30,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 330,
+  "name": "Muddy-Water",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-30",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 331,
+  "name": "Bullet-Seed",
+  "power": 25,
+  "pp": 30,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": null,
+  "category": "physical",
+  "effect": "effect-18",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 332,
+  "name": "Aerial-Ace",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-52",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 3,
+  "id": 334,
+  "name": "Iron-Defense",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "user",
+  "type": "steel"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 337,
+  "name": "Dragon-Claw",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-209",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 3,
+  "id": 339,
+  "name": "Bulk-Up",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-71",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 341,
+  "name": "Mud-Shot",
+  "power": 55,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-106",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 343,
+  "name": "Covet",
+  "power": 60,
+  "pp": 25,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "special",
+  "effect": "effect-18",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 345,
+  "name": "Magical-Leaf",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-212",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 3,
+  "id": 347,
+  "name": "Calm-Mind",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "psychic"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-213",
+  "effectChance": null,
+  "flags": [
+   "dance",
+   "snatch"
+  ],
+  "generation": 3,
+  "id": 349,
+  "name": "Dragon-Dance",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "dragon"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-30",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 3,
+  "id": 350,
+  "name": "Rock-Blast",
+  "power": 25,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "rock"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-77",
+  "effectChance": 20,
+  "flags": [
+   "distance",
+   "mirror",
+   "protect",
+   "pulse"
+  ],
+  "generation": 3,
+  "id": 352,
+  "name": "Water-Pulse",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-220",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 360,
+  "name": "Gyro-Ball",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-222",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 362,
+  "name": "Brine",
+  "power": 65,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-224",
+  "effectChance": null,
+  "flags": [
+   "mirror"
+  ],
+  "generation": 4,
+  "id": 364,
+  "name": "Feint",
+  "power": 30,
+  "pp": 10,
+  "priority": 2,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-226",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 4,
+  "id": 366,
+  "name": "Tailwind",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "users-field",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-229",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 369,
+  "name": "U-Turn",
+  "power": 70,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "bug"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-230",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 370,
+  "name": "Close-Combat",
+  "power": 120,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-232",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 372,
+  "name": "Assurance",
+  "power": 60,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-234",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 374,
+  "name": "Fling",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-243",
+  "effectChance": null,
+  "flags": [],
+  "generation": 4,
+  "id": 383,
+  "name": "Copycat",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-247",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 387,
+  "name": "Last-Resort",
+  "power": 140,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-248",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 4,
+  "id": 388,
+  "name": "Worry-Seed",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-254",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "defrost",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 394,
+  "name": "Flare-Blitz",
+  "power": 120,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-7",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 395,
+  "name": "Force-Palm",
+  "power": 60,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": null,
+  "category": "special",
+  "effect": "effect-18",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "distance",
+   "mirror",
+   "protect",
+   "pulse"
+  ],
+  "generation": 4,
+  "id": 396,
+  "name": "Aura-Sphere",
+  "power": 80,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-3",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 398,
+  "name": "Poison-Jab",
+  "power": 80,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-32",
+  "effectChance": 20,
+  "flags": [
+   "distance",
+   "mirror",
+   "protect",
+   "pulse"
+  ],
+  "generation": 4,
+  "id": 399,
+  "name": "Dark-Pulse",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dark"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 401,
+  "name": "Aqua-Tail",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 402,
+  "name": "Seed-Bomb",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-32",
+  "effectChance": 30,
+  "flags": [
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 403,
+  "name": "Air-Slash",
+  "power": 75,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "distance",
+   "mirror",
+   "protect",
+   "pulse"
+  ],
+  "generation": 4,
+  "id": 406,
+  "name": "Dragon-Pulse",
+  "power": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": 75,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 20,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 407,
+  "name": "Dragon-Rush",
+  "power": 100,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-4",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "heal",
+   "mirror",
+   "protect",
+   "punch"
+  ],
+  "generation": 4,
+  "id": 409,
+  "name": "Drain-Punch",
+  "power": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-104",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 410,
+  "name": "Vacuum-Wave",
+  "power": 40,
+  "pp": 30,
+  "priority": 1,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 70,
+  "category": "special",
+  "effect": "effect-73",
+  "effectChance": 10,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 411,
+  "name": "Focus-Blast",
+  "power": 120,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-73",
+  "effectChance": 10,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 412,
+  "name": "Energy-Ball",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-199",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 413,
+  "name": "Brave-Bird",
+  "power": 120,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-73",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 414,
+  "name": "Earth-Power",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-81",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect",
+   "recharge"
+  ],
+  "generation": 4,
+  "id": 416,
+  "name": "Giga-Impact",
+  "power": 150,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-54",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 4,
+  "id": 417,
+  "name": "Nasty-Plot",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "user",
+  "type": "dark"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-44",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 421,
+  "name": "Shadow-Claw",
+  "power": 70,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ghost"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-276",
+  "effectChance": 10,
+  "flags": [
+   "bite",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 422,
+  "name": "Thunder-Fang",
+  "power": 65,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-275",
+  "effectChance": 10,
+  "flags": [
+   "bite",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 423,
+  "name": "Ice-Fang",
+  "power": 65,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ice"
+ },
+ {
+  "accuracy": 95,
+  "category": "physical",
+  "effect": "effect-274",
+  "effectChance": 10,
+  "flags": [
+   "bite",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 424,
+  "name": "Fire-Fang",
+  "power": 65,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 20,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 428,
+  "name": "Zen-Headbutt",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "psychic"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-73",
+  "effectChance": 10,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 430,
+  "name": "Flash-Cannon",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 90,
+  "category": "special",
+  "effect": "effect-205",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 434,
+  "name": "Draco-Meteor",
+  "power": 130,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-7",
+  "effectChance": 30,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 435,
+  "name": "Discharge",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-other-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 90,
+  "category": "special",
+  "effect": "effect-205",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 437,
+  "name": "Leaf-Storm",
+  "power": 130,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 85,
+  "category": "physical",
+  "effect": "effect-1",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 438,
+  "name": "Power-Whip",
+  "power": 120,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 80,
+  "category": "physical",
+  "effect": "effect-3",
+  "effectChance": 30,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 441,
+  "name": "Gunk-Shot",
+  "power": 120,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-32",
+  "effectChance": 30,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 442,
+  "name": "Iron-Head",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 80,
+  "category": "physical",
+  "effect": "effect-44",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 444,
+  "name": "Stone-Edge",
+  "power": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "rock"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-267",
+  "effectChance": null,
+  "flags": [
+   "reflectable"
+  ],
+  "generation": 4,
+  "id": 446,
+  "name": "Stealth-Rock",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "opponents-field",
+  "type": "rock"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-197",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 447,
+  "name": "Grass-Knot",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 90,
+  "category": "special",
+  "effect": "effect-277",
+  "effectChance": 70,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 451,
+  "name": "Charge-Beam",
+  "power": 50,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 80,
+  "category": "physical",
+  "effect": "effect-270",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 4,
+  "id": 457,
+  "name": "Head-Smash",
+  "power": 150,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "rock"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-284",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 474,
+  "name": "Venoshock",
+  "power": 65,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-288",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 479,
+  "name": "Smack-Down",
+  "power": 50,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "rock"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-292",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 484,
+  "name": "Heavy-Slam",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-294",
+  "effectChance": null,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 486,
+  "name": "Electro-Ball",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-296",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 488,
+  "name": "Flame-Charge",
+  "power": 50,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-21",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 490,
+  "name": "Low-Sweep",
+  "power": 65,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-297",
+  "effectChance": 100,
+  "flags": [
+   "ballistics",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 491,
+  "name": "Acid-Spray",
+  "power": 40,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "poison"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-303",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "sound"
+  ],
+  "generation": 5,
+  "id": 497,
+  "name": "Echoed-Voice",
+  "power": 40,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-306",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 500,
+  "name": "Stored-Power",
+  "power": 20,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "psychic"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-307",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 5,
+  "id": 501,
+  "name": "Quick-Guard",
+  "power": null,
+  "pp": 15,
+  "priority": 3,
+  "target": "users-field",
+  "type": "fighting"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-309",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 5,
+  "id": 504,
+  "name": "Shell-Smash",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-310",
+  "effectChance": null,
+  "flags": [
+   "distance",
+   "heal",
+   "protect",
+   "pulse",
+   "reflectable"
+  ],
+  "generation": 5,
+  "id": 505,
+  "name": "Heal-Pulse",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "psychic"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-318",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 512,
+  "name": "Acrobatics",
+  "power": 55,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-321",
+  "effectChance": null,
+  "flags": [
+   "protect"
+  ],
+  "generation": 5,
+  "id": 515,
+  "name": "Final-Gambit",
+  "power": null,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 50,
+  "category": "special",
+  "effect": "effect-5",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 517,
+  "name": "Inferno",
+  "power": 100,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-325",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 518,
+  "name": "Water-Pledge",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-326",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 519,
+  "name": "Fire-Pledge",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-327",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 520,
+  "name": "Grass-Pledge",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-229",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 521,
+  "name": "Volt-Switch",
+  "power": 70,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-71",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "non-sky-battle",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 523,
+  "name": "Bulldoze",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "all-other-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-314",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 525,
+  "name": "Dragon-Tail",
+  "power": 60,
+  "pp": 10,
+  "priority": -6,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-328",
+  "effectChance": null,
+  "flags": [
+   "snatch"
+  ],
+  "generation": 5,
+  "id": 526,
+  "name": "Work-Up",
+  "power": null,
+  "pp": 30,
+  "priority": 0,
+  "target": "user",
+  "type": "normal"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-21",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 527,
+  "name": "Electroweb",
+  "power": 55,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-49",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 528,
+  "name": "Wild-Charge",
+  "power": 90,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 70,
+  "category": "special",
+  "effect": "effect-334",
+  "effectChance": 30,
+  "flags": [
+   "distance",
+   "mirror",
+   "protect"
+  ],
+  "generation": 5,
+  "id": 542,
+  "name": "Hurricane",
+  "power": 110,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-72",
+  "effectChance": 100,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "sound"
+  ],
+  "generation": 5,
+  "id": 555,
+  "name": "Snarl",
+  "power": 55,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "dark"
+ },
+ {
+  "accuracy": null,
+  "category": "special",
+  "effect": "effect-381",
+  "effectChance": null,
+  "flags": [
+   "authentic",
+   "mirror",
+   "protect",
+   "sound"
+  ],
+  "generation": 6,
+  "id": 574,
+  "name": "Disarming-Voice",
+  "power": 40,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "fairy"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-349",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "heal",
+   "mirror",
+   "protect"
+  ],
+  "generation": 6,
+  "id": 577,
+  "name": "Draining-Kiss",
+  "power": 50,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fairy"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-352",
+  "effectChance": null,
+  "flags": [
+   "non-sky-battle"
+  ],
+  "generation": 6,
+  "id": 580,
+  "name": "Grassy-Terrain",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "grass"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-69",
+  "effectChance": 10,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 6,
+  "id": 583,
+  "name": "Play-Rough",
+  "power": 90,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fairy"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-357",
+  "effectChance": 100,
+  "flags": [
+   "authentic",
+   "mirror",
+   "reflectable"
+  ],
+  "generation": 6,
+  "id": 589,
+  "name": "Play-Nice",
+  "power": null,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-62",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 6,
+  "id": 598,
+  "name": "Eerie-Impulse",
+  "power": null,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-369",
+  "effectChance": null,
+  "flags": [
+   "non-sky-battle"
+  ],
+  "generation": 6,
+  "id": 604,
+  "name": "Electric-Terrain",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "status",
+  "effect": "effect-365",
+  "effectChance": null,
+  "flags": [
+   "mirror",
+   "protect",
+   "reflectable"
+  ],
+  "generation": 6,
+  "id": 608,
+  "name": "Baby-Doll-Eyes",
+  "power": null,
+  "pp": 30,
+  "priority": 1,
+  "target": "selected-pokemon",
+  "type": "fairy"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-372",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 6,
+  "id": 609,
+  "name": "Nuzzle",
+  "power": 20,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "electric"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-187",
+  "effectChance": null,
+  "flags": [
+   "bite",
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 7,
+  "id": 706,
+  "name": "Psychic-Fangs",
+  "power": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "psychic"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-409",
+  "effectChance": null,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 7,
+  "id": 707,
+  "name": "Stomping-Tantrum",
+  "power": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-70",
+  "effectChance": 20,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 7,
+  "id": 710,
+  "name": "Liquidation",
+  "power": 85,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-396",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 784,
+  "name": "Breaking-Swipe",
+  "power": 60,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "dragon"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-471",
+  "effectChance": 100,
+  "flags": [
+   "authentic",
+   "heal",
+   "snatch"
+  ],
+  "generation": 8,
+  "id": 791,
+  "name": "Life-Dew",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "user-and-allies",
+  "type": "water"
+ },
+ {
+  "accuracy": 95,
+  "category": "special",
+  "effect": "effect-420",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 796,
+  "name": "Steel-Beam",
+  "power": 140,
+  "pp": 5,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "steel"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-443",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 799,
+  "name": "Scale-Shot",
+  "power": 25,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "dragon"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-478",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 803,
+  "name": "Grassy-Glide",
+  "power": 55,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-481",
+  "effectChance": 100,
+  "flags": [
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 807,
+  "name": "Burning-Jealousy",
+  "power": 70,
+  "pp": 5,
+  "priority": 0,
+  "target": "all-opponents",
+  "type": "fire"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": "effect-484",
+  "effectChance": 100,
+  "flags": [
+   "authentic"
+  ],
+  "generation": 8,
+  "id": 811,
+  "name": "Coaching",
+  "power": null,
+  "pp": 10,
+  "priority": 0,
+  "target": "user-and-allies",
+  "type": "fighting"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": "effect-229",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 812,
+  "name": "Flip-Turn",
+  "power": 60,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-105",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 813,
+  "name": "Triple-Axel",
+  "power": 20,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ice"
+ },
+ {
+  "accuracy": 90,
+  "category": "physical",
+  "effect": "effect-45",
+  "effectChance": 100,
+  "flags": [
+   "contact",
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 814,
+  "name": "Dual-Wingbeat",
+  "power": 40,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "flying"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": "effect-5",
+  "effectChance": 30,
+  "flags": [
+   "defrost",
+   "mirror",
+   "protect"
+  ],
+  "generation": 8,
+  "id": 815,
+  "name": "Scorching-Sands",
+  "power": 70,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ground"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 8,
+  "id": 834,
+  "name": "Wave-Crash",
+  "power": 120,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 851,
+  "name": "Tera-Blast",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "normal"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 861,
+  "name": "Ice-Spinner",
+  "power": 80,
+  "pp": 15,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "ice"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 883,
+  "name": "Snowscape",
+  "power": 0,
+  "pp": 10,
+  "priority": 0,
+  "target": "entire-field",
+  "type": "ice"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 885,
+  "name": "Trailblaze",
+  "power": 50,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "grass"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 886,
+  "name": "Chilling-Water",
+  "power": 50,
+  "pp": 20,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "water"
+ },
+ {
+  "accuracy": null,
+  "category": "status",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 913,
+  "name": "Dragon-Cheer",
+  "power": 0,
+  "pp": 15,
+  "priority": 0,
+  "target": "all-allies",
+  "type": "dragon"
+ },
+ {
+  "accuracy": 100,
+  "category": "special",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 914,
+  "name": "Alluring-Voice",
+  "power": 80,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fairy"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 915,
+  "name": "Temper-Flare",
+  "power": 75,
+  "pp": 10,
+  "priority": 0,
+  "target": "selected-pokemon",
+  "type": "fire"
+ },
+ {
+  "accuracy": 100,
+  "category": "physical",
+  "effect": null,
+  "effectChance": null,
+  "flags": [],
+  "generation": 9,
+  "id": 918,
+  "name": "Upper-Hand",
+  "power": 65,
+  "pp": 15,
+  "priority": 3,
+  "target": "selected-pokemon",
+  "type": "fighting"
+ }
+]

@@ -1,0 +1,122 @@
+{
+ "caps": [
+  {
+   "cap": 14,
+   "checkpoint": "start",
+   "index": 0,
+   "raisedBy": null
+  },
+  {
+   "ace": "Cranidos 14",
+   "cap": 14,
+   "checkpoint": "roark",
+   "index": 1,
+   "location": "Oreburgh Gym",
+   "raisedBy": "badge:coal"
+  },
+  {
+   "ace": "Roserade 22",
+   "cap": 22,
+   "checkpoint": "gardenia",
+   "index": 2,
+   "location": "Eterna Gym",
+   "raisedBy": "badge:forest"
+  },
+  {
+   "ace": "Mismagius 26",
+   "cap": 26,
+   "checkpoint": "fantina",
+   "index": 3,
+   "location": "Hearthome Gym",
+   "raisedBy": "badge:relic"
+  },
+  {
+   "ace": "Lucario 32",
+   "cap": 32,
+   "checkpoint": "maylene",
+   "index": 4,
+   "location": "Veilstone Gym",
+   "raisedBy": "badge:cobble"
+  },
+  {
+   "ace": "Floatzel 37",
+   "cap": 37,
+   "checkpoint": "crasher_wake",
+   "index": 5,
+   "location": "Pastoria Gym",
+   "raisedBy": "badge:fen"
+  },
+  {
+   "ace": "Bastiodon 41",
+   "cap": 41,
+   "checkpoint": "byron",
+   "index": 6,
+   "location": "Canalave Gym",
+   "raisedBy": "badge:mine"
+  },
+  {
+   "ace": "Froslass 44",
+   "cap": 44,
+   "checkpoint": "candice",
+   "index": 7,
+   "location": "Snowpoint Gym",
+   "raisedBy": "badge:icicle"
+  },
+  {
+   "ace": "Electivire 50",
+   "cap": 50,
+   "checkpoint": "volkner",
+   "index": 8,
+   "location": "Sunyshore Gym",
+   "raisedBy": "badge:beacon"
+  },
+  {
+   "ace": "Drapion 53",
+   "cap": 53,
+   "checkpoint": "aaron",
+   "index": 9,
+   "location": "Elite Four",
+   "raisedBy": "flag:aaron_defeated"
+  },
+  {
+   "ace": "Rhyperior 55",
+   "cap": 55,
+   "checkpoint": "bertha",
+   "index": 10,
+   "location": "Elite Four",
+   "raisedBy": "flag:bertha_defeated"
+  },
+  {
+   "ace": "Magmortar 57",
+   "cap": 57,
+   "checkpoint": "flint",
+   "index": 11,
+   "location": "Elite Four",
+   "raisedBy": "flag:flint_defeated"
+  },
+  {
+   "ace": "Gallade 59",
+   "cap": 59,
+   "checkpoint": "lucian",
+   "index": 12,
+   "location": "Elite Four",
+   "raisedBy": "flag:lucian_defeated"
+  },
+  {
+   "ace": "Garchomp 62",
+   "cap": 62,
+   "checkpoint": "cynthia",
+   "index": 13,
+   "location": "Champion",
+   "raisedBy": "flag:hall_of_fame"
+  },
+  {
+   "cap": 100,
+   "checkpoint": "postgame",
+   "index": 14,
+   "raisedBy": null
+  }
+ ],
+ "postGameCap": 100,
+ "rule": "hard-xp-stop"
+}

@@ -1,0 +1,3 @@
+# Keep the Godot importer out of this tree.
+# Without this, `godot --headless --path . --import` walks 1.7 GB of ROM dumps
+# and takes minutes. Nothing here is ever loaded through res://.

@@ -1,0 +1,3295 @@
+{
+  "forms": [
+    {
+      "abilities": [
+        "thick-fat"
+      ],
+      "abilityStatus": "canon",
+      "base": 3,
+      "bst": 625,
+      "height": 24,
+      "id": "venusaur-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Venusaur",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/venusaur-mega.png",
+        "front": "mega/venusaur-mega.png",
+        "icon": "mega/icon/venusaur-mega.png"
+      },
+      "stats": {
+        "atk": 100,
+        "def": 123,
+        "hp": 80,
+        "spa": 122,
+        "spd": 120,
+        "spe": 80
+      },
+      "stone": "venusaurite",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "weight": 1555
+    },
+    {
+      "abilities": [
+        "tough-claws"
+      ],
+      "abilityStatus": "canon",
+      "base": 6,
+      "bst": 634,
+      "height": 17,
+      "id": "charizard-mega-x",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Charizard X",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/charizard-mega-x.png",
+        "front": "mega/charizard-mega-x.png",
+        "icon": "mega/icon/charizard-mega-x.png"
+      },
+      "stats": {
+        "atk": 130,
+        "def": 111,
+        "hp": 78,
+        "spa": 130,
+        "spd": 85,
+        "spe": 100
+      },
+      "stone": "charizardite-x",
+      "types": [
+        "fire",
+        "dragon"
+      ],
+      "weight": 1105
+    },
+    {
+      "abilities": [
+        "drought"
+      ],
+      "abilityStatus": "canon",
+      "base": 6,
+      "bst": 634,
+      "height": 17,
+      "id": "charizard-mega-y",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Charizard Y",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/charizard-mega-y.png",
+        "front": "mega/charizard-mega-y.png",
+        "icon": "mega/icon/charizard-mega-y.png"
+      },
+      "stats": {
+        "atk": 104,
+        "def": 78,
+        "hp": 78,
+        "spa": 159,
+        "spd": 115,
+        "spe": 100
+      },
+      "stone": "charizardite-y",
+      "types": [
+        "fire",
+        "flying"
+      ],
+      "weight": 1005
+    },
+    {
+      "abilities": [
+        "mega-launcher"
+      ],
+      "abilityStatus": "canon",
+      "base": 9,
+      "bst": 630,
+      "height": 16,
+      "id": "blastoise-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Blastoise",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/blastoise-mega.png",
+        "front": "mega/blastoise-mega.png",
+        "icon": "mega/icon/blastoise-mega.png"
+      },
+      "stats": {
+        "atk": 103,
+        "def": 120,
+        "hp": 79,
+        "spa": 135,
+        "spd": 115,
+        "spe": 78
+      },
+      "stone": "blastoisinite",
+      "types": [
+        "water"
+      ],
+      "weight": 1011
+    },
+    {
+      "abilities": [
+        "adaptability"
+      ],
+      "abilityStatus": "canon",
+      "base": 15,
+      "bst": 495,
+      "height": 14,
+      "id": "beedrill-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Beedrill",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/beedrill-mega.png",
+        "front": "mega/beedrill-mega.png",
+        "icon": "mega/icon/beedrill-mega.png"
+      },
+      "stats": {
+        "atk": 150,
+        "def": 40,
+        "hp": 65,
+        "spa": 15,
+        "spd": 80,
+        "spe": 145
+      },
+      "stone": "beedrillite",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "weight": 405
+    },
+    {
+      "abilities": [
+        "no-guard"
+      ],
+      "abilityStatus": "canon",
+      "base": 18,
+      "bst": 579,
+      "height": 22,
+      "id": "pidgeot-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Pidgeot",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/pidgeot-mega.png",
+        "front": "mega/pidgeot-mega.png",
+        "icon": "mega/icon/pidgeot-mega.png"
+      },
+      "stats": {
+        "atk": 80,
+        "def": 80,
+        "hp": 83,
+        "spa": 135,
+        "spd": 80,
+        "spe": 121
+      },
+      "stone": "pidgeotite",
+      "types": [
+        "normal",
+        "flying"
+      ],
+      "weight": 505
+    },
+    {
+      "abilities": [
+        "trace"
+      ],
+      "abilityStatus": "canon",
+      "base": 65,
+      "bst": 600,
+      "height": 12,
+      "id": "alakazam-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Alakazam",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/alakazam-mega.png",
+        "front": "mega/alakazam-mega.png",
+        "icon": "mega/icon/alakazam-mega.png"
+      },
+      "stats": {
+        "atk": 50,
+        "def": 65,
+        "hp": 55,
+        "spa": 175,
+        "spd": 105,
+        "spe": 150
+      },
+      "stone": "alakazite",
+      "types": [
+        "psychic"
+      ],
+      "weight": 480
+    },
+    {
+      "abilities": [
+        "shell-armor"
+      ],
+      "abilityStatus": "canon",
+      "base": 80,
+      "bst": 590,
+      "height": 20,
+      "id": "slowbro-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Slowbro",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/slowbro-mega.png",
+        "front": "mega/slowbro-mega.png",
+        "icon": "mega/icon/slowbro-mega.png"
+      },
+      "stats": {
+        "atk": 75,
+        "def": 180,
+        "hp": 95,
+        "spa": 130,
+        "spd": 80,
+        "spe": 30
+      },
+      "stone": "slowbronite",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "weight": 1200
+    },
+    {
+      "abilities": [
+        "shadow-tag"
+      ],
+      "abilityStatus": "canon",
+      "base": 94,
+      "bst": 600,
+      "height": 14,
+      "id": "gengar-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Gengar",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/gengar-mega.png",
+        "front": "mega/gengar-mega.png",
+        "icon": "mega/icon/gengar-mega.png"
+      },
+      "stats": {
+        "atk": 65,
+        "def": 80,
+        "hp": 60,
+        "spa": 170,
+        "spd": 95,
+        "spe": 130
+      },
+      "stone": "gengarite",
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "weight": 405
+    },
+    {
+      "abilities": [
+        "parental-bond"
+      ],
+      "abilityStatus": "canon",
+      "base": 115,
+      "bst": 590,
+      "height": 22,
+      "id": "kangaskhan-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Kangaskhan",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/kangaskhan-mega.png",
+        "front": "mega/kangaskhan-mega.png",
+        "icon": "mega/icon/kangaskhan-mega.png"
+      },
+      "stats": {
+        "atk": 125,
+        "def": 100,
+        "hp": 105,
+        "spa": 60,
+        "spd": 100,
+        "spe": 100
+      },
+      "stone": "kangaskhanite",
+      "types": [
+        "normal"
+      ],
+      "weight": 1000
+    },
+    {
+      "abilities": [
+        "aerilate"
+      ],
+      "abilityStatus": "canon",
+      "base": 127,
+      "bst": 600,
+      "height": 17,
+      "id": "pinsir-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Pinsir",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/pinsir-mega.png",
+        "front": "mega/pinsir-mega.png",
+        "icon": "mega/icon/pinsir-mega.png"
+      },
+      "stats": {
+        "atk": 155,
+        "def": 120,
+        "hp": 65,
+        "spa": 65,
+        "spd": 90,
+        "spe": 105
+      },
+      "stone": "pinsirite",
+      "types": [
+        "bug",
+        "flying"
+      ],
+      "weight": 590
+    },
+    {
+      "abilities": [
+        "mold-breaker"
+      ],
+      "abilityStatus": "canon",
+      "base": 130,
+      "bst": 640,
+      "height": 65,
+      "id": "gyarados-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Gyarados",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/gyarados-mega.png",
+        "front": "mega/gyarados-mega.png",
+        "icon": "mega/icon/gyarados-mega.png"
+      },
+      "stats": {
+        "atk": 155,
+        "def": 109,
+        "hp": 95,
+        "spa": 70,
+        "spd": 130,
+        "spe": 81
+      },
+      "stone": "gyaradosite",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "weight": 3050
+    },
+    {
+      "abilities": [
+        "tough-claws"
+      ],
+      "abilityStatus": "canon",
+      "base": 142,
+      "bst": 615,
+      "height": 21,
+      "id": "aerodactyl-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Aerodactyl",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/aerodactyl-mega.png",
+        "front": "mega/aerodactyl-mega.png",
+        "icon": "mega/icon/aerodactyl-mega.png"
+      },
+      "stats": {
+        "atk": 135,
+        "def": 85,
+        "hp": 80,
+        "spa": 70,
+        "spd": 95,
+        "spe": 150
+      },
+      "stone": "aerodactylite",
+      "types": [
+        "rock",
+        "flying"
+      ],
+      "weight": 790
+    },
+    {
+      "abilities": [
+        "steadfast"
+      ],
+      "abilityStatus": "canon",
+      "base": 150,
+      "bst": 780,
+      "height": 23,
+      "id": "mewtwo-mega-x",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Mewtwo X",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/mewtwo-mega-x.png",
+        "front": "mega/mewtwo-mega-x.png",
+        "icon": "mega/icon/mewtwo-mega-x.png"
+      },
+      "stats": {
+        "atk": 190,
+        "def": 100,
+        "hp": 106,
+        "spa": 154,
+        "spd": 100,
+        "spe": 130
+      },
+      "stone": "mewtwonite-x",
+      "types": [
+        "psychic",
+        "fighting"
+      ],
+      "weight": 1270
+    },
+    {
+      "abilities": [
+        "insomnia"
+      ],
+      "abilityStatus": "canon",
+      "base": 150,
+      "bst": 780,
+      "height": 15,
+      "id": "mewtwo-mega-y",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Mewtwo Y",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/mewtwo-mega-y.png",
+        "front": "mega/mewtwo-mega-y.png",
+        "icon": "mega/icon/mewtwo-mega-y.png"
+      },
+      "stats": {
+        "atk": 150,
+        "def": 70,
+        "hp": 106,
+        "spa": 194,
+        "spd": 120,
+        "spe": 140
+      },
+      "stone": "mewtwonite-y",
+      "types": [
+        "psychic"
+      ],
+      "weight": 330
+    },
+    {
+      "abilities": [
+        "mold-breaker"
+      ],
+      "abilityStatus": "canon",
+      "base": 181,
+      "bst": 610,
+      "height": 14,
+      "id": "ampharos-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Ampharos",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/ampharos-mega.png",
+        "front": "mega/ampharos-mega.png",
+        "icon": "mega/icon/ampharos-mega.png"
+      },
+      "stats": {
+        "atk": 95,
+        "def": 105,
+        "hp": 90,
+        "spa": 165,
+        "spd": 110,
+        "spe": 45
+      },
+      "stone": "ampharosite",
+      "types": [
+        "electric",
+        "dragon"
+      ],
+      "weight": 615
+    },
+    {
+      "abilities": [
+        "sand-force"
+      ],
+      "abilityStatus": "canon",
+      "base": 208,
+      "bst": 610,
+      "height": 105,
+      "id": "steelix-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Steelix",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/steelix-mega.png",
+        "front": "mega/steelix-mega.png",
+        "icon": "mega/icon/steelix-mega.png"
+      },
+      "stats": {
+        "atk": 125,
+        "def": 230,
+        "hp": 75,
+        "spa": 55,
+        "spd": 95,
+        "spe": 30
+      },
+      "stone": "steelixite",
+      "types": [
+        "steel",
+        "ground"
+      ],
+      "weight": 7400
+    },
+    {
+      "abilities": [
+        "technician"
+      ],
+      "abilityStatus": "canon",
+      "base": 212,
+      "bst": 600,
+      "height": 20,
+      "id": "scizor-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Scizor",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/scizor-mega.png",
+        "front": "mega/scizor-mega.png",
+        "icon": "mega/icon/scizor-mega.png"
+      },
+      "stats": {
+        "atk": 150,
+        "def": 140,
+        "hp": 70,
+        "spa": 65,
+        "spd": 100,
+        "spe": 75
+      },
+      "stone": "scizorite",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "weight": 1250
+    },
+    {
+      "abilities": [
+        "skill-link"
+      ],
+      "abilityStatus": "canon",
+      "base": 214,
+      "bst": 600,
+      "height": 17,
+      "id": "heracross-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Heracross",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/heracross-mega.png",
+        "front": "mega/heracross-mega.png",
+        "icon": "mega/icon/heracross-mega.png"
+      },
+      "stats": {
+        "atk": 185,
+        "def": 115,
+        "hp": 80,
+        "spa": 40,
+        "spd": 105,
+        "spe": 75
+      },
+      "stone": "heracronite",
+      "types": [
+        "bug",
+        "fighting"
+      ],
+      "weight": 625
+    },
+    {
+      "abilities": [
+        "solar-power"
+      ],
+      "abilityStatus": "canon",
+      "base": 229,
+      "bst": 600,
+      "height": 19,
+      "id": "houndoom-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Houndoom",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/houndoom-mega.png",
+        "front": "mega/houndoom-mega.png",
+        "icon": "mega/icon/houndoom-mega.png"
+      },
+      "stats": {
+        "atk": 90,
+        "def": 90,
+        "hp": 75,
+        "spa": 140,
+        "spd": 90,
+        "spe": 115
+      },
+      "stone": "houndoominite",
+      "types": [
+        "dark",
+        "fire"
+      ],
+      "weight": 495
+    },
+    {
+      "abilities": [
+        "sand-stream"
+      ],
+      "abilityStatus": "canon",
+      "base": 248,
+      "bst": 700,
+      "height": 25,
+      "id": "tyranitar-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Tyranitar",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/tyranitar-mega.png",
+        "front": "mega/tyranitar-mega.png",
+        "icon": "mega/icon/tyranitar-mega.png"
+      },
+      "stats": {
+        "atk": 164,
+        "def": 150,
+        "hp": 100,
+        "spa": 95,
+        "spd": 120,
+        "spe": 71
+      },
+      "stone": "tyranitarite",
+      "types": [
+        "rock",
+        "dark"
+      ],
+      "weight": 2550
+    },
+    {
+      "abilities": [
+        "lightning-rod"
+      ],
+      "abilityStatus": "canon",
+      "base": 254,
+      "bst": 630,
+      "height": 19,
+      "id": "sceptile-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Sceptile",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/sceptile-mega.png",
+        "front": "mega/sceptile-mega.png",
+        "icon": "mega/icon/sceptile-mega.png"
+      },
+      "stats": {
+        "atk": 110,
+        "def": 75,
+        "hp": 70,
+        "spa": 145,
+        "spd": 85,
+        "spe": 145
+      },
+      "stone": "sceptilite",
+      "types": [
+        "grass",
+        "dragon"
+      ],
+      "weight": 552
+    },
+    {
+      "abilities": [
+        "speed-boost"
+      ],
+      "abilityStatus": "canon",
+      "base": 257,
+      "bst": 630,
+      "height": 19,
+      "id": "blaziken-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Blaziken",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/blaziken-mega.png",
+        "front": "mega/blaziken-mega.png",
+        "icon": "mega/icon/blaziken-mega.png"
+      },
+      "stats": {
+        "atk": 160,
+        "def": 80,
+        "hp": 80,
+        "spa": 130,
+        "spd": 80,
+        "spe": 100
+      },
+      "stone": "blazikenite",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "weight": 520
+    },
+    {
+      "abilities": [
+        "swift-swim"
+      ],
+      "abilityStatus": "canon",
+      "base": 260,
+      "bst": 635,
+      "height": 19,
+      "id": "swampert-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Swampert",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/swampert-mega.png",
+        "front": "mega/swampert-mega.png",
+        "icon": "mega/icon/swampert-mega.png"
+      },
+      "stats": {
+        "atk": 150,
+        "def": 110,
+        "hp": 100,
+        "spa": 95,
+        "spd": 110,
+        "spe": 70
+      },
+      "stone": "swampertite",
+      "types": [
+        "water",
+        "ground"
+      ],
+      "weight": 1020
+    },
+    {
+      "abilities": [
+        "pixilate"
+      ],
+      "abilityStatus": "canon",
+      "base": 282,
+      "bst": 618,
+      "height": 16,
+      "id": "gardevoir-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Gardevoir",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/gardevoir-mega.png",
+        "front": "mega/gardevoir-mega.png",
+        "icon": "mega/icon/gardevoir-mega.png"
+      },
+      "stats": {
+        "atk": 85,
+        "def": 65,
+        "hp": 68,
+        "spa": 165,
+        "spd": 135,
+        "spe": 100
+      },
+      "stone": "gardevoirite",
+      "types": [
+        "psychic",
+        "fairy"
+      ],
+      "weight": 484
+    },
+    {
+      "abilities": [
+        "magic-bounce"
+      ],
+      "abilityStatus": "canon",
+      "base": 302,
+      "bst": 480,
+      "height": 5,
+      "id": "sableye-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Sableye",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/sableye-mega.png",
+        "front": "mega/sableye-mega.png",
+        "icon": "mega/icon/sableye-mega.png"
+      },
+      "stats": {
+        "atk": 85,
+        "def": 125,
+        "hp": 50,
+        "spa": 85,
+        "spd": 115,
+        "spe": 20
+      },
+      "stone": "sablenite",
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "weight": 1610
+    },
+    {
+      "abilities": [
+        "huge-power"
+      ],
+      "abilityStatus": "canon",
+      "base": 303,
+      "bst": 480,
+      "height": 10,
+      "id": "mawile-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Mawile",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/mawile-mega.png",
+        "front": "mega/mawile-mega.png",
+        "icon": "mega/icon/mawile-mega.png"
+      },
+      "stats": {
+        "atk": 105,
+        "def": 125,
+        "hp": 50,
+        "spa": 55,
+        "spd": 95,
+        "spe": 50
+      },
+      "stone": "mawilite",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "weight": 235
+    },
+    {
+      "abilities": [
+        "filter"
+      ],
+      "abilityStatus": "canon",
+      "base": 306,
+      "bst": 630,
+      "height": 22,
+      "id": "aggron-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Aggron",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/aggron-mega.png",
+        "front": "mega/aggron-mega.png",
+        "icon": "mega/icon/aggron-mega.png"
+      },
+      "stats": {
+        "atk": 140,
+        "def": 230,
+        "hp": 70,
+        "spa": 60,
+        "spd": 80,
+        "spe": 50
+      },
+      "stone": "aggronite",
+      "types": [
+        "steel"
+      ],
+      "weight": 3950
+    },
+    {
+      "abilities": [
+        "pure-power"
+      ],
+      "abilityStatus": "canon",
+      "base": 308,
+      "bst": 510,
+      "height": 13,
+      "id": "medicham-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Medicham",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/medicham-mega.png",
+        "front": "mega/medicham-mega.png",
+        "icon": "mega/icon/medicham-mega.png"
+      },
+      "stats": {
+        "atk": 100,
+        "def": 85,
+        "hp": 60,
+        "spa": 80,
+        "spd": 85,
+        "spe": 100
+      },
+      "stone": "medichamite",
+      "types": [
+        "fighting",
+        "psychic"
+      ],
+      "weight": 315
+    },
+    {
+      "abilities": [
+        "intimidate"
+      ],
+      "abilityStatus": "canon",
+      "base": 310,
+      "bst": 575,
+      "height": 18,
+      "id": "manectric-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Manectric",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/manectric-mega.png",
+        "front": "mega/manectric-mega.png",
+        "icon": "mega/icon/manectric-mega.png"
+      },
+      "stats": {
+        "atk": 75,
+        "def": 80,
+        "hp": 70,
+        "spa": 135,
+        "spd": 80,
+        "spe": 135
+      },
+      "stone": "manectite",
+      "types": [
+        "electric"
+      ],
+      "weight": 440
+    },
+    {
+      "abilities": [
+        "strong-jaw"
+      ],
+      "abilityStatus": "canon",
+      "base": 319,
+      "bst": 560,
+      "height": 25,
+      "id": "sharpedo-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Sharpedo",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/sharpedo-mega.png",
+        "front": "mega/sharpedo-mega.png",
+        "icon": "mega/icon/sharpedo-mega.png"
+      },
+      "stats": {
+        "atk": 140,
+        "def": 70,
+        "hp": 70,
+        "spa": 110,
+        "spd": 65,
+        "spe": 105
+      },
+      "stone": "sharpedonite",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "weight": 1303
+    },
+    {
+      "abilities": [
+        "sheer-force"
+      ],
+      "abilityStatus": "canon",
+      "base": 323,
+      "bst": 560,
+      "height": 25,
+      "id": "camerupt-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Camerupt",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/camerupt-mega.png",
+        "front": "mega/camerupt-mega.png",
+        "icon": "mega/icon/camerupt-mega.png"
+      },
+      "stats": {
+        "atk": 120,
+        "def": 100,
+        "hp": 70,
+        "spa": 145,
+        "spd": 105,
+        "spe": 20
+      },
+      "stone": "cameruptite",
+      "types": [
+        "fire",
+        "ground"
+      ],
+      "weight": 3205
+    },
+    {
+      "abilities": [
+        "pixilate"
+      ],
+      "abilityStatus": "canon",
+      "base": 334,
+      "bst": 590,
+      "height": 15,
+      "id": "altaria-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Altaria",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/altaria-mega.png",
+        "front": "mega/altaria-mega.png",
+        "icon": "mega/icon/altaria-mega.png"
+      },
+      "stats": {
+        "atk": 110,
+        "def": 110,
+        "hp": 75,
+        "spa": 110,
+        "spd": 105,
+        "spe": 80
+      },
+      "stone": "altarianite",
+      "types": [
+        "dragon",
+        "fairy"
+      ],
+      "weight": 206
+    },
+    {
+      "abilities": [
+        "prankster"
+      ],
+      "abilityStatus": "canon",
+      "base": 354,
+      "bst": 555,
+      "height": 12,
+      "id": "banette-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Banette",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/banette-mega.png",
+        "front": "mega/banette-mega.png",
+        "icon": "mega/icon/banette-mega.png"
+      },
+      "stats": {
+        "atk": 165,
+        "def": 75,
+        "hp": 64,
+        "spa": 93,
+        "spd": 83,
+        "spe": 75
+      },
+      "stone": "banettite",
+      "types": [
+        "ghost"
+      ],
+      "weight": 130
+    },
+    {
+      "abilities": [
+        "magic-bounce"
+      ],
+      "abilityStatus": "canon",
+      "base": 359,
+      "bst": 565,
+      "height": 12,
+      "id": "absol-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Absol",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/absol-mega.png",
+        "front": "mega/absol-mega.png",
+        "icon": "mega/icon/absol-mega.png"
+      },
+      "stats": {
+        "atk": 150,
+        "def": 60,
+        "hp": 65,
+        "spa": 115,
+        "spd": 60,
+        "spe": 115
+      },
+      "stone": "absolite",
+      "types": [
+        "dark"
+      ],
+      "weight": 490
+    },
+    {
+      "abilities": [
+        "refrigerate"
+      ],
+      "abilityStatus": "canon",
+      "base": 362,
+      "bst": 580,
+      "height": 21,
+      "id": "glalie-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Glalie",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/glalie-mega.png",
+        "front": "mega/glalie-mega.png",
+        "icon": "mega/icon/glalie-mega.png"
+      },
+      "stats": {
+        "atk": 120,
+        "def": 80,
+        "hp": 80,
+        "spa": 120,
+        "spd": 80,
+        "spe": 100
+      },
+      "stone": "glalitite",
+      "types": [
+        "ice"
+      ],
+      "weight": 3502
+    },
+    {
+      "abilities": [
+        "aerilate"
+      ],
+      "abilityStatus": "canon",
+      "base": 373,
+      "bst": 700,
+      "height": 18,
+      "id": "salamence-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Salamence",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/salamence-mega.png",
+        "front": "mega/salamence-mega.png",
+        "icon": "mega/icon/salamence-mega.png"
+      },
+      "stats": {
+        "atk": 145,
+        "def": 130,
+        "hp": 95,
+        "spa": 120,
+        "spd": 90,
+        "spe": 120
+      },
+      "stone": "salamencite",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "weight": 1126
+    },
+    {
+      "abilities": [
+        "tough-claws"
+      ],
+      "abilityStatus": "canon",
+      "base": 376,
+      "bst": 700,
+      "height": 25,
+      "id": "metagross-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Metagross",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/metagross-mega.png",
+        "front": "mega/metagross-mega.png",
+        "icon": "mega/icon/metagross-mega.png"
+      },
+      "stats": {
+        "atk": 145,
+        "def": 150,
+        "hp": 80,
+        "spa": 105,
+        "spd": 110,
+        "spe": 110
+      },
+      "stone": "metagrossite",
+      "types": [
+        "steel",
+        "psychic"
+      ],
+      "weight": 9429
+    },
+    {
+      "abilities": [
+        "levitate"
+      ],
+      "abilityStatus": "canon",
+      "base": 380,
+      "bst": 700,
+      "height": 18,
+      "id": "latias-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Latias",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/latias-mega.png",
+        "front": "mega/latias-mega.png",
+        "icon": "mega/icon/latias-mega.png"
+      },
+      "stats": {
+        "atk": 100,
+        "def": 120,
+        "hp": 80,
+        "spa": 140,
+        "spd": 150,
+        "spe": 110
+      },
+      "stone": "latiasite",
+      "types": [
+        "dragon",
+        "psychic"
+      ],
+      "weight": 520
+    },
+    {
+      "abilities": [
+        "levitate"
+      ],
+      "abilityStatus": "canon",
+      "base": 381,
+      "bst": 700,
+      "height": 23,
+      "id": "latios-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Latios",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/latios-mega.png",
+        "front": "mega/latios-mega.png",
+        "icon": "mega/icon/latios-mega.png"
+      },
+      "stats": {
+        "atk": 130,
+        "def": 100,
+        "hp": 80,
+        "spa": 160,
+        "spd": 120,
+        "spe": 110
+      },
+      "stone": "latiosite",
+      "types": [
+        "dragon",
+        "psychic"
+      ],
+      "weight": 700
+    },
+    {
+      "abilities": [
+        "delta-stream"
+      ],
+      "abilityStatus": "canon",
+      "base": 384,
+      "bst": 780,
+      "height": 108,
+      "id": "rayquaza-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Rayquaza",
+      "requiresForm": null,
+      "requiresMove": "dragon-ascent",
+      "sprite": {
+        "back": "mega/back/rayquaza-mega.png",
+        "front": "mega/rayquaza-mega.png",
+        "icon": "mega/icon/rayquaza-mega.png"
+      },
+      "stats": {
+        "atk": 180,
+        "def": 100,
+        "hp": 105,
+        "spa": 180,
+        "spd": 100,
+        "spe": 115
+      },
+      "stone": null,
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "weight": 3920
+    },
+    {
+      "abilities": [
+        "scrappy"
+      ],
+      "abilityStatus": "canon",
+      "base": 428,
+      "bst": 580,
+      "height": 13,
+      "id": "lopunny-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Lopunny",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/lopunny-mega.png",
+        "front": "mega/lopunny-mega.png",
+        "icon": "mega/icon/lopunny-mega.png"
+      },
+      "stats": {
+        "atk": 136,
+        "def": 94,
+        "hp": 65,
+        "spa": 54,
+        "spd": 96,
+        "spe": 135
+      },
+      "stone": "lopunnite",
+      "types": [
+        "normal",
+        "fighting"
+      ],
+      "weight": 283
+    },
+    {
+      "abilities": [
+        "sand-force"
+      ],
+      "abilityStatus": "canon",
+      "base": 445,
+      "bst": 700,
+      "height": 19,
+      "id": "garchomp-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Garchomp",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/garchomp-mega.png",
+        "front": "mega/garchomp-mega.png",
+        "icon": "mega/icon/garchomp-mega.png"
+      },
+      "stats": {
+        "atk": 170,
+        "def": 115,
+        "hp": 108,
+        "spa": 120,
+        "spd": 95,
+        "spe": 92
+      },
+      "stone": "garchompite",
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "weight": 950
+    },
+    {
+      "abilities": [
+        "adaptability"
+      ],
+      "abilityStatus": "canon",
+      "base": 448,
+      "bst": 625,
+      "height": 13,
+      "id": "lucario-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Lucario",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/lucario-mega.png",
+        "front": "mega/lucario-mega.png",
+        "icon": "mega/icon/lucario-mega.png"
+      },
+      "stats": {
+        "atk": 145,
+        "def": 88,
+        "hp": 70,
+        "spa": 140,
+        "spd": 70,
+        "spe": 112
+      },
+      "stone": "lucarionite",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "weight": 575
+    },
+    {
+      "abilities": [
+        "snow-warning"
+      ],
+      "abilityStatus": "canon",
+      "base": 460,
+      "bst": 594,
+      "height": 27,
+      "id": "abomasnow-mega",
+      "introducedIn": "xy",
+      "metricsSource": "published",
+      "name": "Mega Abomasnow",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/abomasnow-mega.png",
+        "front": "mega/abomasnow-mega.png",
+        "icon": "mega/icon/abomasnow-mega.png"
+      },
+      "stats": {
+        "atk": 132,
+        "def": 105,
+        "hp": 90,
+        "spa": 132,
+        "spd": 105,
+        "spe": 30
+      },
+      "stone": "abomasite",
+      "types": [
+        "grass",
+        "ice"
+      ],
+      "weight": 1850
+    },
+    {
+      "abilities": [
+        "inner-focus"
+      ],
+      "abilityStatus": "canon",
+      "base": 475,
+      "bst": 618,
+      "height": 16,
+      "id": "gallade-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Gallade",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/gallade-mega.png",
+        "front": "mega/gallade-mega.png",
+        "icon": "mega/icon/gallade-mega.png"
+      },
+      "stats": {
+        "atk": 165,
+        "def": 95,
+        "hp": 68,
+        "spa": 65,
+        "spd": 115,
+        "spe": 110
+      },
+      "stone": "galladite",
+      "types": [
+        "psychic",
+        "fighting"
+      ],
+      "weight": 564
+    },
+    {
+      "abilities": [
+        "healer"
+      ],
+      "abilityStatus": "canon",
+      "base": 531,
+      "bst": 545,
+      "height": 15,
+      "id": "audino-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Audino",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/audino-mega.png",
+        "front": "mega/audino-mega.png",
+        "icon": "mega/icon/audino-mega.png"
+      },
+      "stats": {
+        "atk": 60,
+        "def": 126,
+        "hp": 103,
+        "spa": 80,
+        "spd": 126,
+        "spe": 50
+      },
+      "stone": "audinite",
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "weight": 320
+    },
+    {
+      "abilities": [
+        "magic-bounce"
+      ],
+      "abilityStatus": "canon",
+      "base": 719,
+      "bst": 700,
+      "height": 11,
+      "id": "diancie-mega",
+      "introducedIn": "oras",
+      "metricsSource": "published",
+      "name": "Mega Diancie",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/diancie-mega.png",
+        "front": "mega/diancie-mega.png",
+        "icon": "mega/icon/diancie-mega.png"
+      },
+      "stats": {
+        "atk": 160,
+        "def": 110,
+        "hp": 50,
+        "spa": 160,
+        "spd": 110,
+        "spe": 110
+      },
+      "stone": "diancite",
+      "types": [
+        "rock",
+        "fairy"
+      ],
+      "weight": 278
+    },
+    {
+      "abilities": [
+        "electric-surge"
+      ],
+      "abilityStatus": "champions",
+      "base": 26,
+      "bst": 585,
+      "height": 8,
+      "id": "raichu-mega-x",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Raichu X",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/raichu-mega-x.png",
+        "front": "mega/raichu-mega-x.png",
+        "icon": "mega/icon/raichu-mega-x.png"
+      },
+      "stats": {
+        "atk": 135,
+        "def": 95,
+        "hp": 60,
+        "spa": 90,
+        "spd": 95,
+        "spe": 110
+      },
+      "stone": "raichunite-x",
+      "types": [
+        "electric"
+      ],
+      "weight": 300
+    },
+    {
+      "abilities": [
+        "no-guard"
+      ],
+      "abilityStatus": "champions",
+      "base": 26,
+      "bst": 585,
+      "height": 8,
+      "id": "raichu-mega-y",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Raichu Y",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/raichu-mega-y.png",
+        "front": "mega/raichu-mega-y.png",
+        "icon": "mega/icon/raichu-mega-y.png"
+      },
+      "stats": {
+        "atk": 100,
+        "def": 55,
+        "hp": 60,
+        "spa": 160,
+        "spd": 80,
+        "spe": 130
+      },
+      "stone": "raichunite-y",
+      "types": [
+        "electric"
+      ],
+      "weight": 300
+    },
+    {
+      "abilities": [
+        "magic-bounce"
+      ],
+      "abilityStatus": "champions",
+      "base": 36,
+      "bst": 583,
+      "height": 13,
+      "id": "clefable-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Clefable",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/clefable-mega.png",
+        "front": "mega/clefable-mega.png",
+        "icon": "mega/icon/clefable-mega.png"
+      },
+      "stats": {
+        "atk": 80,
+        "def": 93,
+        "hp": 95,
+        "spa": 135,
+        "spd": 110,
+        "spe": 70
+      },
+      "stone": "clefablite",
+      "types": [
+        "fairy",
+        "flying"
+      ],
+      "weight": 400
+    },
+    {
+      "abilities": [
+        "innards-out"
+      ],
+      "abilityStatus": "champions",
+      "base": 71,
+      "bst": 590,
+      "height": 17,
+      "id": "victreebel-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Victreebel",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/victreebel-mega.png",
+        "front": "mega/victreebel-mega.png",
+        "icon": "mega/icon/victreebel-mega.png"
+      },
+      "stats": {
+        "atk": 125,
+        "def": 85,
+        "hp": 80,
+        "spa": 135,
+        "spd": 95,
+        "spe": 70
+      },
+      "stone": "victreebelite",
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "weight": 155
+    },
+    {
+      "abilities": [
+        "huge-power"
+      ],
+      "abilityStatus": "champions",
+      "base": 121,
+      "bst": 620,
+      "height": 11,
+      "id": "starmie-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Starmie",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/starmie-mega.png",
+        "front": "mega/starmie-mega.png",
+        "icon": "mega/icon/starmie-mega.png"
+      },
+      "stats": {
+        "atk": 100,
+        "def": 105,
+        "hp": 60,
+        "spa": 130,
+        "spd": 105,
+        "spe": 120
+      },
+      "stone": "starminite",
+      "types": [
+        "water",
+        "psychic"
+      ],
+      "weight": 800
+    },
+    {
+      "abilities": [
+        "multiscale"
+      ],
+      "abilityStatus": "champions",
+      "base": 149,
+      "bst": 700,
+      "height": 22,
+      "id": "dragonite-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Dragonite",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/dragonite-mega.png",
+        "front": "mega/dragonite-mega.png",
+        "icon": "mega/icon/dragonite-mega.png"
+      },
+      "stats": {
+        "atk": 124,
+        "def": 115,
+        "hp": 91,
+        "spa": 145,
+        "spd": 125,
+        "spe": 100
+      },
+      "stone": "dragoninite",
+      "types": [
+        "dragon",
+        "flying"
+      ],
+      "weight": 2100
+    },
+    {
+      "abilities": [
+        "mega-sol"
+      ],
+      "abilityStatus": "champions",
+      "base": 154,
+      "bst": 625,
+      "height": 18,
+      "id": "meganium-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Meganium",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/meganium-mega.png",
+        "front": "mega/meganium-mega.png",
+        "icon": "mega/icon/meganium-mega.png"
+      },
+      "stats": {
+        "atk": 92,
+        "def": 115,
+        "hp": 80,
+        "spa": 143,
+        "spd": 115,
+        "spe": 80
+      },
+      "stone": "meganiumite",
+      "types": [
+        "grass",
+        "fairy"
+      ],
+      "weight": 1005
+    },
+    {
+      "abilities": [
+        "dragonize"
+      ],
+      "abilityStatus": "champions",
+      "base": 160,
+      "bst": 630,
+      "height": 23,
+      "id": "feraligatr-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Feraligatr",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/feraligatr-mega.png",
+        "front": "mega/feraligatr-mega.png",
+        "icon": "mega/icon/feraligatr-mega.png"
+      },
+      "stats": {
+        "atk": 160,
+        "def": 125,
+        "hp": 85,
+        "spa": 89,
+        "spd": 93,
+        "spe": 78
+      },
+      "stone": "feraligite",
+      "types": [
+        "water",
+        "dragon"
+      ],
+      "weight": 888
+    },
+    {
+      "abilities": [
+        "stalwart"
+      ],
+      "abilityStatus": "champions",
+      "base": 227,
+      "bst": 565,
+      "height": 17,
+      "id": "skarmory-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Skarmory",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/skarmory-mega.png",
+        "front": "mega/skarmory-mega.png",
+        "icon": "mega/icon/skarmory-mega.png"
+      },
+      "stats": {
+        "atk": 140,
+        "def": 110,
+        "hp": 65,
+        "spa": 40,
+        "spd": 100,
+        "spe": 110
+      },
+      "stone": "skarmorite",
+      "types": [
+        "steel",
+        "flying"
+      ],
+      "weight": 505
+    },
+    {
+      "abilities": [
+        "levitate"
+      ],
+      "abilityStatus": "champions",
+      "base": 358,
+      "bst": 555,
+      "height": 6,
+      "id": "chimecho-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Chimecho",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/chimecho-mega.png",
+        "front": "mega/chimecho-mega.png",
+        "icon": "mega/icon/chimecho-mega.png"
+      },
+      "stats": {
+        "atk": 50,
+        "def": 110,
+        "hp": 75,
+        "spa": 135,
+        "spd": 120,
+        "spe": 65
+      },
+      "stone": "chimechite",
+      "types": [
+        "psychic",
+        "steel"
+      ],
+      "weight": 10
+    },
+    {
+      "abilities": [
+        "sharpness"
+      ],
+      "abilityStatus": "champions",
+      "base": 359,
+      "bst": 565,
+      "height": 12,
+      "id": "absol-mega-z",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Absol Z",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/absol-mega-z.png",
+        "front": "mega/absol-mega-z.png",
+        "icon": "mega/icon/absol-mega-z.png"
+      },
+      "stats": {
+        "atk": 154,
+        "def": 60,
+        "hp": 65,
+        "spa": 75,
+        "spd": 60,
+        "spe": 151
+      },
+      "stone": "absolite-z",
+      "types": [
+        "dark",
+        "ghost"
+      ],
+      "weight": 470
+    },
+    {
+      "abilities": [
+        "contrary"
+      ],
+      "abilityStatus": "champions",
+      "base": 398,
+      "bst": 585,
+      "height": 12,
+      "id": "staraptor-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Staraptor",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/staraptor-mega.png",
+        "front": "mega/staraptor-mega.png",
+        "icon": "mega/icon/staraptor-mega.png"
+      },
+      "stats": {
+        "atk": 140,
+        "def": 100,
+        "hp": 85,
+        "spa": 60,
+        "spd": 90,
+        "spe": 110
+      },
+      "stone": "staraptite",
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "weight": 249
+    },
+    {
+      "abilities": [
+        "levitate"
+      ],
+      "abilityStatus": "champions",
+      "base": 445,
+      "bst": 700,
+      "height": 19,
+      "id": "garchomp-mega-z",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Garchomp Z",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/garchomp-mega-z.png",
+        "front": "mega/garchomp-mega-z.png",
+        "icon": "mega/icon/garchomp-mega-z.png"
+      },
+      "stats": {
+        "atk": 130,
+        "def": 85,
+        "hp": 108,
+        "spa": 141,
+        "spd": 85,
+        "spe": 151
+      },
+      "stone": "garchompite-z",
+      "types": [
+        "dragon"
+      ],
+      "weight": 950
+    },
+    {
+      "abilities": [
+        "aura-guard"
+      ],
+      "abilityStatus": "champions",
+      "base": 448,
+      "bst": 625,
+      "height": 12,
+      "id": "lucario-mega-z",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Lucario Z",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/lucario-mega-z.png",
+        "front": "mega/lucario-mega-z.png",
+        "icon": "mega/icon/lucario-mega-z.png"
+      },
+      "stats": {
+        "atk": 100,
+        "def": 70,
+        "hp": 70,
+        "spa": 164,
+        "spd": 70,
+        "spe": 151
+      },
+      "stone": "lucarionite-z",
+      "types": [
+        "fighting",
+        "steel"
+      ],
+      "weight": 540
+    },
+    {
+      "abilities": [
+        "snow-warning"
+      ],
+      "abilityStatus": "champions",
+      "base": 478,
+      "bst": 580,
+      "height": 13,
+      "id": "froslass-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Froslass",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/froslass-mega.png",
+        "front": "mega/froslass-mega.png",
+        "icon": "mega/icon/froslass-mega.png"
+      },
+      "stats": {
+        "atk": 80,
+        "def": 70,
+        "hp": 70,
+        "spa": 140,
+        "spd": 100,
+        "spe": 120
+      },
+      "stone": "froslassite",
+      "types": [
+        "ice",
+        "ghost"
+      ],
+      "weight": 266
+    },
+    {
+      "abilities": [
+        "earth-eater"
+      ],
+      "abilityStatus": "owner-decided",
+      "base": 485,
+      "bst": 700,
+      "height": 17,
+      "id": "heatran-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Heatran",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/heatran-mega.png",
+        "front": "mega/heatran-mega.png",
+        "icon": "mega/icon/heatran-mega.png"
+      },
+      "stats": {
+        "atk": 120,
+        "def": 106,
+        "hp": 91,
+        "spa": 175,
+        "spd": 141,
+        "spe": 67
+      },
+      "stone": "heatranite",
+      "types": [
+        "fire",
+        "steel"
+      ],
+      "weight": 4300,
+      "abilityNote": "Owner pick (write-in). Strictly better than the proposed Levitate: Earth Eater turns Heatran's 4x Ground weakness into 1/4 max-HP healing rather than mere immunity. Gen 9 ability (Orthworm), already present in data/abilities.json - no hand-authoring needed. Post-Hall-of-Fame content at cap 100, so the power level is balance-insensitive."
+    },
+    {
+      "abilities": [
+        "dark-aura"
+      ],
+      "abilityStatus": "owner-decided",
+      "base": 491,
+      "bst": 700,
+      "height": 15,
+      "id": "darkrai-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Darkrai",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/darkrai-mega.png",
+        "front": "mega/darkrai-mega.png",
+        "icon": "mega/icon/darkrai-mega.png"
+      },
+      "stats": {
+        "atk": 120,
+        "def": 130,
+        "hp": 70,
+        "spa": 165,
+        "spd": 130,
+        "spe": 85
+      },
+      "stone": "darkranite",
+      "types": [
+        "dark"
+      ],
+      "weight": 505,
+      "abilityNote": "Champions datamine shows Speed DROPPING 125->85 while SpA rises to 165 and both defences to 130. It is a bulky wallbreaker, not a fast sweeper, so a flat damage multiplier beats any speed/snowball ability."
+    },
+    {
+      "abilities": [
+        "mold-breaker"
+      ],
+      "abilityStatus": "champions",
+      "base": 500,
+      "bst": 628,
+      "height": 16,
+      "id": "emboar-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Emboar",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/emboar-mega.png",
+        "front": "mega/emboar-mega.png",
+        "icon": "mega/icon/emboar-mega.png"
+      },
+      "stats": {
+        "atk": 148,
+        "def": 75,
+        "hp": 110,
+        "spa": 110,
+        "spd": 110,
+        "spe": 75
+      },
+      "stone": "emboarite",
+      "types": [
+        "fire",
+        "fighting"
+      ],
+      "weight": 1500
+    },
+    {
+      "abilities": [
+        "piercing-drill"
+      ],
+      "abilityStatus": "champions",
+      "base": 530,
+      "bst": 608,
+      "height": 7,
+      "id": "excadrill-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Excadrill",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/excadrill-mega.png",
+        "front": "mega/excadrill-mega.png",
+        "icon": "mega/icon/excadrill-mega.png"
+      },
+      "stats": {
+        "atk": 165,
+        "def": 100,
+        "hp": 110,
+        "spa": 65,
+        "spd": 65,
+        "spe": 103
+      },
+      "stone": "excadrite",
+      "types": [
+        "ground",
+        "steel"
+      ],
+      "weight": 404
+    },
+    {
+      "abilities": [
+        "shell-armor"
+      ],
+      "abilityStatus": "champions",
+      "base": 545,
+      "bst": 585,
+      "height": 25,
+      "id": "scolipede-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Scolipede",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/scolipede-mega.png",
+        "front": "mega/scolipede-mega.png",
+        "icon": "mega/icon/scolipede-mega.png"
+      },
+      "stats": {
+        "atk": 140,
+        "def": 149,
+        "hp": 60,
+        "spa": 75,
+        "spd": 99,
+        "spe": 62
+      },
+      "stone": "scolipite",
+      "types": [
+        "bug",
+        "poison"
+      ],
+      "weight": 2005
+    },
+    {
+      "abilities": [
+        "intimidate"
+      ],
+      "abilityStatus": "champions",
+      "base": 560,
+      "bst": 588,
+      "height": 11,
+      "id": "scrafty-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Scrafty",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/scrafty-mega.png",
+        "front": "mega/scrafty-mega.png",
+        "icon": "mega/icon/scrafty-mega.png"
+      },
+      "stats": {
+        "atk": 130,
+        "def": 135,
+        "hp": 65,
+        "spa": 55,
+        "spd": 135,
+        "spe": 68
+      },
+      "stone": "scraftinite",
+      "types": [
+        "dark",
+        "fighting"
+      ],
+      "weight": 300
+    },
+    {
+      "abilities": [
+        "eelevate"
+      ],
+      "abilityStatus": "champions",
+      "base": 604,
+      "bst": 615,
+      "height": 21,
+      "id": "eelektross-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Eelektross",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/eelektross-mega.png",
+        "front": "mega/eelektross-mega.png",
+        "icon": "mega/icon/eelektross-mega.png"
+      },
+      "stats": {
+        "atk": 145,
+        "def": 80,
+        "hp": 85,
+        "spa": 135,
+        "spd": 90,
+        "spe": 80
+      },
+      "stone": "eelektrossite",
+      "types": [
+        "electric"
+      ],
+      "weight": 805
+    },
+    {
+      "abilities": [
+        "infiltrator"
+      ],
+      "abilityStatus": "champions",
+      "base": 609,
+      "bst": 620,
+      "height": 10,
+      "id": "chandelure-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Chandelure",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/chandelure-mega.png",
+        "front": "mega/chandelure-mega.png",
+        "icon": "mega/icon/chandelure-mega.png"
+      },
+      "stats": {
+        "atk": 75,
+        "def": 110,
+        "hp": 60,
+        "spa": 175,
+        "spd": 110,
+        "spe": 90
+      },
+      "stone": "chandelurite",
+      "types": [
+        "ghost",
+        "fire"
+      ],
+      "weight": 343
+    },
+    {
+      "abilities": [
+        "unseen-fist"
+      ],
+      "abilityStatus": "champions",
+      "base": 623,
+      "bst": 583,
+      "height": 28,
+      "id": "golurk-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Golurk",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/golurk-mega.png",
+        "front": "mega/golurk-mega.png",
+        "icon": "mega/icon/golurk-mega.png"
+      },
+      "stats": {
+        "atk": 159,
+        "def": 105,
+        "hp": 89,
+        "spa": 70,
+        "spd": 105,
+        "spe": 55
+      },
+      "stone": "golurkite",
+      "types": [
+        "ground",
+        "ghost"
+      ],
+      "weight": 3300
+    },
+    {
+      "abilities": [
+        "bulletproof"
+      ],
+      "abilityStatus": "champions",
+      "base": 652,
+      "bst": 630,
+      "height": 16,
+      "id": "chesnaught-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Chesnaught",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/chesnaught-mega.png",
+        "front": "mega/chesnaught-mega.png",
+        "icon": "mega/icon/chesnaught-mega.png"
+      },
+      "stats": {
+        "atk": 137,
+        "def": 172,
+        "hp": 88,
+        "spa": 74,
+        "spd": 115,
+        "spe": 44
+      },
+      "stone": "chesnaughtite",
+      "types": [
+        "grass",
+        "fighting"
+      ],
+      "weight": 900
+    },
+    {
+      "abilities": [
+        "levitate"
+      ],
+      "abilityStatus": "champions",
+      "base": 655,
+      "bst": 634,
+      "height": 15,
+      "id": "delphox-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Delphox",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/delphox-mega.png",
+        "front": "mega/delphox-mega.png",
+        "icon": "mega/icon/delphox-mega.png"
+      },
+      "stats": {
+        "atk": 69,
+        "def": 72,
+        "hp": 75,
+        "spa": 159,
+        "spd": 125,
+        "spe": 134
+      },
+      "stone": "delphoxite",
+      "types": [
+        "fire",
+        "psychic"
+      ],
+      "weight": 390
+    },
+    {
+      "abilities": [
+        "protean"
+      ],
+      "abilityStatus": "champions",
+      "base": 658,
+      "bst": 630,
+      "height": 15,
+      "id": "greninja-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Greninja",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/greninja-mega.png",
+        "front": "mega/greninja-mega.png",
+        "icon": "mega/icon/greninja-mega.png"
+      },
+      "stats": {
+        "atk": 125,
+        "def": 77,
+        "hp": 72,
+        "spa": 133,
+        "spd": 81,
+        "spe": 142
+      },
+      "stone": "greninjite",
+      "types": [
+        "water",
+        "dark"
+      ],
+      "weight": 400
+    },
+    {
+      "abilities": [
+        "fire-mane"
+      ],
+      "abilityStatus": "champions",
+      "base": 668,
+      "bst": 607,
+      "height": 15,
+      "id": "pyroar-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Pyroar",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/pyroar-mega.png",
+        "front": "mega/pyroar-mega.png",
+        "icon": "mega/icon/pyroar-mega.png"
+      },
+      "stats": {
+        "atk": 88,
+        "def": 92,
+        "hp": 86,
+        "spa": 129,
+        "spd": 86,
+        "spe": 126
+      },
+      "stone": "pyroarite",
+      "types": [
+        "fire",
+        "normal"
+      ],
+      "weight": 815
+    },
+    {
+      "abilities": [
+        "fairy-aura"
+      ],
+      "abilityStatus": "champions",
+      "base": 670,
+      "bst": 651,
+      "height": 2,
+      "id": "floette-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Floette",
+      "requiresForm": "floette-eternal",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/floette-mega.png",
+        "front": "mega/floette-mega.png",
+        "icon": "mega/icon/floette-mega.png"
+      },
+      "stats": {
+        "atk": 85,
+        "def": 87,
+        "hp": 74,
+        "spa": 155,
+        "spd": 148,
+        "spe": 102
+      },
+      "stone": "floettite",
+      "types": [
+        "fairy"
+      ],
+      "weight": 9
+    },
+    {
+      "abilities": [
+        "trace"
+      ],
+      "abilityStatus": "champions",
+      "base": 678,
+      "bst": 566,
+      "height": 6,
+      "id": "meowstic-mega-male",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Meowstic (Male)",
+      "requiresForm": "meowstic-male",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/meowstic-mega-male.png",
+        "front": "mega/meowstic-mega-male.png",
+        "icon": "mega/icon/meowstic-mega-male.png"
+      },
+      "stats": {
+        "atk": 48,
+        "def": 76,
+        "hp": 74,
+        "spa": 143,
+        "spd": 101,
+        "spe": 124
+      },
+      "stone": "meowsticite",
+      "types": [
+        "psychic"
+      ],
+      "weight": 85
+    },
+    {
+      "abilities": [
+        "trace"
+      ],
+      "abilityStatus": "champions",
+      "base": 678,
+      "bst": 566,
+      "height": 6,
+      "id": "meowstic-mega-female",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Meowstic (Female)",
+      "requiresForm": "meowstic-female",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/meowstic-mega-female.png",
+        "front": "mega/meowstic-mega-female.png",
+        "icon": "mega/icon/meowstic-mega-female.png"
+      },
+      "stats": {
+        "atk": 48,
+        "def": 76,
+        "hp": 74,
+        "spa": 143,
+        "spd": 101,
+        "spe": 124
+      },
+      "stone": "meowsticite",
+      "types": [
+        "psychic"
+      ],
+      "weight": 85
+    },
+    {
+      "abilities": [
+        "contrary"
+      ],
+      "abilityStatus": "champions",
+      "base": 687,
+      "bst": 582,
+      "height": 15,
+      "id": "malamar-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Malamar",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/malamar-mega.png",
+        "front": "mega/malamar-mega.png",
+        "icon": "mega/icon/malamar-mega.png"
+      },
+      "stats": {
+        "atk": 102,
+        "def": 88,
+        "hp": 86,
+        "spa": 98,
+        "spd": 120,
+        "spe": 88
+      },
+      "stone": "malamarite",
+      "types": [
+        "dark",
+        "psychic"
+      ],
+      "weight": 470
+    },
+    {
+      "abilities": [
+        "tough-claws"
+      ],
+      "abilityStatus": "champions",
+      "base": 689,
+      "bst": 600,
+      "height": 13,
+      "id": "barbaracle-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Barbaracle",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/barbaracle-mega.png",
+        "front": "mega/barbaracle-mega.png",
+        "icon": "mega/icon/barbaracle-mega.png"
+      },
+      "stats": {
+        "atk": 140,
+        "def": 130,
+        "hp": 72,
+        "spa": 64,
+        "spd": 106,
+        "spe": 88
+      },
+      "stone": "barbaracite",
+      "types": [
+        "rock",
+        "fighting"
+      ],
+      "weight": 960
+    },
+    {
+      "abilities": [
+        "regenerator"
+      ],
+      "abilityStatus": "champions",
+      "base": 691,
+      "bst": 594,
+      "height": 18,
+      "id": "dragalge-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Dragalge",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/dragalge-mega.png",
+        "front": "mega/dragalge-mega.png",
+        "icon": "mega/icon/dragalge-mega.png"
+      },
+      "stats": {
+        "atk": 85,
+        "def": 105,
+        "hp": 65,
+        "spa": 132,
+        "spd": 163,
+        "spe": 44
+      },
+      "stone": "dragalgite",
+      "types": [
+        "poison",
+        "dragon"
+      ],
+      "weight": 815
+    },
+    {
+      "abilities": [
+        "no-guard"
+      ],
+      "abilityStatus": "champions",
+      "base": 701,
+      "bst": 600,
+      "height": 8,
+      "id": "hawlucha-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Hawlucha",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/hawlucha-mega.png",
+        "front": "mega/hawlucha-mega.png",
+        "icon": "mega/icon/hawlucha-mega.png"
+      },
+      "stats": {
+        "atk": 137,
+        "def": 100,
+        "hp": 78,
+        "spa": 74,
+        "spd": 93,
+        "spe": 118
+      },
+      "stone": "hawluchanite",
+      "types": [
+        "fighting",
+        "flying"
+      ],
+      "weight": 215
+    },
+    {
+      "abilities": [
+        "thick-fat"
+      ],
+      "abilityStatus": "owner-decided-by-recommendation",
+      "base": 718,
+      "bst": 778,
+      "height": 50,
+      "id": "zygarde-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Zygarde",
+      "requiresForm": "zygarde-complete",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/zygarde-mega.png",
+        "front": "mega/zygarde-mega.png",
+        "icon": "mega/icon/zygarde-mega.png"
+      },
+      "stats": {
+        "atk": 70,
+        "def": 91,
+        "hp": 216,
+        "spa": 216,
+        "spd": 85,
+        "spe": 100
+      },
+      "stone": "zygardite",
+      "types": [
+        "dragon",
+        "ground"
+      ],
+      "weight": 3050,
+      "abilityNote": "Taken as recommended - NOT explicitly confirmed by the owner. Halves Ice and Fire, turning the 4x Ice weakness into 2x. Flag for review if the owner wants to revisit."
+    },
+    {
+      "abilities": [
+        "iron-fist"
+      ],
+      "abilityStatus": "champions",
+      "base": 740,
+      "bst": 578,
+      "height": 17,
+      "id": "crabominable-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Crabominable",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/crabominable-mega.png",
+        "front": "mega/crabominable-mega.png",
+        "icon": "mega/icon/crabominable-mega.png"
+      },
+      "stats": {
+        "atk": 157,
+        "def": 122,
+        "hp": 97,
+        "spa": 62,
+        "spd": 107,
+        "spe": 33
+      },
+      "stone": "crabominite",
+      "types": [
+        "fighting",
+        "ice"
+      ],
+      "weight": 1800
+    },
+    {
+      "abilities": [
+        "tough-claws"
+      ],
+      "abilityStatus": "champions",
+      "base": 768,
+      "bst": 630,
+      "height": 20,
+      "id": "golisopod-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Golisopod",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/golisopod-mega.png",
+        "front": "mega/golisopod-mega.png",
+        "icon": "mega/icon/golisopod-mega.png"
+      },
+      "stats": {
+        "atk": 150,
+        "def": 175,
+        "hp": 75,
+        "spa": 70,
+        "spd": 120,
+        "spe": 40
+      },
+      "stone": "golisopite",
+      "types": [
+        "bug",
+        "steel"
+      ],
+      "weight": 1080
+    },
+    {
+      "abilities": [
+        "berserk"
+      ],
+      "abilityStatus": "champions",
+      "base": 780,
+      "bst": 585,
+      "height": 30,
+      "id": "drampa-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Drampa",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/drampa-mega.png",
+        "front": "mega/drampa-mega.png",
+        "icon": "mega/icon/drampa-mega.png"
+      },
+      "stats": {
+        "atk": 85,
+        "def": 110,
+        "hp": 78,
+        "spa": 160,
+        "spd": 116,
+        "spe": 36
+      },
+      "stone": "drampanite",
+      "types": [
+        "normal",
+        "dragon"
+      ],
+      "weight": 1850
+    },
+    {
+      "abilities": [
+        "soul-heart"
+      ],
+      "abilityStatus": "owner-decided-by-recommendation",
+      "base": 801,
+      "bst": 700,
+      "height": 10,
+      "id": "magearna-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Magearna",
+      "requiresForm": "magearna",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/magearna-mega.png",
+        "front": "mega/magearna-mega.png",
+        "icon": "mega/icon/magearna-mega.png"
+      },
+      "stats": {
+        "atk": 125,
+        "def": 115,
+        "hp": 80,
+        "spa": 170,
+        "spd": 115,
+        "spe": 95
+      },
+      "stone": "magearnite",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "weight": 805,
+      "abilityNote": "Taken as recommended - NOT explicitly confirmed. Continuity with the base form; magearnite is a Battle Park BP purchase so the player already owns Soul-Heart on the base long before the Mega exists."
+    },
+    {
+      "abilities": [
+        "soul-heart"
+      ],
+      "abilityStatus": "owner-decided-by-recommendation",
+      "base": 801,
+      "bst": 700,
+      "height": 10,
+      "id": "magearna-mega-original",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Magearna (Original Color)",
+      "requiresForm": "magearna-original",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/magearna-mega-original.png",
+        "front": "mega/magearna-mega-original.png",
+        "icon": "mega/icon/magearna-mega-original.png"
+      },
+      "stats": {
+        "atk": 125,
+        "def": 115,
+        "hp": 80,
+        "spa": 170,
+        "spd": 115,
+        "spe": 95
+      },
+      "stone": "magearnite",
+      "types": [
+        "steel",
+        "fairy"
+      ],
+      "weight": 805,
+      "abilityNote": "MIRRORS standard Mega Magearna by rule. Champions precedent is directly on point: Meowstic Male and Female have DIFFERENT mainline ability sets and Champions gave BOTH of them Trace. Cosmetic variants do not diverge. If the standard row changes, change this one with it."
+    },
+    {
+      "abilities": [
+        "transistor"
+      ],
+      "abilityStatus": "owner-decided",
+      "base": 807,
+      "bst": 700,
+      "height": 15,
+      "id": "zeraora-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Zeraora",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/zeraora-mega.png",
+        "front": "mega/zeraora-mega.png",
+        "icon": "mega/icon/zeraora-mega.png"
+      },
+      "stats": {
+        "atk": 157,
+        "def": 75,
+        "hp": 88,
+        "spa": 147,
+        "spd": 80,
+        "spe": 153
+      },
+      "stone": "zeraorite",
+      "types": [
+        "electric"
+      ],
+      "weight": 445,
+      "abilityNote": "1.3x Electric. Transplanting a legendary's signature ability onto a Mega is confirmed Champions precedent. Engine tier 1 (onDamageCalc)."
+    },
+    {
+      "abilities": [
+        "defiant"
+      ],
+      "abilityStatus": "champions",
+      "base": 870,
+      "bst": 570,
+      "height": 30,
+      "id": "falinks-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Falinks",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/falinks-mega.png",
+        "front": "mega/falinks-mega.png",
+        "icon": "mega/icon/falinks-mega.png"
+      },
+      "stats": {
+        "atk": 135,
+        "def": 135,
+        "hp": 65,
+        "spa": 70,
+        "spd": 65,
+        "spe": 100
+      },
+      "stone": "falinksite",
+      "types": [
+        "fighting"
+      ],
+      "weight": 620
+    },
+    {
+      "abilities": [
+        "spicy-spray"
+      ],
+      "abilityStatus": "champions",
+      "base": 952,
+      "bst": 586,
+      "height": 9,
+      "id": "scovillain-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Scovillain",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/scovillain-mega.png",
+        "front": "mega/scovillain-mega.png",
+        "icon": "mega/icon/scovillain-mega.png"
+      },
+      "stats": {
+        "atk": 138,
+        "def": 85,
+        "hp": 65,
+        "spa": 138,
+        "spd": 85,
+        "spe": 75
+      },
+      "stone": "scovillainite",
+      "types": [
+        "grass",
+        "fire"
+      ],
+      "weight": 150
+    },
+    {
+      "abilities": [
+        "adaptability"
+      ],
+      "abilityStatus": "champions",
+      "base": 970,
+      "bst": 625,
+      "height": 15,
+      "id": "glimmora-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Glimmora",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/glimmora-mega.png",
+        "front": "mega/glimmora-mega.png",
+        "icon": "mega/icon/glimmora-mega.png"
+      },
+      "stats": {
+        "atk": 90,
+        "def": 105,
+        "hp": 83,
+        "spa": 150,
+        "spd": 96,
+        "spe": 101
+      },
+      "stone": "glimmoranite",
+      "types": [
+        "rock",
+        "poison"
+      ],
+      "weight": 450
+    },
+    {
+      "abilities": [
+        "storm-drain"
+      ],
+      "abilityStatus": "owner-decided",
+      "base": 978,
+      "bst": 575,
+      "height": 3,
+      "id": "tatsugiri-mega-curly",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Tatsugiri (Curly)",
+      "requiresForm": "tatsugiri-curly",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/tatsugiri-mega-curly.png",
+        "front": "mega/tatsugiri-mega-curly.png",
+        "icon": "mega/icon/tatsugiri-mega-curly.png"
+      },
+      "stats": {
+        "atk": 65,
+        "def": 90,
+        "hp": 68,
+        "spa": 135,
+        "spd": 125,
+        "spe": 92
+      },
+      "stone": "tatsugirinite",
+      "types": [
+        "dragon",
+        "water"
+      ],
+      "weight": 80,
+      "abilityNote": "The ONLY balance-sensitive form of the nine - tatsugirinite is T4 (badge:mine, cap 44), mid-game inside the hard cap. Storm Drain is the base form's own hidden ability, so nothing new enters the game at a capped checkpoint. Dragon's Maw and Adaptability were both rejected as too strong there."
+    },
+    {
+      "abilities": [
+        "storm-drain"
+      ],
+      "abilityStatus": "owner-decided",
+      "base": 978,
+      "bst": 575,
+      "height": 3,
+      "id": "tatsugiri-mega-droopy",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Tatsugiri (Droopy)",
+      "requiresForm": "tatsugiri-droopy",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/tatsugiri-mega-droopy.png",
+        "front": "mega/tatsugiri-mega-droopy.png",
+        "icon": "mega/icon/tatsugiri-mega-droopy.png"
+      },
+      "stats": {
+        "atk": 65,
+        "def": 90,
+        "hp": 68,
+        "spa": 135,
+        "spd": 125,
+        "spe": 92
+      },
+      "stone": "tatsugirinite",
+      "types": [
+        "dragon",
+        "water"
+      ],
+      "weight": 80,
+      "abilityNote": "MIRRORS Curly by rule - the three Tatsugiri forms are appearance-only and share typing, stats and abilities. One decision, not three."
+    },
+    {
+      "abilities": [
+        "storm-drain"
+      ],
+      "abilityStatus": "owner-decided",
+      "base": 978,
+      "bst": 575,
+      "height": 3,
+      "id": "tatsugiri-mega-stretchy",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Tatsugiri (Stretchy)",
+      "requiresForm": "tatsugiri-stretchy",
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/tatsugiri-mega-stretchy.png",
+        "front": "mega/tatsugiri-mega-stretchy.png",
+        "icon": "mega/icon/tatsugiri-mega-stretchy.png"
+      },
+      "stats": {
+        "atk": 65,
+        "def": 90,
+        "hp": 68,
+        "spa": 135,
+        "spd": 125,
+        "spe": 92
+      },
+      "stone": "tatsugirinite",
+      "types": [
+        "dragon",
+        "water"
+      ],
+      "weight": 80,
+      "abilityNote": "MIRRORS Curly by rule. See Droopy."
+    },
+    {
+      "abilities": [
+        "thermal-exchange"
+      ],
+      "abilityStatus": "champions",
+      "base": 998,
+      "bst": 700,
+      "height": 21,
+      "id": "baxcalibur-mega",
+      "introducedIn": "za",
+      "metricsSource": "base-species",
+      "name": "Mega Baxcalibur",
+      "requiresForm": null,
+      "requiresMove": null,
+      "sprite": {
+        "back": "mega/back/baxcalibur-mega.png",
+        "front": "mega/baxcalibur-mega.png",
+        "icon": "mega/icon/baxcalibur-mega.png"
+      },
+      "stats": {
+        "atk": 175,
+        "def": 117,
+        "hp": 115,
+        "spa": 105,
+        "spd": 101,
+        "spe": 87
+      },
+      "stone": "baxcalibrite",
+      "types": [
+        "dragon",
+        "ice"
+      ],
+      "weight": 2100
+    }
+  ],
+  "keyItem": "key-stone",
+  "revertsAfterBattle": true,
+  "rule": "one-per-battle"
+}

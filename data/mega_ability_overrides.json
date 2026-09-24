@@ -1,0 +1,79 @@
+{
+  "_comment": "OWNER-APPROVED ability assignments for Legends Z-A Mega forms that Pokemon Champions does not cover. Per DATA_CONTRACT.md 11.5 resolution step 2. This file is authoritative and OVERRIDES any inferred or guessed value. Committed: this is design data, not ROM art.",
+  "_decidedOn": "2026-09-23",
+  "_rule": "Any Z-A Mega NOT listed here and NOT in the Champions table ships as abilities: [] with abilityStatus: pending-owner. Never guess.",
+  "overrides": [
+    {
+      "form": "heatran-mega",
+      "name": "Mega Heatran",
+      "base": 485,
+      "abilities": ["earth-eater"],
+      "abilityStatus": "owner-decided",
+      "note": "Owner pick (write-in). Strictly better than the proposed Levitate: Earth Eater turns Heatran's 4x Ground weakness into 1/4 max-HP healing rather than mere immunity. Gen 9 ability (Orthworm), already present in data/abilities.json - no hand-authoring needed. Post-Hall-of-Fame content at cap 100, so the power level is balance-insensitive."
+    },
+    {
+      "form": "darkrai-mega",
+      "name": "Mega Darkrai",
+      "base": 491,
+      "abilities": ["dark-aura"],
+      "abilityStatus": "owner-decided",
+      "note": "Champions datamine shows Speed DROPPING 125->85 while SpA rises to 165 and both defences to 130. It is a bulky wallbreaker, not a fast sweeper, so a flat damage multiplier beats any speed/snowball ability."
+    },
+    {
+      "form": "zygarde-mega",
+      "name": "Mega Zygarde",
+      "base": 718,
+      "abilities": ["thick-fat"],
+      "abilityStatus": "owner-decided-by-recommendation",
+      "note": "Taken as recommended - NOT explicitly confirmed by the owner. Halves Ice and Fire, turning the 4x Ice weakness into 2x. Flag for review if the owner wants to revisit."
+    },
+    {
+      "form": "magearna-mega",
+      "name": "Mega Magearna",
+      "base": 801,
+      "abilities": ["soul-heart"],
+      "abilityStatus": "owner-decided-by-recommendation",
+      "note": "Taken as recommended - NOT explicitly confirmed. Continuity with the base form; magearnite is a Battle Park BP purchase so the player already owns Soul-Heart on the base long before the Mega exists."
+    },
+    {
+      "form": "magearna-original-mega",
+      "name": "Mega Magearna (Original Colour)",
+      "base": 801,
+      "abilities": ["soul-heart"],
+      "abilityStatus": "owner-decided-by-recommendation",
+      "note": "MIRRORS standard Mega Magearna by rule. Champions precedent is directly on point: Meowstic Male and Female have DIFFERENT mainline ability sets and Champions gave BOTH of them Trace. Cosmetic variants do not diverge. If the standard row changes, change this one with it."
+    },
+    {
+      "form": "zeraora-mega",
+      "name": "Mega Zeraora",
+      "base": 807,
+      "abilities": ["transistor"],
+      "abilityStatus": "owner-decided",
+      "note": "1.3x Electric. Transplanting a legendary's signature ability onto a Mega is confirmed Champions precedent. Engine tier 1 (onDamageCalc)."
+    },
+    {
+      "form": "tatsugiri-curly-mega",
+      "name": "Mega Tatsugiri (Curly)",
+      "base": 978,
+      "abilities": ["storm-drain"],
+      "abilityStatus": "owner-decided",
+      "note": "The ONLY balance-sensitive form of the nine - tatsugirinite is T4 (badge:mine, cap 44), mid-game inside the hard cap. Storm Drain is the base form's own hidden ability, so nothing new enters the game at a capped checkpoint. Dragon's Maw and Adaptability were both rejected as too strong there."
+    },
+    {
+      "form": "tatsugiri-droopy-mega",
+      "name": "Mega Tatsugiri (Droopy)",
+      "base": 978,
+      "abilities": ["storm-drain"],
+      "abilityStatus": "owner-decided",
+      "note": "MIRRORS Curly by rule - the three Tatsugiri forms are appearance-only and share typing, stats and abilities. One decision, not three."
+    },
+    {
+      "form": "tatsugiri-stretchy-mega",
+      "name": "Mega Tatsugiri (Stretchy)",
+      "base": 978,
+      "abilities": ["storm-drain"],
+      "abilityStatus": "owner-decided",
+      "note": "MIRRORS Curly by rule. See Droopy."
+    }
+  ]
+}
