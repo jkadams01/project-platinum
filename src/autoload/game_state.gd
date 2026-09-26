@@ -44,6 +44,14 @@ var flags: Dictionary = {}                  # String -> bool
 var bag: Dictionary = {}                    # String item id -> int count
 var cap_index: int = 0                      # row in data/level_caps.json
 var player_name: String = "Lucas"
+## The starter the player chose, as a `starterLines` key in data/rom/bosses.json
+## ("turtwig" | "chimchar" | "piplup"). Empty until the choice is made.
+##
+## This file does not know what the values mean -- `Bosses` owns that. It only has
+## to remember the choice and round-trip it, because Barry's starter is derived
+## from it in EVERY one of his seven fights: a choice lost on load would silently
+## re-roll his party, mid-playthrough, with no error anywhere.
+var starter_choice: String = ""
 var current_map: StringName = &"twinleaf_town"
 var player_cell: Vector2i = Vector2i.ZERO
 var player_facing: Vector2i = Vector2i.DOWN
@@ -76,11 +84,31 @@ func reset() -> void:
 	bag.clear()
 	cap_index = 0
 	player_name = "Lucas"
+	starter_choice = ""
 	current_map = &"twinleaf_town"
 	player_cell = Vector2i.ZERO
 	player_facing = Vector2i.DOWN
 	rng_seed = 0
 	input_locked = false
+
+
+# --------------------------------------------------------------------------
+# The starter
+# --------------------------------------------------------------------------
+
+## Records the player's starter. Normalised to lower case and trimmed because the
+## value is used directly as a Dictionary key in `bosses.json`'s `starterLines`
+## and `starterCounter`; a stray "Turtwig" would resolve to nothing and quietly
+## leave Barry on his placeholder.
+##
+## Deliberately not validated here -- the set of legal starters lives in the boss
+## table, and `GameState` must not depend on it. `Bosses.resolve_rival_starter()`
+## returns 0 for a value it does not recognise, which is where that is caught.
+func set_starter_choice(slug: String) -> void:
+	var was := starter_choice
+	starter_choice = slug.strip_edges().to_lower()
+	if starter_choice != was:
+		Log.info("starter choice: '%s'" % starter_choice, "GameState")
 
 
 # --------------------------------------------------------------------------
@@ -324,6 +352,7 @@ func to_dict() -> Dictionary:
 	return {
 		"v": SAVE_VERSION,
 		"playerName": player_name,
+		"starterChoice": starter_choice,
 		"party": party.duplicate(true),
 		"badges": badges,
 		"money": money,
@@ -349,6 +378,9 @@ func from_dict(d: Dictionary) -> bool:
 		return false
 
 	player_name = String(d.get("playerName", "Lucas"))
+	# Normalised on the way in as well as the way out: a save hand-edited to
+	# "Piplup" must still resolve Barry's starter.
+	starter_choice = String(d.get("starterChoice", "")).strip_edges().to_lower()
 
 	party.clear()
 	for entry: Variant in (d.get("party", []) as Array):

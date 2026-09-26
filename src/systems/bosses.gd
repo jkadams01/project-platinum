@@ -32,6 +32,27 @@ const FIXTURE_PATH := "res://tests/fixtures/bosses.json"
 ## Every boss has exactly this many party members (DATA_CONTRACT 7.1).
 const PARTY_SIZE := 6
 
+## The `dynamicSlot` tag on a party member whose species is resolved at battle
+## start from the player's starter choice. Barry is the only user.
+const DYNAMIC_RIVAL_STARTER := "rival-starter"
+
+## Sinnoh's three starter lines and the counter-pick map, used when the table has
+## no `starterLines` / `starterCounter` of its own. `bosses.json` is gitignored, so
+## a fresh checkout has NO table at all -- and these three lines are a locked
+## design fact, not generated data. Same policy as `DataRegistry.FALLBACK_CAPS`.
+const FALLBACK_STARTER_LINES: Dictionary = {
+	"turtwig": [387, 388, 389],
+	"chimchar": [390, 391, 392],
+	"piplup": [393, 394, 395],
+}
+## Player's pick -> the starter Barry carries against it, each with the type
+## advantage: Turtwig -> Chimchar -> Piplup -> Turtwig.
+const FALLBACK_STARTER_COUNTER: Dictionary = {
+	"turtwig": "chimchar",
+	"chimchar": "piplup",
+	"piplup": "turtwig",
+}
+
 static var _bosses: Dictionary = {}
 static var _meta: Dictionary = {}
 static var _source: String = "missing"
@@ -112,15 +133,107 @@ static func meta() -> Dictionary:
 # --------------------------------------------------------------------------
 
 ## The boss's six Pokemon as battle-ready Dictionaries, in send-out order.
+##
+## A member tagged `dynamicSlot` has its species resolved here (Barry's starter,
+## picked to counter the player's). `bosses.json` is NEVER mutated to do it: the
+## substituted id is handed to the builder and the stored row keeps its
+## placeholder, so re-entering the fight -- or loading a save where the player
+## chose differently -- resolves again from scratch.
 static func build_party(key: String) -> Array:
 	var boss := get_boss(key)
 	var out: Array = []
 	for member: Variant in (boss.get("party", []) as Array):
 		if member is Dictionary:
-			var mon := PartyBuilder.from_boss_member(member)
+			var mon := _build_member(member as Dictionary)
 			if not mon.is_empty():
 				out.append(mon)
 	return out
+
+
+## One party member, with its dynamic slot resolved if it has one.
+##
+## An unresolvable tagged slot (no choice recorded yet, an unrecognised choice, a
+## table with no starter maps) falls back to the placeholder and says so once. A
+## rival fight with the wrong starter is a bug; a rival fight that cannot start is
+## a broken game, and the placeholder is a legal Pokemon.
+static func _build_member(member: Dictionary) -> Dictionary:
+	if String(member.get("dynamicSlot", "")) != DYNAMIC_RIVAL_STARTER:
+		return PartyBuilder.from_boss_member(member)
+
+	var stage := int(member.get("starterStage", 0))
+	var species := rival_starter_species(stage)
+	if species <= 0:
+		Log.warn("dynamic slot unresolved (starter choice '%s', stage %d); "
+			% [GameState.starter_choice, stage]
+			+ "falling back to placeholder species %d"
+			% int(member.get("placeholderSpecies", member.get("species", 0))), "Bosses")
+		return PartyBuilder.from_boss_member(member)
+	return PartyBuilder.from_boss_member(member, species)
+
+
+# --------------------------------------------------------------------------
+# The rival's dynamic starter
+# --------------------------------------------------------------------------
+
+## `starterLines`: starter slug -> the three dex ids of its line, lowest first.
+## Falls back to [constant FALLBACK_STARTER_LINES] when the table carries none.
+static func starter_lines() -> Dictionary:
+	var v: Variant = _meta.get("starterLines", null)
+	if v is Dictionary and not (v as Dictionary).is_empty():
+		return v
+	return FALLBACK_STARTER_LINES
+
+
+## `starterCounter`: the player's pick -> the starter Barry carries against it.
+static func starter_counter() -> Dictionary:
+	var v: Variant = _meta.get("starterCounter", null)
+	if v is Dictionary and not (v as Dictionary).is_empty():
+		return v
+	return FALLBACK_STARTER_COUNTER
+
+
+## The dex id a tagged slot resolves to, or 0 when it cannot be resolved.
+##
+## Pure, with the maps passed in, so the rule is testable without the gitignored
+## table. `stage` indexes the evolution line (0 = base) and is clamped: a roster
+## that ever tags a stage beyond the line gets the final form, not a crash.
+##
+## Every id is re-cast with int(): `_meta` is raw JSON (only `bosses` rows go
+## through `_intify`), so these arrive as floats.
+static func resolve_rival_starter(player_choice: String, stage: int,
+		lines: Dictionary, counter: Dictionary) -> int:
+	var choice := player_choice.strip_edges().to_lower()
+	if choice.is_empty():
+		return 0
+	var theirs := String(counter.get(choice, ""))
+	if theirs.is_empty():
+		return 0
+	var line: Variant = lines.get(theirs, null)
+	if not (line is Array) or (line as Array).is_empty():
+		return 0
+	var arr: Array = line
+	return int(arr[clampi(stage, 0, arr.size() - 1)])
+
+
+## The same, against the loaded table and the recorded choice.
+static func rival_starter_species(stage: int) -> int:
+	return resolve_rival_starter(
+		GameState.starter_choice, stage, starter_lines(), starter_counter())
+
+
+## The `starterLines` key whose line contains this species, or "" if none does.
+## Lets `boot.gd` record the choice from the species it actually handed over,
+## instead of keeping a second copy of the starter list.
+static func starter_slug_for(species_id: int) -> String:
+	var lines := starter_lines()
+	for k: Variant in lines:
+		var line: Variant = lines[k]
+		if not (line is Array):
+			continue
+		for dex: Variant in (line as Array):
+			if int(dex) == species_id:
+				return String(k)
+	return ""
 
 
 ## The trainer block the battle engine reads (`name`, `ai`, `prizeMoney`, and the

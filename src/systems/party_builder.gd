@@ -79,23 +79,103 @@ static func wild(species_id: int, level: int, opts: Dictionary = {}) -> Dictiona
 ## rosters are designed, and rolling a learnset over them would quietly undo the
 ## design. `megaEvolves` members keep their stone in `item`, which is what
 ## `battle_engine.can_mega_evolve()` reads.
-static func from_boss_member(member: Dictionary) -> Dictionary:
+##
+## `species_override` is for a `dynamicSlot` member, whose stored species is only a
+## placeholder -- Barry's starter, chosen to counter the player's. Substituting the
+## species alone is THE trap: every authored, species-specific field describes the
+## placeholder's line, so each one is deliberately re-resolved or dropped.
+##
+##   * `moves` come from the SUBSTITUTED species' own learnset at that level.
+##     Keeping the authored four is the silent bug the roster invites: Barry's slot
+##     is written as the Chimchar line, so a player who picks Chimchar faces an
+##     Empoleon holding Mach Punch and Ember. A test that only checks the species
+##     id passes straight over it.
+##   * `ability` maps by ROLE, not by slug -- see [method _substitute_ability].
+##   * `speciesName` is dropped, so the mon is named after what it actually is.
+##
+## `item` and `nature` are species-agnostic and carry over untouched. An override
+## equal to the stored species changes nothing, so re-resolving is always safe.
+static func from_boss_member(member: Dictionary, species_override: int = 0) -> Dictionary:
+	var stored := int(member.get("species", 0))
+	var species := species_override if species_override > 0 else stored
+	var level := int(member.get("level", 5))
+	var substituted := species != stored
+
 	var opts: Dictionary = {
-		"moves": (member.get("moves", []) as Array).duplicate(),
 		"item": String(member.get("item", "")) if member.get("item", null) != null else "",
 		"friendship": 70,
 	}
-	if member.get("ability", null) != null and not String(member["ability"]).is_empty():
-		opts["ability"] = String(member["ability"])
 	if member.get("nature", null) != null and not String(member["nature"]).is_empty():
 		opts["nature"] = String(member["nature"])
-	if member.get("speciesName", null) != null and not String(member["speciesName"]).is_empty():
-		opts["name"] = String(member["speciesName"])
 
-	var mon := wild(int(member.get("species", 0)), int(member.get("level", 5)), opts)
+	if substituted:
+		# Left unset, `wild()` rolls the learnset for us -- but be explicit: this
+		# line is the whole point of the override and must not be easy to delete.
+		opts["moves"] = Array(moves_at_level(species, level))
+		var ability := _substitute_ability(stored, species, _authored_ability(member))
+		if not ability.is_empty():
+			opts["ability"] = ability
+	else:
+		opts["moves"] = (member.get("moves", []) as Array).duplicate()
+		var authored := _authored_ability(member)
+		if not authored.is_empty():
+			opts["ability"] = authored
+		if member.get("speciesName", null) != null and not String(member["speciesName"]).is_empty():
+			opts["name"] = String(member["speciesName"])
+
+	var mon := wild(species, level, opts)
 	# Trainer Pokemon are full EV-less but max-IV like the ROM rosters; nothing to
 	# copy across beyond what `opts` already carried.
 	return mon
+
+
+## The member's authored ability slug, lower-cased, or "" when it has none.
+static func _authored_ability(member: Dictionary) -> String:
+	if member.get("ability", null) == null:
+		return ""
+	return String(member["ability"]).strip_edges().to_lower()
+
+
+## The substituted species' equivalent of an authored ability, matched by ROLE.
+##
+## Barry's late Infernape is authored with `iron-fist`, which is Infernape's HIDDEN
+## ability -- so the Torterra that replaces it must come out with Shell Armor, not
+## Overgrow. Matching hidden-to-hidden and normal-slot-to-normal-slot is what keeps
+## the roster's intent across a species it was not written for. Copying the slug
+## itself would hand Torterra an ability it cannot legally have.
+##
+## Returns "" when nothing can be resolved, which leaves `Stats.build` to fall back
+## to the species' first ability -- always legal, never empty.
+static func _substitute_ability(from_species: int, to_species: int, authored: String) -> String:
+	var reg := Deps.registry()
+	if reg == null or not reg.has_method("get_species"):
+		return ""
+	var dst: Dictionary = reg.get_species(to_species)
+	var dst_normal: Array = dst.get("abilities", [])
+	var dst_hidden := ""
+	if dst.get("hiddenAbility", null) != null:
+		dst_hidden = String(dst["hiddenAbility"]).strip_edges().to_lower()
+
+	var dst_first := String(dst_normal[0]) if not dst_normal.is_empty() else ""
+	if authored.is_empty():
+		return dst_first
+
+	var src: Dictionary = reg.get_species(from_species)
+	var src_hidden := ""
+	if src.get("hiddenAbility", null) != null:
+		src_hidden = String(src["hiddenAbility"]).strip_edges().to_lower()
+
+	if not src_hidden.is_empty() and authored == src_hidden:
+		return dst_hidden if not dst_hidden.is_empty() else dst_first
+
+	# Normal slot for normal slot. An authored ability the placeholder does not
+	# actually have (a roster typo) is treated as slot 0 rather than dropped.
+	var idx := (src.get("abilities", []) as Array).find(authored)
+	if idx < 0:
+		idx = 0
+	if dst_normal.is_empty():
+		return dst_hidden
+	return String(dst_normal[mini(idx, dst_normal.size() - 1)])
 
 
 ## The player's starting party for the vertical slice. Turtwig, the Sinnoh grass

@@ -12,7 +12,7 @@ the to-do list.
 
 ```
 tools/run_tests.sh -- --require-data
-→ 9,412 of 9,412 checks pass across the whole suite
+→ 9,578 of 9,578 checks pass across the whole suite
 → 0 failures, 0 pending
 ```
 
@@ -75,6 +75,49 @@ loudly if an override or local-effect slug ever stops matching a real row.
 > `git status --short -- data/` — anything beyond what you meant to change is a
 > regression, not noise.
 
+**The dynamic rival starter — engine side DONE.** The predicted silent bug was real and is
+covered. `tests/test_dynamic_starter.gd` is 21 tests / 165 checks; the rule itself is pure and
+runs without the gitignored table.
+
+- `GameState.starter_choice` + `set_starter_choice()`, normalised, in `to_dict`/`from_dict`.
+  `SAVE_VERSION` is unchanged on purpose: a save predating the field loads and leaves the
+  choice empty (tested both ways, on disk and off).
+- `Bosses.resolve_rival_starter(choice, stage, lines, counter)` is **pure** — the maps are
+  arguments, so the rule is testable with no `bosses.json` at all. `starter_lines()` /
+  `starter_counter()` fall back to `FALLBACK_STARTER_*` constants, same policy as
+  `DataRegistry.FALLBACK_CAPS`, because `data/rom/**` is gitignored and a fresh checkout has
+  no table. The stage is clamped; every id is `int()`-cast (`_meta` is raw JSON — only
+  `bosses` rows go through `_intify`, so these arrive as floats).
+- `Bosses._build_member()` resolves the tag and hands the species to the builder.
+  **`bosses.json` is never written to** — tested by deep-comparing the member row across a
+  build, and by building the same fight twice under different choices.
+- `PartyBuilder.from_boss_member(member, species_override)` is where the trap lives. On a real
+  substitution the authored `moves` are **dropped** and rolled from the substituted species'
+  learnset, `speciesName` is dropped, and the ability maps **by role, not by slug**: Barry's
+  late slot is authored `iron-fist`, which is Infernape's *hidden* ability, so Torterra gets
+  Shell Armor and Empoleon gets Competitive — never a copied `iron-fist`, which neither can
+  legally have. `item` and `nature` are species-agnostic and carry over.
+- Sprites and icons needed no change: `battle_screen._set_sprite` looks them up from
+  `mon["species"]` at draw time, so the substituted id carries them. Pinned by a test anyway.
+- An unresolvable tag falls back to the placeholder and warns once. A rival with the wrong
+  starter is a bug; a rival fight that cannot start is a broken game.
+
+### Three roster observations — *author to decide, not changed*
+
+1. **`ace` disagrees with the party in Barry r1 and r2.** `barry_r2_route_203` declares its ace
+   as slot 0 / species 391 Monferno, but slot 0 is species 77 **Ponyta** — the Monferno is at
+   slot 5. `barry_r1_route_201` declares slot 0 / 391 Monferno against a party of one level-5
+   species 390. `Bosses.ace_slot()` reads only `slot`, so nothing crashes, but any UI that says
+   "this is the ace" points at the wrong Pokémon in those two fights.
+2. **Only the Turtwig player meets a designed rival moveset.** The tagged slot is authored as
+   the Chimchar line, so `turtwig → chimchar` is not a substitution and keeps its hand-picked
+   four. The other two choices roll the learnset. That is correct behaviour for the data as
+   written, and the test asserts both branches — but if all three choices should face *designed*
+   movesets, the roster needs two more hand-authored sets.
+3. `barry_r1_route_201`'s tagged slot has `"speciesName": "Monferno"` on species **390**
+   (Chimchar). Harmless now — the name is dropped on substitution and the fight is
+   turtwig-only otherwise — but it is wrong in the data.
+
 ## 3. Work that was stopped mid-flight
 
 Three workflows were stopped deliberately. **Their scripts are on disk and re-runnable.**
@@ -86,7 +129,7 @@ Three workflows were stopped deliberately. **Their scripts are on disk and re-ru
 
 | Workflow | Script | Got as far as |
 |---|---|---|
-| Dynamic rival starter | `…/workflows/scripts/dynamic-rival-starter-wf_a62c6c02-3b4.js` | Implement phase started, **nothing written** |
+| ~~Dynamic rival starter~~ | `…/workflows/scripts/dynamic-rival-starter-wf_a62c6c02-3b4.js` | **Superseded — §4b is done, do not re-run** |
 | Integration | `…/workflows/scripts/platinum-integrate-wf_5b53999c-c91.js` | 3 fixes done, integrator **mostly done** (maps + scenes + UI exist) |
 | Evolutions | `…/workflows/scripts/evolution-rework-wf_1e9f5bac-1a1.js` | Audit **done**, Design started, **nothing applied** |
 
@@ -97,29 +140,17 @@ Scripts live under
 
 ## 4. Outstanding work, in priority order
 
+**Next up is (c), the evolution rework** — (a), (b) and the `population-bomb` half of (d) are
+done.
+
+
 ### a) ~~Fix the Roark reward hookup~~ — DONE 2026-09-26, see §2
 
-### b) Finish the dynamic rival starter — data done, engine NOT done
+### b) ~~Finish the dynamic rival starter~~ — DONE 2026-09-26, see §2
 
-`tools/tag_dynamic_starter.py` has already run. `data/rom/bosses.json` now carries:
-
-```jsonc
-"starterLines":   {"turtwig":[387,388,389], "chimchar":[390,391,392], "piplup":[393,394,395]},
-"starterCounter": {"turtwig":"chimchar", "chimchar":"piplup", "piplup":"turtwig"}
-```
-
-and each of Barry's **seven** fights has one party slot tagged:
-`"dynamicSlot":"rival-starter"`, `"starterStage": 0|1|2`, `"placeholderSpecies": <dex>`.
-Stages: r1=0 (L5), r2=1 (L13), r3–r7=2 (L45/54/66/90/96).
-
-**Still to write (engine side):**
-- `GameState` stores the player's starter choice and survives a save/load round-trip
-- battle party loader substitutes `starterLines[counter[choice]][starterStage]`
-- **moves and ability must resolve from the SUBSTITUTED species**, not the placeholder —
-  otherwise Torterra ends up with Chimchar's Fire moves. This is the likely silent bug; a
-  naive test passes it.
-- sprite/icon paths follow the substituted dex id
-- never mutate `bosses.json` at runtime — resolve into the built party only
+Data tagging (`tools/tag_dynamic_starter.py`) had already run; the engine side, the save
+round-trip, the ability/move re-resolution and 21 tests all landed. Three roster observations
+are listed in §2 for the owner to rule on.
 
 ### c) Apply the evolution rework — audit done, nothing applied
 

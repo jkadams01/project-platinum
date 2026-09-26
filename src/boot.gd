@@ -135,6 +135,11 @@ func _build_world() -> void:
 func _give_starter() -> void:
 	for mon: Dictionary in PartyBuilder.starter_party(STARTER_SPECIES, STARTER_LEVEL):
 		GameState.add_to_party(mon)
+	# Recorded from the species actually handed over, so there is no second copy of
+	# the starter list to fall out of step. Every Barry fight derives his starter
+	# from this, so the slice must set it even though the choice is not yet a
+	# player-facing menu.
+	GameState.set_starter_choice(Bosses.starter_slug_for(STARTER_SPECIES))
 	# Enough to actually finish the slice: Roark's Cranidos hits hard.
 	GameState.bag["potion"] = int(GameState.bag.get("potion", 0)) + 5
 	GameState.bag["super-potion"] = int(GameState.bag.get("super-potion", 0)) + 2

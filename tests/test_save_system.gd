@@ -39,6 +39,7 @@ func _populate() -> void:
 	GameState.player_cell = Vector2i(14, 9)
 	GameState.player_facing = Vector2i.LEFT
 	GameState.rng_seed = 42
+	GameState.set_starter_choice("piplup")
 	GameState.add_to_party({
 		"species": 387, "level": 12, "exp": 640, "hp": 33, "maxHp": 38,
 		"moves": ["tackle", "withdraw"], "ivs": [31, 20, 5, 14, 9, 2],
@@ -70,6 +71,9 @@ func test_round_trip_preserves_every_field() -> void:
 	eq(GameState.player_cell, Vector2i(14, 9), "player cell")
 	eq(GameState.player_facing, Vector2i.LEFT, "facing")
 	eq(GameState.rng_seed, 42, "rng seed")
+	# Barry's starter is derived from this in all seven of his fights, so a choice
+	# lost on load would silently re-roll his party mid-playthrough.
+	eq(GameState.starter_choice, "piplup", "starter choice")
 
 	eq(GameState.party_size(), 1, "party size")
 	var mon: Dictionary = GameState.party[0]
