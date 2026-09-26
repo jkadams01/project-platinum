@@ -3,7 +3,7 @@ extends "res://src/battle/abilities/ability.gd"
 ##
 ## On moves with a VARIABLE hit count, two changes:
 ##   1. the hit count becomes the MAXIMUM of the range -- 2-5 becomes 5, Triple
-##      Kick and Triple Axel become 3, Population Bomb would become 10;
+##      Kick and Triple Axel become 3, Population Bomb becomes 10;
 ##   2. per-hit accuracy is switched OFF, so Triple Kick rolls accuracy once and
 ##      all three kicks land.
 ##
@@ -32,11 +32,16 @@ extends "res://src/battle/abilities/ability.gd"
 ##   443 scale-shot
 ##   105 triple-kick / triple-axel -- 3 hits WITH per-hit accuracy, which is the
 ##       half of the ability people skip
+##   20001 population-bomb -- 10 hits with per-hit accuracy. PROJECT-LOCAL effect
+##       id: veekun ships none for this move, so tools/build_species.py assigns it
+##       (LOCAL_EFFECT_IDS). Without Skill Link the hit loop stops at the first
+##       miss; with it, all ten land.
 const VARIABLE_HITS: Dictionary = {
 	30: 5,
 	105: 3,
 	361: 5,
 	443: 5,
+	20001: 10,
 }
 
 ## Fixed-count families, listed only so the exclusion is visible and greppable:

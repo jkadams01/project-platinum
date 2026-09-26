@@ -207,6 +207,11 @@ static func apply_victory(key: String) -> Dictionary:
 	var first_time := not GameState.get_flag(String(out["flag"]))
 	GameState.set_flag(String(out["flag"]), true)
 
+	# `verbs` and `stones` are built in locals and stored back at the end.
+	# PackedStringArray is a VALUE type: appending through `out[k] as PackedStringArray`
+	# mutates a throwaway copy and the reward silently reports nothing.
+	var verbs := PackedStringArray()
+
 	var badge := String(boss.get("badge", "")) if boss.get("badge", null) != null else ""
 	if not badge.is_empty():
 		out["badge"] = badge
@@ -215,20 +220,23 @@ static func apply_victory(key: String) -> Dictionary:
 				GameState.player_name, badge.capitalize()])
 			var verb := _verb_for_badge(badge)
 			if not verb.is_empty():
-				(out["verbs"] as PackedStringArray).append(verb)
+				verbs.append(verb)
 				(out["messages"] as Array).append(
 					"%s can now be used outside of battle!" % verb.to_upper())
+	out["verbs"] = verbs
 
 	out["capAfter"] = GameState.current_level_cap()
 	if int(out["capAfter"]) > int(out["capBefore"]):
 		(out["messages"] as Array).append("The level cap rose to %d!" % int(out["capAfter"]))
 
+	var stones := PackedStringArray()
 	for stone: String in _stones_of(boss):
-		(out["stones"] as PackedStringArray).append(stone)
+		stones.append(stone)
 		if first_time:
 			GameState.bag[stone] = int(GameState.bag.get(stone, 0)) + 1
 			(out["messages"] as Array).append("%s obtained the %s!" % [
 				GameState.player_name, _pretty(stone)])
+	out["stones"] = stones
 
 	Log.info("victory over %s: badge=%s stones=%s cap %d -> %d" % [
 		key, out["badge"], String(", ").join(out["stones"]),

@@ -23,9 +23,12 @@ extends RefCounted
 ##   45  hits-twice-in-one-turn -- 7 moves      78  twineedle
 ##   450 dragon-darts                           486 surging-strikes (3)
 ##
-## KNOWN DATA GAP: population-bomb has `effectId: null` in data/moves.json, so it
-## hits ONCE here and Skill Link cannot see it. That is a data row to fix, not a
-## rule to special-case.
+## PER-HIT ACCURACY at a fixed maximum
+##   20001 population-bomb -- 10 hits, each rolling accuracy, so the hit loop in
+##       battle_engine stops at the first miss. 20001 is a PROJECT-LOCAL effect id:
+##       veekun ships no effect_id for this move, so tools/build_species.py assigns
+##       it (see LOCAL_EFFECT_IDS there). Skill Link turns per-hit accuracy off and
+##       all ten land.
 
 const Abilities := preload("res://src/battle/abilities/registry.gd")
 
@@ -36,6 +39,9 @@ const FIXED_HITS: Dictionary = {45: 2, 78: 2, 450: 2, 486: 3}
 ## Triple Kick / Triple Axel.
 const TRIPLE_KICK := 105
 const TRIPLE_KICK_HITS := 3
+## Population Bomb: a fixed maximum, but every hit rolls its own accuracy.
+## Project-local effect id -- see the header and tools/build_species.py.
+const PER_HIT_ACCURACY_HITS: Dictionary = {20001: 10}
 
 ## Gen 5+ 2-5 distribution: 2 and 3 at 35% each, 4 and 5 at 15% each. Twenty
 ## entries so a single randi_range gives exactly those odds.
@@ -71,6 +77,12 @@ static func natural(move: Dictionary, rng: RandomNumberGenerator = null) -> Dict
 		out["natural_hits"] = TRIPLE_KICK_HITS
 		out["single_accuracy"] = false     # each kick rolls its own accuracy
 		out["escalating"] = true
+		return out
+
+	if PER_HIT_ACCURACY_HITS.has(effect_id):
+		out["hits"] = int(PER_HIT_ACCURACY_HITS[effect_id])
+		out["natural_hits"] = out["hits"]
+		out["single_accuracy"] = false   # the loop stops at the first miss
 		return out
 
 	if FIXED_HITS.has(effect_id):

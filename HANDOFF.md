@@ -1,6 +1,6 @@
 # HANDOFF — resume from here
 
-Written 2026-09-23, at a deliberate pause. Everything below was **verified by running it**,
+Written 2026-09-23, updated 2026-09-26. Everything below was **verified by running it**,
 not assumed. Read `CLAUDE.md` first for rules and traps; this file is the state snapshot and
 the to-do list.
 
@@ -8,12 +8,12 @@ the to-do list.
 
 ## 1. Where the project actually stands
 
-**The game boots and very nearly passes its own test suite.**
+**The game boots and passes its own test suite outright.**
 
 ```
-tools/run_tests.sh
-→ 9,405 of 9,407 checks pass across the whole suite
-→ 1 test fails (2 checks). 1 check pending on a known data gap.
+tools/run_tests.sh -- --require-data
+→ 9,412 of 9,412 checks pass across the whole suite
+→ 0 failures, 0 pending
 ```
 
 | Area | State |
@@ -31,25 +31,49 @@ tools/run_tests.sh
 
 ---
 
-## 2. The one failing test — start here
+## 2. What was fixed on 2026-09-26
 
-```
-test_integration.gd::test_beating_roark_awards_the_badge_the_cap_raise_and_aerodactylite
-  FAIL  the reward names SMASH            expected true
-  FAIL  Aerodactylite awarded             expected ["aerodactylite"], got []
-```
+**`test_beating_roark_awards_the_badge_the_cap_raise_and_aerodactylite` — fixed.**
 
-Everything around it passes: Roark's roster matches the contract, his six build into usable
-battle Pokémon, he correctly never Mega Evolves (gym 1), the cap blocks EXP properly, and the
-fight resolves. **Only the post-victory reward hookup is missing** — beating him must also:
+`Bosses.apply_victory` built its `verbs` and `stones` through
+`(out["stones"] as PackedStringArray).append(...)`. **`PackedStringArray` is a VALUE type
+in GDScript**, so each append mutated a throwaway copy: the Coal badge, the cap raise, the
+`smash` unlock and the stone in the bag were all applied for real, but the returned reward
+reported neither the verb nor the stone. `messages` worked throughout only because `Array`
+*is* a reference type — which is what made the bug look like a missing hookup rather than a
+dropped write. Both sites now accumulate in locals and store back (`src/systems/bosses.gd`).
 
-1. unlock the `smash` traversal verb (Coal badge), and
-2. award `aerodactylite` to the bag.
+> **Trap, repo-wide:** never append through a `Dictionary[k] as Packed*Array` cast. A grep
+> for `as Packed\w*Array)\.(append|push_back|insert|…)` finds every instance; those two
+> were the only ones.
 
-The badge grant and cap raise themselves appear to work. Look at the victory path in the
-battle→overworld return and the boss reward handler.
+**`population-bomb` — fixed, and it was more than a data row.** veekun ships no `effect_id`
+for it (93 moves have that gap), so the move read as ordinary single-hit damage. Assigning
+the id was not enough: the engine branches on `effectId`, so both hit-count tables had to
+learn it too.
 
----
+- `tools/build_species.py` now owns `LOCAL_EFFECT_IDS` — project-local move-effect ids
+  starting at **20001**, clear of veekun's space (its highest real id is 10006). Population
+  Bomb is `20001`.
+- `src/battle/multi_hit.gd` gained `PER_HIT_ACCURACY_HITS` — a fixed count *with* per-hit
+  accuracy, so `battle_engine`'s hit loop stops at the first miss. That is the move's real
+  behaviour and no loop change was needed.
+- `src/battle/abilities/skill-link.gd` carries `20001: 10`, so Skill Link now takes it to a
+  guaranteed ten hits, exactly as that file's own doc comment always claimed it would.
+- The test is no longer a pending data-gap marker; it asserts both halves
+  (`test_population_bomb_hits_ten_times_with_skill_link`).
+
+**`tools/build_species.py` was not idempotent — fixed.** Re-running it silently reverted
+hand-applied corrections in `data/abilities.json`: `hook` and `tier` for **all 14**
+Mega-critical abilities (back to `none` / tier 3) and the effect text for `parental-bond`,
+`piercing-drill` and `fire-mane` (back to veekun's outdated or truncated prose). Those
+corrections now live in `ABILITY_HOOK_OVERRIDES` / `ABILITY_TEXT_OVERRIDES` in the script,
+so a rebuild reproduces `abilities.json` byte for byte. Two new assertions (20 total) fail
+loudly if an override or local-effect slug ever stops matching a real row.
+
+> **Check this after any data rebuild:** `python tools/build_species.py` then
+> `git status --short -- data/` — anything beyond what you meant to change is a
+> regression, not noise.
 
 ## 3. Work that was stopped mid-flight
 
@@ -73,8 +97,7 @@ Scripts live under
 
 ## 4. Outstanding work, in priority order
 
-### a) Fix the Roark reward hookup
-See §2. Smallest, highest value — it is the last thing between here and a green suite.
+### a) ~~Fix the Roark reward hookup~~ — DONE 2026-09-26, see §2
 
 ### b) Finish the dynamic rival starter — data done, engine NOT done
 
@@ -124,8 +147,7 @@ distinguishing "unobtainable because the evolution is impossible" (the bug) from
 
 ### d) Known smaller gaps
 
-- `population-bomb` has `effectId: null` in `moves.json`, so Skill Link sees 1 hit, not 10.
-  One data row; a test already marks it pending and flips green when fixed.
+- ~~`population-bomb` has `effectId: null`~~ — DONE 2026-09-26, see §2.
 - **Protect is not implemented**, so `unseen-fist` and `piercing-drill` are spec-complete but
   dormant. Hooks and the volatile key exist; a Protect move only needs to set it.
 - The new multi-hit loop changed behaviour for **26 multi-strike moves game-wide**. Suite is
@@ -167,14 +189,19 @@ Full detail in `CLAUDE.md`; summary so a fresh session does not re-ask:
 ```bash
 cd "C:/Users/James/Documents/GitHub/project-platinum"
 
-tools/run_tests.sh                      # expect 9,405/9,407, 1 failing test (§2)
+tools/run_tests.sh -- --require-data    # expect 9,412/9,412, no failures, no pendings
 
 python -c "import json;d=json.load(open('data/level_caps.json'));print(d['expMultiplierMode'], [c['cap'] for c in d['caps']])"
 python -c "import json;m=json.load(open('data/megas.json'));f=m['forms'];print(len(f),'forms;',sum(1 for x in f if not x.get('abilities')),'without ability')"
 python -c "import json;b=json.load(open('data/rom/bosses.json'));bl=b.get('bosses',b);print(len(bl),'bosses')"
 
 git check-ignore -v References/Roms/     # must report ignored
+
+python tools/build_species.py           # 20 assertions; must pass
+git status --short -- data/             # and must leave data/ CLEAN (rebuild is idempotent)
 ```
 
-**Nothing has been committed.** `git status` shows ~88 changed/untracked paths. The ROMs and
-all ROM-derived output are correctly gitignored — verify before any commit.
+**Everything through 2026-09-26 is committed and pushed** on
+`build/engine-data-and-vertical-slice`; `main` is still at the initial commit, so the branch
+has not been merged. The ROMs and all ROM-derived output are gitignored — re-verify with the
+`git check-ignore` line above before any commit.

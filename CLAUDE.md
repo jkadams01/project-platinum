@@ -191,6 +191,20 @@ tile in the manifest.
 
 Each of these has already cost real time. Do not rediscover them.
 
+**GDScript `Packed*Array` is a VALUE type.** `(dict["k"] as PackedStringArray).append(x)`
+appends to a throwaway copy and the stored array never changes — silently, with no error.
+`Array` and `Dictionary` *are* references, so a function that fills both looks half-working,
+which is the trap: the `Array` field populates and the `Packed*` one comes back empty.
+Accumulate in a local and assign back. This cost the Roark reward hookup a whole debugging
+pass. Grep: `as Packed\w*Array)\.(append|push_back|insert|resize|set)`.
+
+**`tools/build_species.py` must be idempotent, and it silently was not.** Re-running it used
+to revert hand-applied corrections in `data/abilities.json` (14 ability hooks/tiers, 3 effect
+texts) with no warning at all. Post-generator corrections belong in the script's override
+tables — `ABILITY_HOOK_OVERRIDES`, `ABILITY_TEXT_OVERRIDES`, `LOCAL_EFFECT_IDS` — never in the
+emitted JSON. **After any data rebuild:** `git status --short -- data/`, and treat anything you
+did not mean to change as a regression.
+
 **NSBTX palette binding is by NAME, not index.** TEX0 stores textures and palettes in two
 *separately name-sorted* dictionaries, so `palette[i]` is not `texture[i]`'s palette. Bind
 `<tex>_pl` with a fallback chain. Index binding silently recolours a large fraction of the
@@ -231,11 +245,14 @@ bytes, and the offset is **language-specific** (that value is for the English RO
 
 ## Open items
 
-- **Integration is incomplete.** `data/maps/` is empty and only `scenes/Overworld.tscn` exists;
-  there is no `Boot.tscn` or `Battle.tscn`, so the game does not yet boot end to end.
+- Integration landed: `data/maps/` carries the 9 Twinleaf→Oreburgh maps and `Boot.tscn`,
+  `Overworld.tscn` and `Battle.tscn` all exist. The vertical slice boots. Remaining work is
+  tracked in `HANDOFF.md` §4.
 - Gen 4 party-icon palette index table not located (icons use a PokeAPI-intersection workaround).
 - Gen 5 dex-number → form-index mapping for `/a/0/0/4` not located; callers supply the mapping.
 - Platinum script bytecode opcodes not decoded — the largest remaining unknown for story events.
-- 93 of 919 moves have null effects (upstream veekun gap, mostly Gen 8–9). The engine must
-  tolerate null.
+- 92 of 919 moves have null effects (upstream veekun gap, mostly Gen 8–9). The engine must
+  tolerate null. Where a gap actually matters, fill it through `LOCAL_EFFECT_IDS` in
+  `tools/build_species.py` (ids from 20001) and teach the engine table that branches on it —
+  `population-bomb` is the worked example.
 - `mega-design.md` lists Latias/Latios as ORAS; they are **XY** forms.

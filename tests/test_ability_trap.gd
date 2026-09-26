@@ -500,18 +500,29 @@ func test_skill_link_five_hits_in_a_real_battle() -> void:
 		"and it hurts more: %d vs %d" % [int(linked_row["dealt"]), int(plain_row["dealt"])])
 
 
-## Population Bomb is invisible to Skill Link because its data row has no
-## effectId. Recorded, not special-cased.
-func test_population_bomb_is_a_known_data_gap() -> void:
+## Population Bomb: ten hits, and Skill Link is what guarantees them.
+##
+## It used to be invisible here -- veekun ships no `effect_id` for the move, so its
+## data row read as ordinary single-hit damage. tools/build_species.py now assigns
+## the project-local id 20001 (LOCAL_EFFECT_IDS) and both hit-count tables carry it.
+## Ten attempts either way; without Skill Link each one rolls accuracy and the hit
+## loop stops at the first miss, which is the whole difference the ability makes.
+func test_population_bomb_hits_ten_times_with_skill_link() -> void:
 	var move := real_move("population-bomb")
 	if move.is_empty():
 		pending("data/moves.json has no population-bomb row")
 		return
+	eq(int(move.get("effectId", 0)), 20001, "the data row carries the local effect id")
+
+	var plain := fixture("MAUSHOLD", ["normal"], 50, FAST, [])
+	var natural := MultiHit.plan(plain, move, null)
+	eq(int(natural["hits"]), 10, "ten hits on its own")
+	is_false(bool(natural["single_accuracy"]), "but every hit rolls accuracy")
+
 	var cloyster := fixture("CLOYSTER", ["water", "ice"], 50, FAST, [], {"ability": "skill-link"})
-	if int(MultiHit.plan(cloyster, move, null)["hits"]) == 1:
-		pending("population-bomb has effectId null in data/moves.json, so it hits once")
-	else:
-		eq(int(MultiHit.plan(cloyster, move, null)["hits"]), 10, "ten hits once the row is fixed")
+	var linked := MultiHit.plan(cloyster, move, null)
+	eq(int(linked["hits"]), 10, "still ten with Skill Link")
+	is_true(bool(linked["single_accuracy"]), "and now one roll covers all ten")
 
 
 # ==========================================================================

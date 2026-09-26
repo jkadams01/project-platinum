@@ -59,6 +59,44 @@ EGG_RENAME = {
     'indeterminate': 'amorphous', 'no-eggs': 'undiscovered',
 }
 
+# Post-generator corrections to abilities.json, applied HERE so that rerunning this
+# script is idempotent. Without this table a rebuild silently reverts them and the
+# committed data file loses information -- which is exactly what happened once.
+#
+# `hook` is documentation: no code reads it (docs/research/ability-implementation.md
+# section 4). `tier` is the one that means something -- it records what the engine
+# actually implements. The 14 below are the Mega-critical abilities now written in
+# src/battle/abilities/, so they are no longer tier 3 / hook `none`.
+ABILITY_HOOK_OVERRIDES = {
+    'shadow-tag':      ('onSwitchAttempt', 1),
+    'steadfast':       ('onFlinch', 1),
+    'skill-link':      ('onMultiHitCount', 1),
+    'parental-bond':   ('onMultiHitCount', 1),
+    'delta-stream':    ('onFieldEnter', 1),
+    'stalwart':        ('onRedirect', 2),
+    'unseen-fist':     ('onProtectCheck', 1),
+    'piercing-drill':  ('onProtectCheck', 1),
+    'dragonize':       ('onModifyMoveType', 1),
+    'mega-sol':        ('onWeatherView', 1),
+    'spicy-spray':     ('onHitTaken', 1),
+    'eelevate':        ('onTypeImmunity', 1),
+    'fire-mane':       ('onDamageCalc', 1),
+    'aura-guard':      ('onDamageCalc', 1),
+}
+
+# veekun's `ability_prose` is outdated or truncated for these three.
+ABILITY_TEXT_OVERRIDES = {
+    # veekun still carries Gen 6's "half power"; it is a quarter from Gen 7 on
+    'parental-bond':
+        "Lets the bearer hit twice with damaging moves.  The second hit deals a quarter of the damage.",
+    # veekun's row stops mid-sentence
+    'piercing-drill':
+        "When the Pok\u00e9mon uses contact moves, it can hit even targets that are protecting themselves, dealing 1/4 of the damage it would otherwise deal.",
+    # veekun paraphrases; this states the actual multiplier
+    'fire-mane':
+        "When the Pok\u00e9mon uses a Fire-type move, its Attack or Sp. Atk is multiplied by 1.5.",
+}
+
 # Ability -> engine hook, grouped by the hook the turn pipeline actually needs
 # (docs/research/species-data.md section 9). Order matters: first group wins for the
 # handful of abilities that appear twice.
@@ -381,12 +419,37 @@ flags_by_move = defaultdict(list)
 for r in load('move_flag_map'):
     flags_by_move[num(r['move_id'])].append(FLAG[num(r['move_flag_id'])])
 
+# The Gen 9 effect-id gap. 93 moves in the veekun snapshot carry an EMPTY
+# `effect_id`, and the engine branches on `effectId` and never on the effect
+# string (multi_hit.gd, skill-link.gd), so those moves read as ordinary
+# single-hit damage. This table fills in the ones whose behaviour the engine
+# actually implements; the rest stay null on purpose.
+#
+# Ids start at 20001, deliberately clear of veekun's own space -- the highest
+# real effect_id is 10006 (the Colosseum/XD shadow effects), so nothing upstream
+# can ever collide with these.
+#
+#   20001  population-bomb -- hits up to 10 times, accuracy rolled per hit and
+#          the move stops at the first miss. Skill Link takes it to a guaranteed
+#          10. https://bulbapedia.bulbagarden.net/wiki/Population_Bomb_(move)
+LOCAL_EFFECT_IDS = {
+    'population-bomb': 20001,
+}
+
+# Effect prose for the ids above. veekun has none, and `slugify` runs on the
+# upstream text, so these are written already in the emitted slug form.
+LOCAL_EFFECT_TEXT = {
+    20001: 'hits-up-to-10-times-in-one-turn-checking-accuracy-each-hit',
+}
+
 moves = []
 for r in load('moves'):
     mid = num(r['id'])
     if mid > 10000:  # Colosseum/XD shadow moves
         continue
     eid = num(r['effect_id'])
+    if eid is None:
+        eid = LOCAL_EFFECT_IDS.get(r['identifier'])
     moves.append({
         'id': mid,
         'name': MOVE_NAME.get(mid, r['identifier']),
@@ -402,7 +465,7 @@ for r in load('moves'):
         'pp': num(r['pp']),
         'priority': num(r['priority'], 0),
         'target': TARGET[num(r['target_id'])],
-        'effect': slugify(EFFECT_TEXT.get(eid)),
+        'effect': slugify(EFFECT_TEXT.get(eid)) or LOCAL_EFFECT_TEXT.get(eid),
         'effectId': eid,
         'effectChance': num(r['effect_chance']),
         'flags': sorted(flags_by_move.get(mid, [])),
@@ -424,13 +487,15 @@ for r in load('abilities'):
         continue
     aid = num(r['id'])
     slug = r['identifier']
+    hook, tier = ABILITY_HOOK_OVERRIDES.get(
+        slug, (hook_of.get(slug, 'none'), tier_of.get(slug, 3)))
     abilities.append({
         'id': aid,
         'name': ABILITY_NAME.get(aid, slug),
         'slug': slug,  # species.abilities / hiddenAbility reference this, not `name`
-        'hook': hook_of.get(slug, 'none'),
-        'text': ABILITY_TEXT.get(aid, ''),
-        'tier': tier_of.get(slug, 3),
+        'hook': hook,
+        'text': ABILITY_TEXT_OVERRIDES.get(slug, ABILITY_TEXT.get(aid, '')),
+        'tier': tier,
     })
 abilities.sort(key=lambda a: a['id'])
 ability_slugs = {r['identifier'] for r in load('abilities') if r['is_main_series'] == '1'}
@@ -498,6 +563,15 @@ unknown_ab = sorted({a for s in species_list for a in s['abilities']} |
                     - ability_slugs)
 unknown_ab = [a for a in unknown_ab if a not in ability_slugs]
 check('every species ability resolves to abilities.json', not unknown_ab, str(unknown_ab[:5]))
+
+# A typo in either override table would otherwise be invisible: the entry simply
+# never applies and the rebuild quietly reverts the correction.
+bad_ovr = sorted((set(ABILITY_HOOK_OVERRIDES) | set(ABILITY_TEXT_OVERRIDES)) - ability_slugs)
+check('every ability override slug is a real ability', not bad_ovr, str(bad_ovr))
+
+# The local move-effect ids must land on real moves, for the same reason.
+bad_eff = sorted(set(LOCAL_EFFECT_IDS) - move_slugs)
+check('every local move-effect slug is a real move', not bad_eff, str(bad_eff))
 
 check('typechart is 18x18',
       len(typechart) == 18 and all(len(v) == 18 for v in typechart.values()),
