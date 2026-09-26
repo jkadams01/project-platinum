@@ -510,6 +510,22 @@ for r in load('type_efficacy'):
 # ------------------------------------------------------------------- output
 species_list = [species[i] for i in sorted(species)]
 
+# The evolution rework is part of the build, not a manual step afterwards.
+#
+# 73 of the 500 veekun evolution edges cannot be performed in a single-player game
+# with no clock, no trading and no Alola/Galar locations. `fix_evolutions.py` owns
+# the owner-approved replacement table (docs/research/evolution-audit.md section 4)
+# and is idempotent. It used to be run BY HAND after this script, which made every
+# rebuild silently revert it -- the same trap `ABILITY_HOOK_OVERRIDES` above exists
+# to close. Applying it here means the emitted species.json is correct the moment
+# it is written, and `python tools/fix_evolutions.py` afterwards reports
+# "already applied" rather than finding 73 things to do again.
+sys.path.insert(0, os.path.join(ROOT, 'tools'))
+import fix_evolutions                                       # noqa: E402
+_evo_changed, _evo_skipped, _evo_errors = fix_evolutions.apply_table(
+    species_list, verbose=False)
+_evo_impossible = fix_evolutions.audit(species_list)
+
 os.makedirs(OUT, exist_ok=True)
 
 
@@ -572,6 +588,14 @@ check('every ability override slug is a real ability', not bad_ovr, str(bad_ovr)
 # The local move-effect ids must land on real moves, for the same reason.
 bad_eff = sorted(set(LOCAL_EFFECT_IDS) - move_slugs)
 check('every local move-effect slug is a real move', not bad_eff, str(bad_eff))
+
+# The evolution rework, applied above. A row of the design table that stops
+# matching the veekun data (an upstream change, a dedupe flipping a route) must
+# fail the build, not quietly leave an unperformable evolution in the game.
+check('the evolution design table applied cleanly', not _evo_errors,
+      '; '.join(_evo_errors[:3]))
+check('no impossible evolution survives', not _evo_impossible,
+      str([(r[1], r[3]) for r in _evo_impossible[:5]]))
 
 check('typechart is 18x18',
       len(typechart) == 18 and all(len(v) == 18 for v in typechart.values()),

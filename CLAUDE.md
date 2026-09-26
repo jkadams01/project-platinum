@@ -87,6 +87,11 @@ tools/run_tests.sh -- --require-data     # pendings become failures
 python tools/build_species.py            # 1025 species, moves, learnsets, abilities, typechart
 python tools/build_megas.py              # 97 Mega forms
 
+# Data audits (read-only; build_species.py already APPLIES the evolution pass)
+python tools/fix_evolutions.py           # the 73-edge rework; --apply, --verify, --markdown
+python tools/check_reachability.py       # who can the player actually get, and why not
+python tools/check_reachability.py --list
+
 # ROM pipelines (gitignored output — needs the ROMs present)
 python tools/build_gamedata.py           # encounters, trainers, bosses, text
 python tools/build_sprites.py            # 1025 front/back/icon sprites
@@ -200,10 +205,18 @@ pass. Grep: `as Packed\w*Array)\.(append|push_back|insert|resize|set)`.
 
 **`tools/build_species.py` must be idempotent, and it silently was not.** Re-running it used
 to revert hand-applied corrections in `data/abilities.json` (14 ability hooks/tiers, 3 effect
-texts) with no warning at all. Post-generator corrections belong in the script's override
-tables — `ABILITY_HOOK_OVERRIDES`, `ABILITY_TEXT_OVERRIDES`, `LOCAL_EFFECT_IDS` — never in the
-emitted JSON. **After any data rebuild:** `git status --short -- data/`, and treat anything you
-did not mean to change as a regression.
+texts) and the whole 73-edge evolution rework in `data/species.json`, with no warning at all.
+Post-generator corrections belong **inside the build**: the override tables
+`ABILITY_HOOK_OVERRIDES`, `ABILITY_TEXT_OVERRIDES`, `LOCAL_EFFECT_IDS`, and the
+`fix_evolutions.apply_table()` call — never in the emitted JSON, and never as a "remember to
+re-run X afterwards" note. **After any data rebuild:** `git status --short -- data/`, and treat
+anything you did not mean to change as a regression.
+
+**An "idempotent" tool is not idempotent until you re-run it and check.** `fix_evolutions.py`
+claimed idempotence in its docstring and was wrong for 25 of its 73 rows: the already-applied
+check sat below the drift diagnostic, so rows that only DROP a condition (keeping
+`method: "level-up"`) reported errors on data that was already correct. Re-run every data pass
+twice before believing it.
 
 **NSBTX palette binding is by NAME, not index.** TEX0 stores textures and palettes in two
 *separately name-sorted* dictionaries, so `palette[i]` is not `texture[i]`'s palette. Bind
@@ -248,6 +261,16 @@ bytes, and the offset is **language-specific** (that value is for the English RO
 - Integration landed: `data/maps/` carries the 9 Twinleaf→Oreburgh maps and `Boot.tscn`,
   `Overworld.tscn` and `Battle.tscn` all exist. The vertical slice boots. Remaining work is
   tracked in `HANDOFF.md` §4.
+- **`data/items.json` has no evolution items.** It holds 93 entries: 92 Mega Stones and the Key
+  Stone. The evolution data references 40 distinct items (23 `item`, 17 `heldItem`) and **none
+  of them exist**, so 23 species that the evolution rework unblocked are still unobtainable and
+  every one of the 67 `use-item` evolutions is dead. `tools/check_reachability.py` reports the
+  exact list (`NEEDS_ITEM`). Required minimum is listed in `docs/research/evolution-audit.md`
+  §6.1. This is the single highest-value data gap left.
+- **Vulpix → Ninetales is an Ice Stone evolution, not Fire Stone** — a veekun per-version-group
+  dedupe artifact where the Alolan row won (evolution-audit.md §6.2). Owner decision: add a Fire
+  Stone route back, or accept it. Meowth → Persian is friendship rather than L28 for the same
+  reason; both its routes are reachable, so that one is harmless.
 - Gen 4 party-icon palette index table not located (icons use a PokeAPI-intersection workaround).
 - Gen 5 dex-number → form-index mapping for `/a/0/0/4` not located; callers supply the mapping.
 - Platinum script bytecode opcodes not decoded — the largest remaining unknown for story events.

@@ -12,7 +12,7 @@ the to-do list.
 
 ```
 tools/run_tests.sh -- --require-data
-→ 9,578 of 9,578 checks pass across the whole suite
+→ 9,648 of 9,648 checks pass across the whole suite
 → 0 failures, 0 pending
 ```
 
@@ -102,6 +102,52 @@ runs without the gitignored table.
 - An unresolvable tag falls back to the placeholder and warns once. A rival with the wrong
   starter is a bug; a rival fight that cannot start is a broken game.
 
+**The evolution rework — APPLIED.** All 73 impossible edges are gone from
+`data/species.json`; `tools/check_reachability.py` is the proof and
+`tests/test_evolutions.gd` is the regression guard (12 tests / 70 checks, 10 of which fail
+against the pre-rework data, so the sweeps are not vacuous).
+
+`tools/fix_evolutions.py` was **not** a stub — the design phase had completed, levels and
+rationale included. Three things were wrong with it, all now fixed:
+
+- **It could not write at all.** `find()` matched edges on `(to, method)` only. Feebas has
+  two routes to Milotic — `level-up beauty=170` and `trade heldItem=prism-scale` — so once
+  the trade edge became `level-up`, the row that deletes the Beauty edge saw two `level-up`
+  edges, reported "2 edges share method level-up", and the pass refused to write *anything*.
+  Matching on the design table's own `old` condition (`find_exact`) makes every row
+  unambiguous and order-independent.
+- **It was not idempotent, for 25 of its 73 rows.** The "already applied" check sat *below*
+  the drift diagnostic, so it was unreachable for every row that only DROPS a dead condition
+  (those keep `method: "level-up"`, so the loose search still found them and compared the
+  already-converted edge against the pre-conversion design row). Re-running reported 25
+  errors on a file that was simply already correct. The check now comes first, and all 73
+  rows report "already applied".
+- **A rebuild reverted it.** Its own docstring said "this script must be re-run after every
+  `build_species.py` run" — the same trap as `abilities.json`. `build_species.py` now imports
+  and applies the table itself before writing, with two assertions (22 total) that fail the
+  build if a row stops matching or an impossible edge survives. Both directions verified
+  byte-stable.
+
+### The headline finding: the rework is correct, and it unblocked 5 species, not 17
+
+`tools/check_reachability.py` walks the obtainability graph over all 1025 species and
+separates the reasons, which is exactly the distinction §4c asked for:
+
+| bucket | before | after | meaning |
+|---|---:|---:|---|
+| obtainable (wild + gift + evolution) | 181 | **186** | |
+| `BROKEN_EVO` | 17 | **0** | reachable parent, unperformable edge — **the bug** |
+| `NEEDS_ITEM` | 11 | **23** | fine edge, but the item does not exist in `items.json` |
+| `NOT_IN_GAME` | 816 | 816 | nothing in its line is obtainable — expected for a slice |
+
+Only **Alakazam, Machamp, Golem, Gengar and Overqwil** became genuinely obtainable. The other
+twelve — Politoed, Scizor, Kingdra, Weavile, Magnezone, Rhyperior, Electivire, Magmortar,
+Gliscor, Probopass, Dusknoir, Sneasler — moved from *impossible* to *needs an item that does
+not exist*, because rule 2 converts trade-with-item into hold-and-level and
+**`data/items.json` contains 93 entries: 92 Mega Stones and the Key Stone, and none of the 40
+items the evolution data references.** Audit §6.1 predicted this exactly. The evolution work
+is complete; the payoff is gated on `items.json`, which is a different owner.
+
 ### Three roster observations — *author to decide, not changed*
 
 1. **`ace` disagrees with the party in Barry r1 and r2.** `barry_r2_route_203` declares its ace
@@ -131,7 +177,7 @@ Three workflows were stopped deliberately. **Their scripts are on disk and re-ru
 |---|---|---|
 | ~~Dynamic rival starter~~ | `…/workflows/scripts/dynamic-rival-starter-wf_a62c6c02-3b4.js` | **Superseded — §4b is done, do not re-run** |
 | Integration | `…/workflows/scripts/platinum-integrate-wf_5b53999c-c91.js` | 3 fixes done, integrator **mostly done** (maps + scenes + UI exist) |
-| Evolutions | `…/workflows/scripts/evolution-rework-wf_1e9f5bac-1a1.js` | Audit **done**, Design started, **nothing applied** |
+| ~~Evolutions~~ | `…/workflows/scripts/evolution-rework-wf_1e9f5bac-1a1.js` | **Superseded — §4c is done, do not re-run** |
 
 Scripts live under
 `C:\Users\James\.claude\projects\C--WINDOWS-system32\a73f5b2d-0c80-46b4-8c4a-4b379a448cba\workflows\scripts\`
@@ -140,8 +186,9 @@ Scripts live under
 
 ## 4. Outstanding work, in priority order
 
-**Next up is (c), the evolution rework** — (a), (b) and the `population-bomb` half of (d) are
-done.
+**(a), (b), (c) and the `population-bomb` half of (d) are done.** What is left is (d)'s
+remaining gaps plus the one thing §4c surfaced that is not an evolution problem:
+**`data/items.json` needs the evolution items** or 23 species stay unobtainable. See §2.
 
 
 ### a) ~~Fix the Roark reward hookup~~ — DONE 2026-09-26, see §2
@@ -152,29 +199,22 @@ Data tagging (`tools/tag_dynamic_starter.py`) had already run; the engine side, 
 round-trip, the ability/move re-resolution and 21 tests all landed. Three roster observations
 are listed in §2 for the owner to rule on.
 
-### c) Apply the evolution rework — audit done, nothing applied
+### c) ~~Apply the evolution rework~~ — DONE 2026-09-26, see §2
 
-`docs/research/evolution-audit.md` exists. Of **500 evolutions, 73 are impossible**:
+All 73 edges converted or deleted, applied as part of `build_species.py`, proved by
+`tools/check_reachability.py` and guarded by `tests/test_evolutions.gd`. `fix_evolutions.py`
+was not a stub; it had three defects that stopped it writing, stopped it being idempotent, and
+let a rebuild revert it. All fixed. **The follow-on is `data/items.json`** — 23 species are now
+blocked only by the 40 missing evolution items.
 
-| Category | Count |
-|---|---|
-| wacky (hardware/mechanics we don't have) | 43 |
-| trade-with-item | 16 |
-| trade | 8 |
-| other | 4 |
-| trade-for-species (Karrablast ↔ Shelmet) | 2 |
-
-Owner's rules: trade → level up at a level · trade+item → level up **holding that item**
-· wacky → level up. **Evolution stones are NOT impossible and must be left alone.**
-
-Design and apply phases never ran. `tools/fix_evolutions.py` exists but check whether it is
-a stub. Levels must be chosen against the cap curve — an evolution level is an availability
-gate here. Specifically: **Fantina is gym 3 (cap 36) and Mega Evolves Gengar**, so Gengar's
-new evolution level should sit at or below 36 if the player is meant to own one by then.
-
-Deliverable that proves it worked: a **reachability check** over all 1025 species,
-distinguishing "unobtainable because the evolution is impossible" (the bug) from
-"unobtainable because it isn't in this game yet" (expected).
+**Still open, and an authorial call:** the cap-vs-availability check could not be completed.
+An evolution level is an availability gate only relative to *where the line is found*, and
+`data/maps/**` still carries no trainer or encounter placement for the 174 unbuilt areas — the
+same gap that makes the EXP model's segment attribution inferred (see §4d). The levels are
+sane in the absolute (369 levelled edges, max L64, nothing above 100, 20 edges at the new L37
+and 19 at L40, matching the existing curve), but "is Gengar reachable *when* the player is
+meant to have one" is only answerable for the nine built maps today. Gengar specifically was
+checked and is correct: L37 lands it the moment Fantina is beaten and the Gengarite awarded.
 
 ### d) Known smaller gaps
 
@@ -228,8 +268,11 @@ python -c "import json;b=json.load(open('data/rom/bosses.json'));bl=b.get('bosse
 
 git check-ignore -v References/Roms/     # must report ignored
 
-python tools/build_species.py           # 20 assertions; must pass
+python tools/build_species.py           # 22 assertions; must pass
 git status --short -- data/             # and must leave data/ CLEAN (rebuild is idempotent)
+
+python tools/fix_evolutions.py          # expect "already-applied 73, errors 0"
+python tools/check_reachability.py      # expect BROKEN_EVO 0 and RESULT: PASS
 ```
 
 **Everything through 2026-09-26 is committed and pushed** on
