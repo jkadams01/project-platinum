@@ -473,16 +473,27 @@ func _activate_field(field: String) -> void:
 			if pool.is_empty():
 				_note("%s has no legal moves in the data." % Spec.species_name(species))
 				return
-			var moves: Array = [{"id": "", "label": "(empty)", "note": ""}]
+			var moves: Array = [{"id": "", "label": "(empty)", "note": "",
+				"detail": "", "effect": "Leave this slot empty."}]
 			for slug: String in pool:
-				moves.append({"id": slug, "label": UI.pretty(slug), "note": _move_note(slug)})
+				var m: Dictionary = _move_data(slug)
+				moves.append({
+					"id": slug,
+					"label": UI.pretty(slug),
+					"note": move_note(m),
+					"detail": move_stats_line(m),
+					"effect": move_effect_text(m),
+					# So a learnset narrows on "physical" as well as on "rock".
+					"search": "%s %s" % [String(m.get("type", "")),
+						String(m.get("category", ""))],
+				})
 			var current: Array = slot.get("moves", [])
 			# The purpose is the FIELD NAME, not the index. Encoding the 0-based
 			# index here and decoding it with the 1-based field rule in _on_picked
 			# is an off-by-one that silently dropped MOVE 1 and made MOVE 2-4 each
 			# write to the slot above. One convention, no arithmetic.
 			_open_pick(field, {"title": "MOVE %d" % (move_index + 1),
-				"items": moves,
+				"items": moves, "details": true,
 				"selected": String(current[move_index]) if move_index < current.size() else ""})
 
 
@@ -493,17 +504,78 @@ func _nature_note(nature: String) -> String:
 	return "+%s -%s" % [String(pair[0]).to_upper(), String(pair[1]).to_upper()]
 
 
-func _move_note(slug: String) -> String:
+func _move_data(slug: String) -> Dictionary:
 	var reg := Deps.registry()
-	if reg == null:
-		return ""
-	var m: Dictionary = reg.get_move_by_name(slug)
+	return {} if reg == null else reg.get_move_by_name(slug)
+
+
+## The narrow right-hand column: type, power and category, for scanning a list.
+## "ROCK 75 PHY". Physical versus special decides which attacking stat is used, so
+## it belongs on the row and not only in the detail line.
+static func move_note(m: Dictionary) -> String:
 	if m.is_empty():
 		return ""
 	var power: Variant = m.get("power", null)
-	return "%s %s" % [
+	return "%s %s %s" % [
 		String(m.get("type", "?")).substr(0, 4).to_upper(),
-		"-" if power == null or int(power) <= 0 else str(int(power))]
+		"-" if power == null or int(power) <= 0 else str(int(power)),
+		String(m.get("category", "status")).substr(0, 3).to_upper()]
+
+
+## The detail line under the list: everything that decides whether a move is worth
+## a slot, in the order it gets asked about.
+static func move_stats_line(m: Dictionary) -> String:
+	if m.is_empty():
+		return ""
+	var power: Variant = m.get("power", null)
+	var acc: Variant = m.get("accuracy", null)
+	var parts := PackedStringArray([
+		String(m.get("category", "status")).to_upper(),
+		"PWR %s" % ("-" if power == null or int(power) <= 0 else str(int(power))),
+		# DATA_CONTRACT 2: a null accuracy never misses, which is not the same as
+		# an accuracy of 0 and must not be drawn as one.
+		"ACC %s" % ("always" if acc == null else str(int(acc))),
+		"PP %d" % int(m.get("pp", 0)),
+	])
+	var priority := int(m.get("priority", 0))
+	if priority != 0:
+		parts.append("PRI %+d" % priority)
+	return String("   ").join(parts)
+
+
+## The effect, turned back into a sentence.
+##
+## `data/moves.json` stores it slugified -- `lowers-the-target-s-defense-by-two-stages`
+## -- so the possessive apostrophe survives only as a lone `s` between hyphens, in
+## 246 of the 919 rows. Rejoining without putting it back reads as a typo.
+##
+## 92 moves have no effect text at all (an upstream veekun gap, mostly Gen 8-9).
+## That is stated rather than left blank: a blank line reads as a UI fault, and the
+## gap is real and worth seeing.
+static func move_effect_text(m: Dictionary) -> String:
+	if m.is_empty():
+		return ""
+	var slug := String(m.get("effect", "")) if m.get("effect", null) != null else ""
+	if slug.is_empty():
+		return "(no effect text for this move in the data)"
+	var out := ""
+	for word: String in slug.split("-"):
+		if word == "s" and not out.is_empty():
+			out += "'s"
+		else:
+			out += ("" if out.is_empty() else " ") + word
+	out = out.substr(0, 1).to_upper() + out.substr(1)
+
+	var chance := int(m.get("effectChance", 0)) if m.get("effectChance", null) != null else 0
+	# A 100% "chance" is not a chance; the sentence already covers it.
+	if chance > 0 and chance < 100:
+		out = "%d%% %s" % [chance, out.substr(0, 1).to_lower() + out.substr(1)]
+	out += "."
+	if PackedStringArray(m.get("flags", [])).has("contact"):
+		# Contact is the flag the ability layer actually branches on (Rough Skin,
+		# Aura Guard, Unseen Fist), so it is worth a word.
+		out += "  Makes contact."
+	return out
 
 
 func _species_items() -> Array:

@@ -12,10 +12,18 @@ extends Control
 ## filter. The footer says so on screen, because a control scheme that differs
 ## from the rest of the game has to announce itself.
 ##
-## ITEMS ARE `{id, label, note, search}`. `id` is whatever the caller wants back
-## -- an int dex number, a move slug, an option name -- and travels through
-## untouched; `label` and `note` are the two columns; `search` is optional hidden
-## text that is matched but never drawn. Nothing in here interprets any of them.
+## ITEMS ARE `{id, label, note, search, detail, effect}`. `id` is whatever the
+## caller wants back -- an int dex number, a move slug, an option name -- and
+## travels through untouched; `label` and `note` are the two columns; `search` is
+## optional hidden text that is matched but never drawn; `detail` and `effect` are
+## shown UNDER the list for the highlighted row only. Nothing in here interprets
+## any of them.
+##
+## DETAIL COSTS ROWS, SO IT IS OPT IN. A picker that passes `details: true` gives
+## up three of its eleven rows to a stat line and three wrapped lines of prose.
+## That is the right trade for a move list, where the difference between two rows
+## is power and category rather than the name, and the wrong one for a species
+## list, where the name is the whole answer.
 ##
 ## THE FILTER MATCHES id, label, note AND search, case-insensitively, as a
 ## substring. The rule for a caller is: IF YOU CAN SEE IT, YOU CAN FILTER ON IT --
@@ -30,6 +38,8 @@ const UI := preload("res://src/ui/ui_kit.gd")
 
 ## Rows drawn at once. 11 at a 11px pitch fills the panel exactly.
 const ROWS := 11
+## Rows left when a detail block is shown underneath (see the header).
+const ROWS_WITH_DETAIL := 8
 const ROW_PITCH := 11.0
 const PANEL := Rect2(6, 6, 244, 180)
 
@@ -44,7 +54,11 @@ var _title: Label = null
 var _search: Label = null
 var _footer: Label = null
 var _empty: Label = null
+var _detail: Label = null
+var _effect: Label = null
 var _searchable: bool = true
+var _details: bool = false
+var _rows_shown: int = ROWS
 
 
 func _ready() -> void:
@@ -68,11 +82,16 @@ func _ready() -> void:
 	for i in ROWS:
 		var y := 30.0 + float(i) * ROW_PITCH
 		_rows.append({
-			"label": UI.label(frame, "", Vector2(8, y), UI.FONT, UI.TEXT, 156),
-			"note": UI.label(frame, "", Vector2(166, y), UI.FONT, UI.TEXT_DIM, 70,
+			# The note column is wide enough for "ROCK 75 PHY"; the label has far
+			# more room than the longest species or move name needs.
+			"label": UI.label(frame, "", Vector2(8, y), UI.FONT, UI.TEXT, 140),
+			"note": UI.label(frame, "", Vector2(150, y), UI.FONT, UI.TEXT_DIM, 86,
 				HORIZONTAL_ALIGNMENT_RIGHT),
 		})
 	_empty = UI.label(frame, "", Vector2(8, 30), UI.FONT, UI.HP_WARN, 232)
+	# The detail block sits where rows 9-11 would be, and is hidden unless asked for.
+	_detail = UI.label(frame, "", Vector2(8, 121), UI.FONT, UI.ACCENT, 232)
+	_effect = UI.wrapped(frame, "", Rect2(8, 133, 232, 30), UI.FONT, UI.TEXT_DIM)
 	_footer = UI.label(frame, "", Vector2(6, 166), UI.FONT, UI.TEXT_DIM, 232)
 	visible = false
 
@@ -87,6 +106,10 @@ func _ready() -> void:
 func open(config: Dictionary) -> void:
 	items = (config.get("items", []) as Array).duplicate()
 	_searchable = bool(config.get("searchable", true))
+	_details = bool(config.get("details", false))
+	_rows_shown = ROWS_WITH_DETAIL if _details else ROWS
+	_detail.visible = _details
+	_effect.visible = _details
 	query = ""
 	_title.text = String(config.get("title", ""))
 	_footer.text = String(config.get("footer",
@@ -193,16 +216,16 @@ func _refresh() -> void:
 	# Keep the cursor inside the window, scrolling by one row at the edges.
 	if index < _top:
 		_top = index
-	elif index >= _top + ROWS:
-		_top = index - ROWS + 1
-	_top = clampi(_top, 0, maxi(_view.size() - ROWS, 0))
+	elif index >= _top + _rows_shown:
+		_top = index - _rows_shown + 1
+	_top = clampi(_top, 0, maxi(_view.size() - _rows_shown, 0))
 
 	for i in ROWS:
 		var row: Dictionary = _rows[i]
 		var label: Label = row["label"]
 		var note: Label = row["note"]
 		var at := _top + i
-		if at >= _view.size():
+		if i >= _rows_shown or at >= _view.size():
 			label.text = ""
 			note.text = ""
 			continue
@@ -213,6 +236,10 @@ func _refresh() -> void:
 		note.text = String(item.get("note", ""))
 
 	_empty.text = "" if not _view.is_empty() else "nothing matches that."
+	if _details:
+		var item := current()
+		_detail.text = String(item.get("detail", ""))
+		_effect.text = String(item.get("effect", ""))
 	if _searchable:
 		_search.text = "find: %s_   %d/%d" % [query, _view.size(), items.size()]
 	elif _view.size() > ROWS:

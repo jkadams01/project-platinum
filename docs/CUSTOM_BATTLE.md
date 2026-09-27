@@ -45,8 +45,28 @@ all find Garchomp — and `dragon` on its own lists every Dragon-type in the gam
 shows all three: `445 Garchomp` with `DRA/GRO` in the right-hand column. A dual type is
 abbreviated to fit the column, but the filter still matches the full name you typed.
 
-The rule for every picker is the same: **if you can see it, you can filter on it.** Moves
-show their type and power, so `rock` narrows a learnset to Rock moves.
+The rule for every picker is the same: **if you can see it, you can filter on it.** Move
+rows show type, power and category (`ROCK 75 PHY`), so a learnset narrows on `rock` and on
+`physical` alike.
+
+### What a move actually does
+
+The move picker gives up three of its rows to a detail block for whatever is highlighted:
+
+```
+> Rock Slide                                ROCK 75 PHY
+
+  PHYSICAL   PWR 75   ACC 90   PP 10
+  30% chance to make the target flinch.
+```
+
+`ACC always` means the move cannot miss (DATA_CONTRACT 2: a null accuracy never misses --
+which is not the same as an accuracy of zero). `PRI +2` appears only when a move has
+non-zero priority, and `Makes contact.` only when it does, because contact is the flag the
+ability layer branches on (Rough Skin, Aura Guard, Unseen Fist).
+
+92 of the 919 moves have no effect text at all -- an upstream veekun gap, mostly Gen 8-9.
+Those say so rather than showing an empty line: the hole is real and worth seeing.
 
 ---
 

@@ -550,6 +550,81 @@ func test_every_move_slot_writes_to_its_own_slot() -> void:
 		"and closes the gap rather than leaving a hole")
 
 
+func test_the_move_picker_explains_what_a_move_does() -> void:
+	if not _have_data():
+		pending("data/moves.json is not built")
+		return
+
+	var slide: Dictionary = DataRegistry.get_move_by_name("rock-slide")
+	eq(TeamBuilder.move_note(slide), "ROCK 75 PHY",
+		"the row shows type, power and category")
+	var line := TeamBuilder.move_stats_line(slide)
+	is_true(line.begins_with("PHYSICAL"), "the detail line leads with the category: %s" % line)
+	is_true(line.contains("PWR 75"), "power: %s" % line)
+	is_true(line.contains("ACC 90"), "accuracy: %s" % line)
+	is_true(line.contains("PP 10"), "PP: %s" % line)
+	is_false(line.contains("PRI"), "and says nothing about priority when it is 0")
+	eq(TeamBuilder.move_effect_text(slide), "30% chance to make the target flinch.",
+		"the effect reads as a sentence, with the chance in front")
+
+	# A status move: no power, and DATA_CONTRACT 2 says a null accuracy NEVER
+	# MISSES -- drawing that as 0 would be the opposite of the truth.
+	var dance: Dictionary = DataRegistry.get_move_by_name("swords-dance")
+	eq(TeamBuilder.move_note(dance), "NORM - STA", "a status move has no power")
+	is_true(TeamBuilder.move_stats_line(dance).contains("PWR -"), "shown as a dash")
+	# Swords Dance has an accuracy in the data; Aerial Ace is the null case.
+	var ace: Dictionary = DataRegistry.get_move_by_name("aerial-ace")
+	is_true(TeamBuilder.move_stats_line(ace).contains("ACC always"),
+		"null accuracy is 'always', not 0: %s" % TeamBuilder.move_stats_line(ace))
+
+	# 246 of 919 effect strings carry a possessive that slugification flattened to
+	# a lone "s". Rejoining without restoring it reads as a typo.
+	eq(TeamBuilder.move_effect_text(dance), "Raises the user's attack by two stages.",
+		"the possessive apostrophe comes back")
+
+	# Priority and contact are the two things that change how a turn plays out.
+	var speed: Dictionary = DataRegistry.get_move_by_name("extreme-speed")
+	is_true(TeamBuilder.move_stats_line(speed).contains("PRI +2"),
+		"priority is shown with its sign: %s" % TeamBuilder.move_stats_line(speed))
+	is_true(TeamBuilder.move_effect_text(speed).contains("Makes contact"),
+		"and contact, which is what the ability layer branches on")
+
+	# 92 moves have no effect text (an upstream veekun gap). Say so; a blank line
+	# reads as a broken UI rather than as a real hole in the data.
+	var gap := TeamBuilder.move_effect_text({"effect": null, "pp": 5})
+	is_true(gap.contains("no effect text"), "a missing effect is stated: '%s'" % gap)
+	eq(TeamBuilder.move_effect_text({}), "", "and an unknown move contributes nothing")
+
+
+func test_the_move_picker_shows_the_detail_of_the_highlighted_row() -> void:
+	if not _have_data():
+		pending("data/moves.json is not built")
+		return
+	var builder := TeamBuilder.new()
+	builder.spec = _duel_spec(GARCHOMP, MAGIKARP, 50)
+	_adopt(builder)
+	builder.debug_focus(0, 0)
+	builder.debug_edit_field("move1")
+	var picker: Control = builder._picker
+	is_true(picker.is_open(), "the move picker opened")
+
+	eq(picker.filter("rock slide"), 1, "one match")
+	var row: Dictionary = picker.current()
+	is_true(String(row.get("detail", "")).contains("PHYSICAL"),
+		"the highlighted row carries its stat line")
+	is_true(String(row.get("effect", "")).contains("flinch"),
+		"and its effect text")
+
+	# Category is searchable because it is on the row.
+	var physical: int = picker.filter("physical")
+	is_true(physical > 10, "filtering by category works, got %d" % physical)
+	is_true(picker.filter("special") > 0, "both ways")
+
+	# Detail costs rows, and the list has to stay usable.
+	is_true(picker.ROWS_WITH_DETAIL >= 8,
+		"a detail picker still shows %d rows" % picker.ROWS_WITH_DETAIL)
+
+
 func test_builder_refuses_an_unplayable_start() -> void:
 	if not _have_data():
 		pending("data/species.json is not built")
