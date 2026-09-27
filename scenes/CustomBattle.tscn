@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3]
+
+; Custom Battle mode. The same two-slot shape scenes/Boot.tscn uses, and for the
+; same reason (src/autoload/scene_router.gd's header): WorldHolder keeps the team
+; builder alive for the whole session and is SUSPENDED while a battle runs in
+; BattleHolder, so the twelve slots and the pinned seed survive a fight with no
+; save/restore code.
+;
+; WorldHolder is a Control, not a Node2D as in Boot.tscn, because the thing it
+; holds is UI -- the router hides a CanvasItem when it suspends it, which is
+; exactly what a full-screen builder wants.
+
+[ext_resource type="Script" path="res://src/custom/custom_battle.gd" id="1_custom"]
+
+[node name="CustomBattle" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_custom")
+
+[node name="WorldHolder" type="Control" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BattleHolder" type="Node" parent="."]
+
+[node name="UILayer" type="CanvasLayer" parent="."]
+layer = 10

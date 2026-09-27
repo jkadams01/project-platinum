@@ -491,3 +491,59 @@ The one event this contract names explicitly, because the whole Mega system hang
 * **Ordering guarantee:** Fantina is the first boss with a `megaForm`, so the player *sees* a
   Mega Evolution in the fight that earns them the Ring. Nothing before gym 3 Mega Evolves, on
   either side.
+
+---
+
+## 13. `EventBus.battle_started` — the battle payload
+
+The Dictionary `SceneRouter.enter_battle()` is given, echoed on
+`EventBus.battle_started`, and handed to `BattleEngine.start()` and the battle scene.
+It is the same shape for a wild encounter, an ordinary trainer, a boss and a custom
+battle — nothing downstream branches on which produced it.
+
+```jsonc
+{
+  "kind": "wild",                 // wild | trainer
+  "party":    [ /* mon */ ],      // side 0, the player
+  "opponent": [ /* mon */ ],      // side 1 (a single Dictionary is accepted too)
+  "trainer": {                    // absent for a wild battle
+    "name": "Roark", "class": "gym-leader",
+    "ai": 7,                      // 0-10, src/battle/ai.gd; >= 3 switches on a bad matchup
+    "prizeMoney": 2160,           // paid into GameState.add_money() on a win
+    "keyStone": true              // may this side Mega Evolve at all (defaults true)
+  },
+  "cap": 18,                      // level cap for EXP; SceneRouter fills it from GameState
+  "seed": 1234,                   // one RNG owns every roll; same seed + same actions = same battle
+  "weather": "",                  // optional starting weather
+  "playerName": "Lucas",
+  "boss": "roark",                // optional; travels back out in the result
+
+  // --- optional, default to the campaign behaviour when absent ---------------
+  "playerKeyStone": true,         // overrides GameState.has_key_stone() for side 0
+  "awardExp": false,              // false: no EXP is computed at all
+  "autoPlayer": false,            // true: the screen plays side 0 from ai.gd (watch mode)
+  "custom": true                  // marks a Custom Battle; nothing in the engine reads it
+}
+```
+
+**`playerKeyStone`** (§11.2). The player Key Stone normally comes from
+`GameState.has_key_stone()`. An explicit value wins, which is how Custom Battle mode
+enables or denies Mega Evolution **without granting the save a Key Stone**. Omit it and
+campaign behaviour is exactly as it was. The opponent equivalent is `trainer.keyStone`,
+which already existed.
+
+**`awardExp`**. `false` makes `BattleEngine._award_exp_for()` return immediately. This is
+*not* the same as capping EXP to zero: a Pokémon at the cap still produces
+`"<NAME> is at the level cap!"` (§8), which is a lie in a fight that has no progression in
+it. A custom battle wants the teams it was handed, at the levels it was handed them, so a
+mid-battle level-up would make a rematch not a rematch.
+
+**`autoPlayer`**. The battle screen submits an *empty* action for side 0, and
+`resolve_turn()` fills it in from `ai.gd` — the same fallback that produces Struggle. Both
+sides then play themselves while the log still pages one line at a time.
+
+**There is no `format` field.** Double, triple and rotation battles are not implemented:
+`sides[side]["active"]` is a single int and `damage.gd` targets `active(1 - side)`. Custom
+Battle mode carries the choice in its own spec and **refuses to start** a non-single
+matchup rather than silently playing it as a single. When multi-slot support lands, the
+field belongs here first.

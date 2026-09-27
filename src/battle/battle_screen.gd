@@ -49,6 +49,12 @@ var engine: RefCounted = null
 var state: State = State.LEAD_IN
 ## When true the screen never calls SceneRouter (tests drive it in isolation).
 var standalone: bool = false
+## WATCH MODE (`autoPlayer` in the setup payload, DATA_CONTRACT 13). The screen
+## submits an EMPTY action for the player, which `resolve_turn()` fills in from
+## `ai.gd` -- so both sides play themselves and the log still pages one line at a
+## time. Custom Battle mode uses it to judge pacing and AI quality without
+## playing every turn by hand.
+var auto_player: bool = false
 
 var _setup: Dictionary = {}
 var _hud: Control = null
@@ -62,6 +68,12 @@ var _log: PackedStringArray = PackedStringArray()
 var _foe_sprite: TextureRect = null
 var _own_sprite: TextureRect = null
 var _exited: bool = false
+## Consecutive auto-resolved turns that produced no log line at all. A turn always
+## logs something in practice, but "resolve, log nothing, return to ACTION" would
+## recurse without bound in watch mode, so it is counted rather than trusted.
+var _auto_turns: int = 0
+
+const AUTO_TURN_LIMIT := 8
 
 
 func _ready() -> void:
@@ -127,6 +139,7 @@ func _make_sprite(node_name: String, pos: Vector2) -> TextureRect:
 ## the order between them is not something this file should depend on.
 func setup(data: Dictionary) -> void:
 	_setup = data.duplicate(true)
+	auto_player = bool(data.get("autoPlayer", false))
 	engine = BattleEngineScript.new()
 	engine.start(_setup)
 	if is_inside_tree() and _hud != null:
@@ -199,6 +212,8 @@ func _enter_state(next: State) -> void:
 			_box.close()
 			_party.open(true)
 	_hud.refresh()
+	if auto_player and not _exited:
+		_auto_advance(next)
 
 
 func _refresh_menu() -> void:
@@ -217,6 +232,7 @@ func _show_next_line() -> void:
 		_log.remove_at(0)
 		_box.show_lines(PackedStringArray([line]))
 		_hud.refresh()
+		_auto_turns = 0
 		return
 	_box.close()
 	if engine.over:
@@ -261,6 +277,33 @@ func _leave() -> void:
 		return
 	# Frees this node. Nothing below this line may touch the tree.
 	SceneRouter.exit_battle(r)
+
+
+## Watch mode: take the decision the player would have taken.
+##
+## An EMPTY action is the whole trick -- `resolve_turn()` calls `auto_action()` for
+## any side that submitted nothing, so the AI plays side 0 through the identical
+## code path the buttons use. A forced replacement cannot go that way (the engine
+## refuses to advance while a side owes one), so it is chosen here.
+func _auto_advance(state_now: State) -> void:
+	match state_now:
+		State.ACTION:
+			_auto_turns += 1
+			if _auto_turns > AUTO_TURN_LIMIT:
+				auto_player = false
+				_box.show_lines(PackedStringArray([
+					"Watch mode stopped: the turn produced no messages."]))
+				Log.error("watch mode made %d turns with an empty log; stopping"
+					% AUTO_TURN_LIMIT, "BattleScreen")
+				return
+			_resolve({})
+		State.FORCED_SWITCH:
+			var party: Array = engine.party_of(0)
+			var current := int((engine.sides[0] as Dictionary)["active"])
+			for i in party.size():
+				if i != current and not Stats.is_fainted(party[i]):
+					_on_party_picked(i)
+					return
 
 
 # --------------------------------------------------------------------------

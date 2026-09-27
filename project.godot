@@ -7,7 +7,7 @@ config_version=5
 
 config/name="Project Platinum"
 config/description="A Pokémon Platinum remake with Gen 5 visuals, boss level caps, HM-free traversal, and species from Generations 1-9."
-run/main_scene="res://scenes/Boot.tscn"
+run/main_scene="res://scenes/Title.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://assets/ui/icon.svg"
 

@@ -77,6 +77,12 @@ var kind: String = "wild"
 var weather: String = ""
 var weather_turns: int = 0
 var level_cap: int = -1           ## -1 = ask GameState every time
+## Overrides `GameState.has_key_stone()` for side 0 when not null, so a fight
+## can be given (or denied) Mega Evolution without touching the save.
+var player_key_stone: Variant = null
+## False switches EXP off entirely -- not capped to zero, not awarded and
+## discarded: never computed. Custom battles want the teams they were handed.
+var award_exp: bool = true
 var exp_awarded: int = 0
 var money_awarded: int = 0
 var awaiting_switch: int = -1     ## side that must choose a replacement, or -1
@@ -106,6 +112,8 @@ func start(setup: Dictionary) -> void:
 	level_cap = int(setup.get("cap", -1))
 	weather = String(setup.get("weather", ""))
 	rng.seed = int(setup.get("seed", randi()))
+	player_key_stone = setup.get("playerKeyStone", null)
+	award_exp = bool(setup.get("awardExp", true))
 
 	var player_party: Array = setup.get("party", [])
 	var opp: Variant = setup.get("opponent", [])
@@ -228,6 +236,10 @@ func mega_check(mon: Dictionary, side: int = PLAYER) -> Dictionary:
 ## `"keyStone": false`. A WILD Pokemon has no trainer and therefore never Megas.
 func _has_key_stone(side: int) -> bool:
 	if side == PLAYER:
+		# DATA_CONTRACT 13: an explicit `playerKeyStone` wins, which is how a
+		# custom battle enables Megas without granting the save a Key Stone.
+		if player_key_stone != null:
+			return bool(player_key_stone)
 		var state := Deps.state()
 		if state != null and state.has_method("has_key_stone"):
 			return bool(state.has_key_stone())
@@ -1011,6 +1023,12 @@ func _auto_replace(side: int) -> void:
 ## EXP for everything on the player's side that took part. THE CAP LIVES IN
 ## exp.gd -- this only decides who gets paid.
 func _award_exp_for(defeated: Dictionary) -> void:
+	if not award_exp:
+		# Not "capped to zero": Exp.award() would print "<NAME> is at the level
+		# cap!" for every participant, which is a lie in a fight that has no
+		# progression in it at all.
+		_reset_participants()
+		return
 	var party: Array = party_of(PLAYER)
 	var participants: Array = []
 	for idx: int in _participants.keys():

@@ -149,7 +149,7 @@ Open the project folder in Godot to play — once integration lands, see below.
 
 **Not finished**
 
-- **Scene integration** — no `Boot.tscn` or `Battle.tscn`; the game does not boot end to end yet
+- **Sinnoh beyond the vertical slice** — the game boots and plays Twinleaf → Oreburgh; the rest of the region is not authored
 - **Sinnoh maps** — `data/maps/` is empty; the Twinleaf → Oreburgh slice is not authored
 - **UI** — menus, bag, party and Pokédex screens
 - Story events and scripted cutscenes (Platinum's script bytecode is not decoded)
@@ -162,6 +162,7 @@ Open the project folder in Godot to play — once integration lands, see below.
 |---|---|
 | [`CLAUDE.md`](CLAUDE.md) | Working guide — rules, commands, locked decisions, known traps |
 | [`docs/DATA_CONTRACT.md`](docs/DATA_CONTRACT.md) | Authoritative schemas between pipelines and runtime |
+| [`docs/CUSTOM_BATTLE.md`](docs/CUSTOM_BATTLE.md) | Custom Battle mode — controls, legality rules, preset format |
 | [`docs/research/`](docs/research/) | Byte-verified findings on ROM formats, Platinum data, Gen 5 assets, the level curve and Megas |
 
 ---

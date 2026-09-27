@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3]
+
+; The project's main scene (project.godot run/main_scene): the mode select.
+;
+; Two entry points share one engine. CAMPAIGN loads scenes/Boot.tscn, which is
+; unchanged and still the whole campaign integrator; CUSTOM BATTLE loads
+; scenes/CustomBattle.tscn. Keeping them as separate scene roots is what stops
+; the sandbox from touching campaign state -- see src/custom/custom_battle.gd.
+;
+; A bare Control with no children on purpose: src/title.gd builds its labels in
+; code out of src/ui/ui_kit.gd, so there is nothing to import before a headless
+; run can instance it.
+
+[ext_resource type="Script" path="res://src/title.gd" id="1_title"]
+
+[node name="Title" type="Control"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_title")

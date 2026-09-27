@@ -14,6 +14,12 @@ A **Pokémon Platinum remake in Godot 4.7.2** with four headline changes:
 Mega Evolution is the **only** gimmick. Dynamax/Gigantamax, Z-Moves and Terastallization
 are deliberately excluded and must never appear in data or engine code.
 
+**Two modes.** `scenes/Title.tscn` is the main scene and picks between them:
+**CAMPAIGN** (`scenes/Boot.tscn`, unchanged) and **CUSTOM BATTLE**
+(`scenes/CustomBattle.tscn`) — build both teams from any species, then fight. The sandbox
+shares the engine, the data and `scenes/Battle.tscn` and must never write to the campaign
+save; see `docs/CUSTOM_BATTLE.md`.
+
 ---
 
 ## Hard rules
@@ -81,6 +87,7 @@ Verify with `python -c "from PIL import Image; print('ok')"`. Without it you get
 # Godot test suite — exits nonzero on failure
 tools/run_tests.sh
 tools/run_tests.sh -- --filter=battle
+tools/run_tests.sh -- --filter=custom     # Custom Battle mode
 tools/run_tests.sh -- --require-data     # pendings become failures
 
 # Data pipelines (committed output)
@@ -119,6 +126,8 @@ src/
   battle/abilities/   one file per ability + registry.gd
   overworld/  map_loader, player, collision, encounters, traversal, warps
   systems/    level caps, badges
+  custom/     Custom Battle mode: battle_spec (the data model), team_builder, custom_battle
+  title.gd    the mode select (run/main_scene)
 tools/
   rom/        production ROM reader: ndsfs, narc, lz, nitrogfx, nsbtx, rom
   build_*.py  pipelines
@@ -264,6 +273,13 @@ any new Z-A import.
 **Reject the "Champions mega abilities leak."** A widely-reposted Chinese-forum list claiming
 localisation insider access. Not a datamine, and wrong where testable (claims Mega Lucario Z has
 Prankster; the official ability is Aura Guard). Never seed data from it, not even as a placeholder.
+
+**A `--script` entry point compiles BEFORE the autoloads exist.** Anything it `preload`s
+that mentions `Log`, `GameState` or `SceneRouter` by name fails to compile — and the failure
+surfaces far away, as `Nonexistent function 'new_spec' in base 'GDScript'` on a static call
+that is plainly there. The test suite never hits it because `run_tests.gd` `load()`s the test
+files at runtime, by which point the autoloads are registered. In a `--script` tool, `load()`
+inside `_initialize()` and reach autoloads with `root.get_node("SceneRouter")`.
 
 **Platinum's gym order is Roark → Gardenia → *Fantina* → Maylene → Wake → Byron → Candice →
 Volkner.** Fantina is gym **3** in Platinum, not gym 5 as in Diamond/Pearl.

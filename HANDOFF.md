@@ -26,7 +26,7 @@ tools/run_tests.sh -- --require-data
 | Tilesets | done — atlas built from Platinum + White 2 + HeartGold |
 | Engine (autoloads, battle, overworld, systems, UI) | built, tests green |
 | Maps | 9 maps: Twinleaf → Route 201/202/203 → Sandgem → Jubilife → Oreburgh Gate/City/Gym |
-| Scenes | `Boot.tscn`, `Overworld.tscn`, `Battle.tscn` all exist |
+| Scenes | `Title.tscn` (main scene) -> `Boot.tscn` or `CustomBattle.tscn`; `Overworld.tscn`, `Battle.tscn` all exist |
 | Mega abilities (the 14) | implemented, all tier 1 |
 
 ---
@@ -239,7 +239,9 @@ Scripts live under
 
 **(a), (b), (c), the `population-bomb` half of (d), and the `items.json` follow-on are all
 done.** What is left is (d)'s remaining gaps — chiefly **Protect**, which would activate
-`unseen-fist` and `piercing-drill`, and the balance review of the 26 multi-strike moves.
+`unseen-fist` and `piercing-drill`, and the balance review of the 26 multi-strike moves —
+and **(e), multi-slot battle formats**, which is now the largest single piece of engine work
+left and is blocking a finished Custom Battle mode.
 
 
 ### a) ~~Fix the Roark reward hookup~~ — DONE 2026-09-26, see §2
@@ -266,6 +268,32 @@ sane in the absolute (369 levelled edges, max L64, nothing above 100, 20 edges a
 and 19 at L40, matching the existing curve), but "is Gengar reachable *when* the player is
 meant to have one" is only answerable for the nine built maps today. Gengar specifically was
 checked and is correct: L37 lands it the moment Fantina is beaten and the Gengarite awarded.
+
+### e) Double / triple / rotation battles — the engine is single-slot
+
+**Custom Battle mode landed on 2026-09-27** (`src/custom/`, `scenes/Title.tscn`,
+`scenes/CustomBattle.tscn`, `docs/CUSTOM_BATTLE.md`, `tests/test_custom_battle.gd`): pick both
+teams from any species, set level / nature / ability / stone / moves, pre-fill either side
+from any of the 31 boss rosters, pin the seed, watch the AI play itself, rematch. It shares
+the engine and `Battle.tscn` with the campaign and writes nothing to the save.
+
+Its format selector offers single / double / triple / rotation and **only single is
+playable**. A non-single matchup is refused with the reason on screen rather than downgraded.
+Making the other three real is an engine job, not a builder job:
+
+* `sides[side]["active"]` is a single int, and `active(side)` returns one Pokemon;
+* `damage.gd` targets `active(1 - side)` with no target parameter at all;
+* actions carry no target — `{kind:"move", move_index:i}` has nowhere to put one;
+* `turn_order.gd` sorts exactly two actions;
+* `ai.gd` chooses one move for one Pokemon against one foe;
+* spread moves need the 0.75 multiplier and redirection (Lightning Rod, Storm Drain, Follow
+  Me) that single battles never exercise;
+* triples need adjacency, rotations need rotating as a free action;
+* every `onFieldEnter` / `onWeatherSet` / `onRedirect` ability hook needs re-checking against
+  more than one opposing Pokemon.
+
+When it lands, `format` goes into DATA_CONTRACT 13 **first**, and
+`BattleSpec.IMPLEMENTED_FORMATS` is the single switch that unlocks it in the builder.
 
 ### d) Known smaller gaps
 
