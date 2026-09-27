@@ -431,6 +431,67 @@ func test_changing_species_drops_what_belonged_to_the_old_one() -> void:
 		"so the slot is left legal, with nothing to report")
 
 
+func test_the_species_picker_finds_by_number_name_and_type() -> void:
+	if not _have_data():
+		pending("data/species.json is not built")
+		return
+	var builder := TeamBuilder.new()
+	builder.spec = _duel_spec()
+	_adopt(builder)
+	builder.debug_focus(0, 0)
+	builder.debug_edit_field("species")
+	var picker: Control = builder._picker
+	is_true(picker.is_open(), "the species picker opened")
+	eq(picker.match_count(), DataRegistry.species_count(), "unfiltered, it offers all of them")
+
+	# 1. by dex number
+	picker.filter("445")
+	is_true(picker.match_ids().has(GARCHOMP), "445 finds Garchomp")
+
+	# 2. by name, including a partial one
+	picker.filter("garchomp")
+	eq(picker.match_count(), 1, "a full name narrows to exactly one")
+	eq(int(picker.match_ids()[0]), GARCHOMP, "and it is the right one")
+	is_true(picker.filter("garch") >= 1, "a partial name still finds it")
+
+	# 3. by type -- the new part. The note column abbreviates Dragon/Ground to
+	#    DRA/GRO, so this only works if the full type names are searchable too.
+	var dragons: int = picker.filter("dragon")
+	is_true(dragons > 20, "dragon lists the Dragon-types, got %d" % dragons)
+	is_true(picker.match_ids().has(GARCHOMP), "including Garchomp")
+	is_true(picker.match_ids().has(149), "and Dragonite")
+	is_false(picker.match_ids().has(MAGIKARP), "but not a Water-type")
+
+	picker.filter("ground")
+	is_true(picker.match_ids().has(GARCHOMP), "its second type finds it too")
+
+	# A type the note shows in full rather than abbreviated.
+	picker.filter("water")
+	is_true(picker.match_ids().has(MAGIKARP), "water finds Magikarp")
+	is_false(picker.match_ids().has(GARCHOMP), "and not Garchomp")
+
+	picker.filter("")
+	eq(picker.match_count(), DataRegistry.species_count(), "clearing restores the list")
+
+
+func test_picker_rows_show_what_they_can_be_searched_by() -> void:
+	if not _have_data():
+		pending("data/species.json is not built")
+		return
+	var builder := TeamBuilder.new()
+	builder.spec = _duel_spec()
+	_adopt(builder)
+	builder.debug_focus(0, 0)
+	builder.debug_edit_field("species")
+	var picker: Control = builder._picker
+	picker.filter("garchomp")
+	var row: Dictionary = picker.current()
+	eq(String(row["label"]), "445 Garchomp", "the row shows the number and the name")
+	eq(String(row["note"]), "DRA/GRO", "and the types, abbreviated to fit the column")
+	eq(TeamBuilder.type_note(["water"]), "WATER", "a single type is not abbreviated")
+	eq(TeamBuilder.type_note([]), "", "and a species with no types shows nothing")
+
+
 func test_builder_refuses_an_unplayable_start() -> void:
 	if not _have_data():
 		pending("data/species.json is not built")

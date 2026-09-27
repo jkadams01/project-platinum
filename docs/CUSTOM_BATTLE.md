@@ -40,8 +40,13 @@ printed on screen.
 | **Any picker** | `↑`/`↓`, `PgUp`/`PgDn`, `Home`/`End` move · **type to filter** · `Enter` pick · `Esc` back |
 | **Result panel** | `A` rematch · `X` back to the builder · `Esc` title |
 
-A species picker filters on name *or* dex number, so `445` and `garchomp` both find
-Garchomp.
+The species picker filters on **dex number, name or type**, so `445`, `garch` and `dragon`
+all find Garchomp — and `dragon` on its own lists every Dragon-type in the game. Each row
+shows all three: `445 Garchomp` with `DRA/GRO` in the right-hand column. A dual type is
+abbreviated to fit the column, but the filter still matches the full name you typed.
+
+The rule for every picker is the same: **if you can see it, you can filter on it.** Moves
+show their type and power, so `rock` narrows a learnset to Rock moves.
 
 ---
 

@@ -419,7 +419,8 @@ func _activate_field(field: String) -> void:
 		"species":
 			_open_pick("species", {
 				"title": "SPECIES", "items": _species_items(),
-				"selected": species if species > 0 else null})
+				"selected": species if species > 0 else null,
+				"footer": "up/down move  enter pick  esc back  filter: no. name type"})
 			return
 		"level":
 			var levels: Array = []
@@ -506,12 +507,33 @@ func _species_items() -> Array:
 		return []
 	for id in reg.species_ids():
 		var sp: Dictionary = reg.get_species(int(id))
+		var types: Array = sp.get("types", [])
+		# The dex number moves into the label so the note column is free for the
+		# types: all three things a player might search by are then on screen, and
+		# typing any of them narrows the list.
 		_species_cache.append({
 			"id": int(id),
-			"label": String(sp.get("name", "#%d" % int(id))),
-			"note": "#%d" % int(id),
+			"label": "%d %s" % [int(id), String(sp.get("name", "?"))],
+			"note": type_note(types),
+			# The note abbreviates a dual type to DRA/GRO to fit 70 pixels; the
+			# full names live here so `dragon` and `ground` still find it.
+			"search": String(" ").join(PackedStringArray(types)).to_lower(),
 		})
 	return _species_cache
+
+
+## Types as the narrow right-hand column can draw them: one type in full, two
+## abbreviated to three letters each. `electric/flying` is fifteen characters and
+## the column fits about nine.
+static func type_note(types: Array) -> String:
+	if types.is_empty():
+		return ""
+	if types.size() == 1:
+		return String(types[0]).to_upper()
+	var out := PackedStringArray()
+	for t: Variant in types:
+		out.append(String(t).substr(0, 3).to_upper())
+	return String("/").join(out)
 
 
 # --------------------------------------------------------------------------

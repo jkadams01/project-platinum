@@ -12,14 +12,16 @@ extends Control
 ## filter. The footer says so on screen, because a control scheme that differs
 ## from the rest of the game has to announce itself.
 ##
-## ITEMS ARE `{id, label, note}`. `id` is whatever the caller wants back -- an int
-## dex number, a move slug, an option name -- and travels through untouched;
-## `label` is matched against the filter; `note` is the dim right-hand column
-## (a type, a stat line, a level). Nothing in here interprets any of them.
+## ITEMS ARE `{id, label, note, search}`. `id` is whatever the caller wants back
+## -- an int dex number, a move slug, an option name -- and travels through
+## untouched; `label` and `note` are the two columns; `search` is optional hidden
+## text that is matched but never drawn. Nothing in here interprets any of them.
 ##
-## THE FILTER MATCHES label OR id, case-insensitively, as a substring. Matching
-## the id is what lets a dex number find a species while its name is what the
-## player sees.
+## THE FILTER MATCHES id, label, note AND search, case-insensitively, as a
+## substring. The rule for a caller is: IF YOU CAN SEE IT, YOU CAN FILTER ON IT --
+## plus whatever `search` adds. That is what lets one box find Garchomp by `445`,
+## by `garch`, and by `dragon`, with the abbreviated `DRA/GRO` in the note column
+## still matching the full type name the player typed.
 
 signal picked(id: Variant)
 signal cancelled()
@@ -143,9 +145,7 @@ func _rebuild() -> void:
 		if not (row is Dictionary):
 			continue
 		var d: Dictionary = row
-		if needle.is_empty() \
-				or String(d.get("label", "")).to_lower().contains(needle) \
-				or str(d.get("id", "")).to_lower().contains(needle):
+		if needle.is_empty() or _matches(d, needle):
 			_view.append(d)
 
 	index = 0
@@ -159,6 +159,32 @@ func _rebuild() -> void:
 				index = i
 				break
 	_top = 0
+
+
+## Every field a row can be found by. `note` is included because it is on screen,
+## and `search` because a column too narrow for `electric/flying` still has to be
+## findable by typing it.
+static func _matches(row: Dictionary, needle: String) -> bool:
+	return String(row.get("label", "")).to_lower().contains(needle) \
+		or str(row.get("id", "")).to_lower().contains(needle) \
+		or String(row.get("note", "")).to_lower().contains(needle) \
+		or String(row.get("search", "")).to_lower().contains(needle)
+
+
+## Apply a filter as if it had been typed. Returns the number of matches.
+func filter(text: String) -> int:
+	query = text
+	_rebuild()
+	_refresh()
+	return _view.size()
+
+
+## The ids currently matching, in display order.
+func match_ids() -> Array:
+	var out: Array = []
+	for row: Dictionary in _view:
+		out.append(row.get("id"))
+	return out
 
 
 func _refresh() -> void:
