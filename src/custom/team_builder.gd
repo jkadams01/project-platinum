@@ -41,7 +41,10 @@ enum State { TEAMS, SLOT, PICK, PROMPT }
 const SIDE_KEYS: Array = ["player", "foe"]
 const SIDE_LABELS: Array = ["YOU", "FOE"]
 
-## The slot editor's rows, in cursor order.
+## The slot editor's rows, in cursor order. The move rows are ONE-BASED
+## (`move1`..`move4`) and that name is the only encoding: it is the cursor row, the
+## picker purpose and, through [method _move_index], the 0-based index into the
+## slot moves array. Never re-encode it.
 const FIELDS: Array = ["species", "level", "nature", "ability", "item",
 	"move1", "move2", "move3", "move4", "clear"]
 const FIELD_LABELS: Dictionary = {
@@ -474,7 +477,11 @@ func _activate_field(field: String) -> void:
 			for slug: String in pool:
 				moves.append({"id": slug, "label": UI.pretty(slug), "note": _move_note(slug)})
 			var current: Array = slot.get("moves", [])
-			_open_pick("move%d" % move_index, {"title": "MOVE %d" % (move_index + 1),
+			# The purpose is the FIELD NAME, not the index. Encoding the 0-based
+			# index here and decoding it with the 1-based field rule in _on_picked
+			# is an off-by-one that silently dropped MOVE 1 and made MOVE 2-4 each
+			# write to the slot above. One convention, no arithmetic.
+			_open_pick(field, {"title": "MOVE %d" % (move_index + 1),
 				"items": moves,
 				"selected": String(current[move_index]) if move_index < current.size() else ""})
 
@@ -849,6 +856,16 @@ func _note(message: String) -> void:
 
 func debug_state() -> String:
 	return ["teams", "slot", "pick", "prompt"][int(_state)]
+
+
+## The text the slot editor is drawing for one field, so a test can assert on what
+## is ON SCREEN and not just on what is in the spec. The move off-by-one showed up
+## as a row that did not change.
+func debug_field_text(field: String) -> String:
+	var at := FIELDS.find(field)
+	if at < 0 or at >= _slot_rows.size():
+		return ""
+	return (_slot_rows[at] as Label).text
 
 
 func debug_status() -> String:

@@ -492,6 +492,64 @@ func test_picker_rows_show_what_they_can_be_searched_by() -> void:
 	eq(TeamBuilder.type_note([]), "", "and a species with no types shows nothing")
 
 
+func test_every_move_slot_writes_to_its_own_slot() -> void:
+	# REGRESSION. The picker purpose used to be re-encoded as a 0-based index and
+	# decoded with the 1-based field rule, so MOVE 1 silently did nothing and
+	# MOVE 2-4 each overwrote the slot above. Picking a move for ONE slot and
+	# checking that slot alone would not have caught it -- this walks all four.
+	if not _have_data():
+		pending("data/species.json is not built")
+		return
+	var builder := TeamBuilder.new()
+	builder.spec = _duel_spec(GARCHOMP, MAGIKARP, 50)
+	var slot: Dictionary = (builder.spec["player"]["slots"] as Array)[0]
+	var starting: Array = (slot["moves"] as Array).duplicate()
+	is_true(starting.size() >= 1, "the slot starts with a moveset")
+	_adopt(builder)
+	builder.debug_focus(0, 0)
+
+	# Four legal slugs it does not already know, so every write is observable.
+	var picks: Array = []
+	for slug in Spec.legal_moves(GARCHOMP):
+		if not starting.has(slug) and picks.size() < Spec.MAX_MOVES:
+			picks.append(slug)
+	if picks.size() < Spec.MAX_MOVES:
+		pending("Garchomp has too few spare legal moves to test with")
+		return
+
+	# The exact symptom first: MOVE 1, on its own, must change.
+	builder.debug_edit_field("move1")
+	builder.debug_pick(picks[0])
+	eq(String((slot["moves"] as Array)[0]), String(picks[0]),
+		"MOVE 1 must take the move it was given")
+
+	for i in range(1, Spec.MAX_MOVES):
+		builder.debug_edit_field("move%d" % (i + 1))
+		builder.debug_pick(picks[i])
+		eq(String((slot["moves"] as Array)[i]), String(picks[i]),
+			"MOVE %d must take the move it was given" % (i + 1))
+
+	eq((slot["moves"] as Array).size(), Spec.MAX_MOVES, "four moves, no more")
+	for i in Spec.MAX_MOVES:
+		eq(String((slot["moves"] as Array)[i]), String(picks[i]),
+			"and slot %d still holds its own move at the end" % (i + 1))
+
+	# The screen has to agree with the data, which is the half a data-only
+	# assertion misses -- the bug was visible on screen as an unchanged row.
+	builder.debug_edit_field("move2")
+	builder._on_pick_cancelled()
+	is_true(builder.debug_field_text("move2").contains(Spec.pretty(String(picks[1]))),
+		"the MOVE 2 row shows '%s', got '%s'" % [
+			Spec.pretty(String(picks[1])), builder.debug_field_text("move2")])
+
+	# (empty) clears a slot and closes the gap, so Stats.build gets a dense array.
+	builder.debug_edit_field("move2")
+	builder.debug_pick("")
+	eq((slot["moves"] as Array).size(), Spec.MAX_MOVES - 1, "clearing removes one move")
+	eq(String((slot["moves"] as Array)[1]), String(picks[2]),
+		"and closes the gap rather than leaving a hole")
+
+
 func test_builder_refuses_an_unplayable_start() -> void:
 	if not _have_data():
 		pending("data/species.json is not built")
