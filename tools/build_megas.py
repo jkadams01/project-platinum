@@ -61,6 +61,13 @@ import sys
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# The canonical data/items.json row order lives in build_items.py, and both
+# scripts sort with it. Without that the file flip-flops between "Mega Stones
+# first" and "evolution items first" depending on which tool ran last, and
+# neither one is idempotent in the presence of the other.
+sys.path.insert(0, os.path.join(REPO, 'tools'))
+from build_items import sort_rows                            # noqa: E402
+
 KEY_ITEM = "key-stone"
 BATTLE_RULE = "one-per-battle"
 
@@ -303,6 +310,10 @@ def apply_owner_overrides(forms, path, log):
             continue
         form["abilities"] = list(row["abilities"])
         form["abilityStatus"] = row.get("abilityStatus", "owner-decided")
+        # The note is the RECORD OF WHY the owner decided this. Dropping it on a
+        # rebuild loses the reasoning behind a locked decision, which is the one
+        # thing that cannot be re-derived from anything else in the repo.
+        form["abilityNote"] = row.get("note")
         applied += 1
         log.append("  + %-24s %-14s (%s)" % (form["id"], ",".join(form["abilities"]),
                                              form["abilityStatus"]))
@@ -333,6 +344,7 @@ def build_megas(forms, species):
             "bst": sum(f["stats"].values()),
             "abilities": f["abilities"],
             "abilityStatus": f.get("abilityStatus") or ability_status(f),
+            "abilityNote": f.get("abilityNote"),
             "height": height,
             "weight": weight,
             # No published Mega figure for the Z-A forms, so the base species'
@@ -425,7 +437,7 @@ def build_items(megas, species, repo):
 
     ours = dict((it["id"], it) for it in items)
     path = os.path.join(repo, "data", "items.json")
-    merged, container, note = items, None, "created"
+    merged, container, note = sort_rows(items), None, "created"
     if os.path.isfile(path):
         with open(path) as fh:
             existing = json.load(fh)
@@ -438,7 +450,7 @@ def build_items(megas, species, repo):
                 if r.get("id") not in ours
                 and r.get("category") not in ("mega-stone", "key-stone")]
         dropped = len(rows) - len(kept)
-        merged = kept + items
+        merged = sort_rows(kept + items)
         note = "merged (kept %d existing row(s), replaced %d Mega row(s))" % (len(kept), dropped)
     payload = merged
     if container is not None:
@@ -594,8 +606,19 @@ def git_tracked(repo, relpath):
 def main():
     ap = argparse.ArgumentParser(description="Build data/megas.json and the Mega Stone items.")
     ap.add_argument("--out", default=REPO, help="repo root to write data/ into")
+    # ON BY DEFAULT. It used to be opt-in, and a plain run therefore ERASED all
+    # nine owner-decided Mega abilities from data/megas.json -- Heatran's
+    # earth-eater among them, which CLAUDE.md lists as a locked decision and
+    # DATA_CONTRACT 11.5 calls authoritative. An authoritative file that a plain
+    # rebuild ignores is a data-loss bug, not a safety feature.
     ap.add_argument("--apply-owner-overrides", action="store_true",
-                    help="fold data/mega_ability_overrides.json into the pending-owner forms")
+                    help="deprecated: overrides are applied by default; kept so "
+                         "existing invocations keep working")
+    ap.add_argument("--no-owner-overrides", dest="owner_overrides",
+                    action="store_false", default=True,
+                    help="ship the Champions-uncovered forms unresolved "
+                         "(abilities [] + abilityStatus pending-owner), which is "
+                         "the pre-decision state -- inspection only")
     ap.add_argument("--overrides",
                     default=os.path.join(REPO, "data", "mega_ability_overrides.json"))
     args = ap.parse_args()
@@ -612,19 +635,17 @@ def main():
                                                     for g in ("xy", "oras", "za"))))
 
     print("\n=== owner ability overrides (DATA_CONTRACT 11.5 step 2) ===")
-    if args.apply_owner_overrides:
+    if not args.owner_overrides:
+        print("  --no-owner-overrides: NOT applied. The nine Champions-uncovered")
+        print("  forms ship abilities: [] + abilityStatus pending-owner. This is")
+        print("  the pre-decision state -- do not commit it.")
+    elif os.path.isfile(args.overrides):
         log = []
         apply_owner_overrides(forms, args.overrides, log)
         print("\n".join(log))
-    elif os.path.isfile(args.overrides):
-        with open(args.overrides) as fh:
-            n = len(json.load(fh).get("overrides", []))
-        print("  %s exists (%d row(s)) and was NOT applied." % (args.overrides, n))
-        print("  The nine Champions-uncovered forms ship abilities: []"
-              " + abilityStatus pending-owner.")
-        print("  Re-run with --apply-owner-overrides to fold it in.")
     else:
-        print("  none on disk; nothing to apply.")
+        print("  %s is MISSING." % args.overrides)
+        print("  The nine Champions-uncovered forms will ship unresolved.")
 
     megas = build_megas(forms, species)
     items_payload, item_rows, items_note = build_items(megas, species, args.out)

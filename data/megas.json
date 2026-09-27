@@ -4,6 +4,7 @@
       "abilities": [
         "thick-fat"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 3,
       "bst": 625,
@@ -38,6 +39,7 @@
       "abilities": [
         "tough-claws"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 6,
       "bst": 634,
@@ -72,6 +74,7 @@
       "abilities": [
         "drought"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 6,
       "bst": 634,
@@ -106,6 +109,7 @@
       "abilities": [
         "mega-launcher"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 9,
       "bst": 630,
@@ -139,6 +143,7 @@
       "abilities": [
         "adaptability"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 15,
       "bst": 495,
@@ -173,6 +178,7 @@
       "abilities": [
         "no-guard"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 18,
       "bst": 579,
@@ -207,6 +213,7 @@
       "abilities": [
         "trace"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 65,
       "bst": 600,
@@ -240,6 +247,7 @@
       "abilities": [
         "shell-armor"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 80,
       "bst": 590,
@@ -274,6 +282,7 @@
       "abilities": [
         "shadow-tag"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 94,
       "bst": 600,
@@ -308,6 +317,7 @@
       "abilities": [
         "parental-bond"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 115,
       "bst": 590,
@@ -341,6 +351,7 @@
       "abilities": [
         "aerilate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 127,
       "bst": 600,
@@ -375,6 +386,7 @@
       "abilities": [
         "mold-breaker"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 130,
       "bst": 640,
@@ -409,6 +421,7 @@
       "abilities": [
         "tough-claws"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 142,
       "bst": 615,
@@ -443,6 +456,7 @@
       "abilities": [
         "steadfast"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 150,
       "bst": 780,
@@ -477,6 +491,7 @@
       "abilities": [
         "insomnia"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 150,
       "bst": 780,
@@ -510,6 +525,7 @@
       "abilities": [
         "mold-breaker"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 181,
       "bst": 610,
@@ -544,6 +560,7 @@
       "abilities": [
         "sand-force"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 208,
       "bst": 610,
@@ -578,6 +595,7 @@
       "abilities": [
         "technician"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 212,
       "bst": 600,
@@ -612,6 +630,7 @@
       "abilities": [
         "skill-link"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 214,
       "bst": 600,
@@ -646,6 +665,7 @@
       "abilities": [
         "solar-power"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 229,
       "bst": 600,
@@ -680,6 +700,7 @@
       "abilities": [
         "sand-stream"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 248,
       "bst": 700,
@@ -714,6 +735,7 @@
       "abilities": [
         "lightning-rod"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 254,
       "bst": 630,
@@ -748,6 +770,7 @@
       "abilities": [
         "speed-boost"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 257,
       "bst": 630,
@@ -782,6 +805,7 @@
       "abilities": [
         "swift-swim"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 260,
       "bst": 635,
@@ -816,6 +840,7 @@
       "abilities": [
         "pixilate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 282,
       "bst": 618,
@@ -850,6 +875,7 @@
       "abilities": [
         "magic-bounce"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 302,
       "bst": 480,
@@ -884,6 +910,7 @@
       "abilities": [
         "huge-power"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 303,
       "bst": 480,
@@ -918,6 +945,7 @@
       "abilities": [
         "filter"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 306,
       "bst": 630,
@@ -951,6 +979,7 @@
       "abilities": [
         "pure-power"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 308,
       "bst": 510,
@@ -985,6 +1014,7 @@
       "abilities": [
         "intimidate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 310,
       "bst": 575,
@@ -1018,6 +1048,7 @@
       "abilities": [
         "strong-jaw"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 319,
       "bst": 560,
@@ -1052,6 +1083,7 @@
       "abilities": [
         "sheer-force"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 323,
       "bst": 560,
@@ -1086,6 +1118,7 @@
       "abilities": [
         "pixilate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 334,
       "bst": 590,
@@ -1120,6 +1153,7 @@
       "abilities": [
         "prankster"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 354,
       "bst": 555,
@@ -1153,6 +1187,7 @@
       "abilities": [
         "magic-bounce"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 359,
       "bst": 565,
@@ -1186,6 +1221,7 @@
       "abilities": [
         "refrigerate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 362,
       "bst": 580,
@@ -1219,6 +1255,7 @@
       "abilities": [
         "aerilate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 373,
       "bst": 700,
@@ -1253,6 +1290,7 @@
       "abilities": [
         "tough-claws"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 376,
       "bst": 700,
@@ -1287,6 +1325,7 @@
       "abilities": [
         "levitate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 380,
       "bst": 700,
@@ -1321,6 +1360,7 @@
       "abilities": [
         "levitate"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 381,
       "bst": 700,
@@ -1355,6 +1395,7 @@
       "abilities": [
         "delta-stream"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 384,
       "bst": 780,
@@ -1389,6 +1430,7 @@
       "abilities": [
         "scrappy"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 428,
       "bst": 580,
@@ -1423,6 +1465,7 @@
       "abilities": [
         "sand-force"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 445,
       "bst": 700,
@@ -1457,6 +1500,7 @@
       "abilities": [
         "adaptability"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 448,
       "bst": 625,
@@ -1491,6 +1535,7 @@
       "abilities": [
         "snow-warning"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 460,
       "bst": 594,
@@ -1525,6 +1570,7 @@
       "abilities": [
         "inner-focus"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 475,
       "bst": 618,
@@ -1559,6 +1605,7 @@
       "abilities": [
         "healer"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 531,
       "bst": 545,
@@ -1593,6 +1640,7 @@
       "abilities": [
         "magic-bounce"
       ],
+      "abilityNote": null,
       "abilityStatus": "canon",
       "base": 719,
       "bst": 700,
@@ -1627,6 +1675,7 @@
       "abilities": [
         "electric-surge"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 26,
       "bst": 585,
@@ -1660,6 +1709,7 @@
       "abilities": [
         "no-guard"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 26,
       "bst": 585,
@@ -1693,6 +1743,7 @@
       "abilities": [
         "magic-bounce"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 36,
       "bst": 583,
@@ -1727,6 +1778,7 @@
       "abilities": [
         "innards-out"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 71,
       "bst": 590,
@@ -1761,6 +1813,7 @@
       "abilities": [
         "huge-power"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 121,
       "bst": 620,
@@ -1795,6 +1848,7 @@
       "abilities": [
         "multiscale"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 149,
       "bst": 700,
@@ -1829,6 +1883,7 @@
       "abilities": [
         "mega-sol"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 154,
       "bst": 625,
@@ -1863,6 +1918,7 @@
       "abilities": [
         "dragonize"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 160,
       "bst": 630,
@@ -1897,6 +1953,7 @@
       "abilities": [
         "stalwart"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 227,
       "bst": 565,
@@ -1931,6 +1988,7 @@
       "abilities": [
         "levitate"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 358,
       "bst": 555,
@@ -1965,6 +2023,7 @@
       "abilities": [
         "sharpness"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 359,
       "bst": 565,
@@ -1999,6 +2058,7 @@
       "abilities": [
         "contrary"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 398,
       "bst": 585,
@@ -2033,6 +2093,7 @@
       "abilities": [
         "levitate"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 445,
       "bst": 700,
@@ -2066,6 +2127,7 @@
       "abilities": [
         "aura-guard"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 448,
       "bst": 625,
@@ -2100,6 +2162,7 @@
       "abilities": [
         "snow-warning"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 478,
       "bst": 580,
@@ -2134,6 +2197,7 @@
       "abilities": [
         "earth-eater"
       ],
+      "abilityNote": "Owner pick (write-in). Strictly better than the proposed Levitate: Earth Eater turns Heatran's 4x Ground weakness into 1/4 max-HP healing rather than mere immunity. Gen 9 ability (Orthworm), already present in data/abilities.json - no hand-authoring needed. Post-Hall-of-Fame content at cap 100, so the power level is balance-insensitive.",
       "abilityStatus": "owner-decided",
       "base": 485,
       "bst": 700,
@@ -2162,13 +2226,13 @@
         "fire",
         "steel"
       ],
-      "weight": 4300,
-      "abilityNote": "Owner pick (write-in). Strictly better than the proposed Levitate: Earth Eater turns Heatran's 4x Ground weakness into 1/4 max-HP healing rather than mere immunity. Gen 9 ability (Orthworm), already present in data/abilities.json - no hand-authoring needed. Post-Hall-of-Fame content at cap 100, so the power level is balance-insensitive."
+      "weight": 4300
     },
     {
       "abilities": [
         "dark-aura"
       ],
+      "abilityNote": "Champions datamine shows Speed DROPPING 125->85 while SpA rises to 165 and both defences to 130. It is a bulky wallbreaker, not a fast sweeper, so a flat damage multiplier beats any speed/snowball ability.",
       "abilityStatus": "owner-decided",
       "base": 491,
       "bst": 700,
@@ -2196,13 +2260,13 @@
       "types": [
         "dark"
       ],
-      "weight": 505,
-      "abilityNote": "Champions datamine shows Speed DROPPING 125->85 while SpA rises to 165 and both defences to 130. It is a bulky wallbreaker, not a fast sweeper, so a flat damage multiplier beats any speed/snowball ability."
+      "weight": 505
     },
     {
       "abilities": [
         "mold-breaker"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 500,
       "bst": 628,
@@ -2237,6 +2301,7 @@
       "abilities": [
         "piercing-drill"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 530,
       "bst": 608,
@@ -2271,6 +2336,7 @@
       "abilities": [
         "shell-armor"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 545,
       "bst": 585,
@@ -2305,6 +2371,7 @@
       "abilities": [
         "intimidate"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 560,
       "bst": 588,
@@ -2339,6 +2406,7 @@
       "abilities": [
         "eelevate"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 604,
       "bst": 615,
@@ -2372,6 +2440,7 @@
       "abilities": [
         "infiltrator"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 609,
       "bst": 620,
@@ -2406,6 +2475,7 @@
       "abilities": [
         "unseen-fist"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 623,
       "bst": 583,
@@ -2440,6 +2510,7 @@
       "abilities": [
         "bulletproof"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 652,
       "bst": 630,
@@ -2474,6 +2545,7 @@
       "abilities": [
         "levitate"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 655,
       "bst": 634,
@@ -2508,6 +2580,7 @@
       "abilities": [
         "protean"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 658,
       "bst": 630,
@@ -2542,6 +2615,7 @@
       "abilities": [
         "fire-mane"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 668,
       "bst": 607,
@@ -2576,6 +2650,7 @@
       "abilities": [
         "fairy-aura"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 670,
       "bst": 651,
@@ -2609,6 +2684,7 @@
       "abilities": [
         "trace"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 678,
       "bst": 566,
@@ -2642,6 +2718,7 @@
       "abilities": [
         "trace"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 678,
       "bst": 566,
@@ -2675,6 +2752,7 @@
       "abilities": [
         "contrary"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 687,
       "bst": 582,
@@ -2709,6 +2787,7 @@
       "abilities": [
         "tough-claws"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 689,
       "bst": 600,
@@ -2743,6 +2822,7 @@
       "abilities": [
         "regenerator"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 691,
       "bst": 594,
@@ -2777,6 +2857,7 @@
       "abilities": [
         "no-guard"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 701,
       "bst": 600,
@@ -2811,6 +2892,7 @@
       "abilities": [
         "thick-fat"
       ],
+      "abilityNote": "Taken as recommended - NOT explicitly confirmed by the owner. Halves Ice and Fire, turning the 4x Ice weakness into 2x. Flag for review if the owner wants to revisit.",
       "abilityStatus": "owner-decided-by-recommendation",
       "base": 718,
       "bst": 778,
@@ -2839,13 +2921,13 @@
         "dragon",
         "ground"
       ],
-      "weight": 3050,
-      "abilityNote": "Taken as recommended - NOT explicitly confirmed by the owner. Halves Ice and Fire, turning the 4x Ice weakness into 2x. Flag for review if the owner wants to revisit."
+      "weight": 3050
     },
     {
       "abilities": [
         "iron-fist"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 740,
       "bst": 578,
@@ -2880,6 +2962,7 @@
       "abilities": [
         "tough-claws"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 768,
       "bst": 630,
@@ -2914,6 +2997,7 @@
       "abilities": [
         "berserk"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 780,
       "bst": 585,
@@ -2948,6 +3032,7 @@
       "abilities": [
         "soul-heart"
       ],
+      "abilityNote": "Taken as recommended - NOT explicitly confirmed. Continuity with the base form; magearnite is a Battle Park BP purchase so the player already owns Soul-Heart on the base long before the Mega exists.",
       "abilityStatus": "owner-decided-by-recommendation",
       "base": 801,
       "bst": 700,
@@ -2976,13 +3061,13 @@
         "steel",
         "fairy"
       ],
-      "weight": 805,
-      "abilityNote": "Taken as recommended - NOT explicitly confirmed. Continuity with the base form; magearnite is a Battle Park BP purchase so the player already owns Soul-Heart on the base long before the Mega exists."
+      "weight": 805
     },
     {
       "abilities": [
         "soul-heart"
       ],
+      "abilityNote": "MIRRORS standard Mega Magearna by rule. Champions precedent is directly on point: Meowstic Male and Female have DIFFERENT mainline ability sets and Champions gave BOTH of them Trace. Cosmetic variants do not diverge. If the standard row changes, change this one with it.",
       "abilityStatus": "owner-decided-by-recommendation",
       "base": 801,
       "bst": 700,
@@ -3011,13 +3096,13 @@
         "steel",
         "fairy"
       ],
-      "weight": 805,
-      "abilityNote": "MIRRORS standard Mega Magearna by rule. Champions precedent is directly on point: Meowstic Male and Female have DIFFERENT mainline ability sets and Champions gave BOTH of them Trace. Cosmetic variants do not diverge. If the standard row changes, change this one with it."
+      "weight": 805
     },
     {
       "abilities": [
         "transistor"
       ],
+      "abilityNote": "1.3x Electric. Transplanting a legendary's signature ability onto a Mega is confirmed Champions precedent. Engine tier 1 (onDamageCalc).",
       "abilityStatus": "owner-decided",
       "base": 807,
       "bst": 700,
@@ -3045,13 +3130,13 @@
       "types": [
         "electric"
       ],
-      "weight": 445,
-      "abilityNote": "1.3x Electric. Transplanting a legendary's signature ability onto a Mega is confirmed Champions precedent. Engine tier 1 (onDamageCalc)."
+      "weight": 445
     },
     {
       "abilities": [
         "defiant"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 870,
       "bst": 570,
@@ -3085,6 +3170,7 @@
       "abilities": [
         "spicy-spray"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 952,
       "bst": 586,
@@ -3119,6 +3205,7 @@
       "abilities": [
         "adaptability"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 970,
       "bst": 625,
@@ -3153,6 +3240,7 @@
       "abilities": [
         "storm-drain"
       ],
+      "abilityNote": "The ONLY balance-sensitive form of the nine - tatsugirinite is T4 (badge:mine, cap 44), mid-game inside the hard cap. Storm Drain is the base form's own hidden ability, so nothing new enters the game at a capped checkpoint. Dragon's Maw and Adaptability were both rejected as too strong there.",
       "abilityStatus": "owner-decided",
       "base": 978,
       "bst": 575,
@@ -3181,13 +3269,13 @@
         "dragon",
         "water"
       ],
-      "weight": 80,
-      "abilityNote": "The ONLY balance-sensitive form of the nine - tatsugirinite is T4 (badge:mine, cap 44), mid-game inside the hard cap. Storm Drain is the base form's own hidden ability, so nothing new enters the game at a capped checkpoint. Dragon's Maw and Adaptability were both rejected as too strong there."
+      "weight": 80
     },
     {
       "abilities": [
         "storm-drain"
       ],
+      "abilityNote": "MIRRORS Curly by rule - the three Tatsugiri forms are appearance-only and share typing, stats and abilities. One decision, not three.",
       "abilityStatus": "owner-decided",
       "base": 978,
       "bst": 575,
@@ -3216,13 +3304,13 @@
         "dragon",
         "water"
       ],
-      "weight": 80,
-      "abilityNote": "MIRRORS Curly by rule - the three Tatsugiri forms are appearance-only and share typing, stats and abilities. One decision, not three."
+      "weight": 80
     },
     {
       "abilities": [
         "storm-drain"
       ],
+      "abilityNote": "MIRRORS Curly by rule. See Droopy.",
       "abilityStatus": "owner-decided",
       "base": 978,
       "bst": 575,
@@ -3251,13 +3339,13 @@
         "dragon",
         "water"
       ],
-      "weight": 80,
-      "abilityNote": "MIRRORS Curly by rule. See Droopy."
+      "weight": 80
     },
     {
       "abilities": [
         "thermal-exchange"
       ],
+      "abilityNote": null,
       "abilityStatus": "champions",
       "base": 998,
       "bst": 700,

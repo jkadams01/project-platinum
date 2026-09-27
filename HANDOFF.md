@@ -12,7 +12,7 @@ the to-do list.
 
 ```
 tools/run_tests.sh -- --require-data
-→ 9,648 of 9,648 checks pass across the whole suite
+→ 9,757 of 9,757 checks pass across the whole suite
 → 0 failures, 0 pending
 ```
 
@@ -148,6 +148,57 @@ not exist*, because rule 2 converts trade-with-item into hold-and-level and
 items the evolution data references.** Audit §6.1 predicted this exactly. The evolution work
 is complete; the payoff is gated on `items.json`, which is a different owner.
 
+**`data/items.json` — the 40 evolution items now exist, and the last blocker bucket is
+empty.** `tools/build_items.py` builds them; `tests/test_items.gd` guards the linkage (8 tests /
+109 checks, 4 of which fail against the old file).
+
+| bucket | after §4c | now |
+|---|---:|---:|
+| obtainable | 186 | **209** |
+| `BROKEN_EVO` | 0 | **0** |
+| `NEEDS_ITEM` | 23 | **0** |
+| `NEEDS_FRIEND` | 0 | **0** |
+| `NOT_IN_GAME` | 816 | 816 |
+
+The item list is **derived from `data/species.json`'s evolution edges**, not typed out, so it
+cannot drift: add an evolution needing a new item and the build fails until the item is
+described. Prices come from the cached veekun `items.csv`; names, descriptions and the
+use/hold role are authored design data, the same status as the Mega Stone descriptions.
+`evolves` is derived, so each row records what it is actually for.
+
+`check_reachability.py` now **fails** on a non-empty `NEEDS_ITEM` as well as `BROKEN_EVO`
+(`--allow-missing-items` opts out). Both buckets were non-empty and are now closed, so both are
+defended rather than merely reported.
+
+> **Two owners, one file.** `build_megas.py` owns the Mega Stones and Key Stone;
+> `build_items.py` owns the 40 evolution items. Each preserves the other's rows and both sort
+> with `build_items.sort_rows()`, so the bytes are identical whichever ran last — verified by
+> alternating the two five times. Nothing in the engine loads `items.json` yet, so
+> `tests/test_items.gd` is the only thing that would notice a break.
+
+### A plain `build_megas.py` run was erasing nine owner decisions
+
+Found while checking whether it was safe to run at all, and it is the worst instance of this
+session's recurring trap because it destroyed *authorial* data, not derived data.
+
+`data/mega_ability_overrides.json` is authoritative — DATA_CONTRACT §11.5 says so, and CLAUDE.md
+lists Heatran = `earth-eater` as a locked decision — but folding it in was **opt-in** behind
+`--apply-owner-overrides`. A plain `python tools/build_megas.py` therefore shipped all nine
+Champions-uncovered Megas as `abilities: []` / `abilityStatus: pending-owner`, silently, with
+every one of its own checks still passing. Worse, it never emitted `abilityNote` at all, so the
+recorded *reasoning* for each of the nine decisions existed only as a hand-edit in `megas.json`
+and died on any rebuild — even with the flag passed.
+
+Fixed: overrides are applied by default, the note is generated from the overrides file's `note`,
+and `--no-owner-overrides` remains for inspecting the pre-decision state. `abilityNote` is now
+emitted on all 97 forms (null where there is none), which is how `requiresMove` and
+`requiresForm` already behave — it was the odd one out precisely because it was hand-added. The
+nine notes are byte-identical to what was committed, and the rebuild is byte-stable.
+
+**The general rule this session has now proved three times: if a file is authoritative, the
+default path must apply it. An authoritative input that the default rebuild ignores is a
+data-loss bug, not a safety flag.**
+
 ### Three roster observations — *author to decide, not changed*
 
 1. **`ace` disagrees with the party in Barry r1 and r2.** `barry_r2_route_203` declares its ace
@@ -186,9 +237,9 @@ Scripts live under
 
 ## 4. Outstanding work, in priority order
 
-**(a), (b), (c) and the `population-bomb` half of (d) are done.** What is left is (d)'s
-remaining gaps plus the one thing §4c surfaced that is not an evolution problem:
-**`data/items.json` needs the evolution items** or 23 species stay unobtainable. See §2.
+**(a), (b), (c), the `population-bomb` half of (d), and the `items.json` follow-on are all
+done.** What is left is (d)'s remaining gaps — chiefly **Protect**, which would activate
+`unseen-fist` and `piercing-drill`, and the balance review of the 26 multi-strike moves.
 
 
 ### a) ~~Fix the Roark reward hookup~~ — DONE 2026-09-26, see §2
@@ -272,7 +323,11 @@ python tools/build_species.py           # 22 assertions; must pass
 git status --short -- data/             # and must leave data/ CLEAN (rebuild is idempotent)
 
 python tools/fix_evolutions.py          # expect "already-applied 73, errors 0"
-python tools/check_reachability.py      # expect BROKEN_EVO 0 and RESULT: PASS
+python tools/check_reachability.py      # expect BROKEN_EVO 0, NEEDS_ITEM 0, RESULT: PASS
+
+python tools/build_megas.py             # overrides applied by DEFAULT; 9 rows logged
+python tools/build_items.py --apply     # 133 items (93 preserved + 40 evolution items)
+git status --short -- data/             # still CLEAN, in either order
 ```
 
 **Everything through 2026-09-26 is committed and pushed** on

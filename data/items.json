@@ -1,5 +1,652 @@
 [
   {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "Armor said to bring good fortune to the one who wears it. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      936
+    ],
+    "holdable": true,
+    "id": "auspicious-armor",
+    "name": "Auspicious Armor",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/auspicious-armor.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A dark stone with a rough, gritty surface. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      900
+    ],
+    "holdable": true,
+    "id": "black-augurite",
+    "name": "Black Augurite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/black-augurite.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A chipped teapot. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      855
+    ],
+    "holdable": true,
+    "id": "cracked-pot",
+    "name": "Cracked Pot",
+    "pocket": "items",
+    "price": 1600,
+    "sellable": true,
+    "sprite": "items/cracked-pot.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A scale that shines a faint pink. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      368
+    ],
+    "holdable": true,
+    "id": "deep-sea-scale",
+    "name": "Deep Sea Scale",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/deep-sea-scale.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A fang that gleams a sharp silver. It is as sharp as a blade. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      367
+    ],
+    "holdable": true,
+    "id": "deep-sea-tooth",
+    "name": "Deep Sea Tooth",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/deep-sea-tooth.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A thick, tough scale, shed by a Dragon-type Pokemon. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      230
+    ],
+    "holdable": true,
+    "id": "dragon-scale",
+    "name": "Dragon Scale",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/dragon-scale.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A transparent device overflowing with dubious data. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      474
+    ],
+    "holdable": true,
+    "id": "dubious-disc",
+    "name": "Dubious Disc",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/dubious-disc.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A box packed with a tremendous amount of electric energy. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      466
+    ],
+    "holdable": true,
+    "id": "electirizer",
+    "name": "Electirizer",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/electirizer.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A cuff woven from Galarica twigs. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      80
+    ],
+    "holdable": true,
+    "id": "galarica-cuff",
+    "name": "Galarica Cuff",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/galarica-cuff.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A wreath woven from Galarica twigs. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      199
+    ],
+    "holdable": true,
+    "id": "galarica-wreath",
+    "name": "Galarica Wreath",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/galarica-wreath.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A rock that looks like a crown. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      186,
+      199
+    ],
+    "holdable": true,
+    "id": "kings-rock",
+    "name": "King's Rock",
+    "pocket": "items",
+    "price": 5000,
+    "sellable": true,
+    "sprite": "items/kings-rock.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A box packed with a tremendous amount of magma energy. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      467
+    ],
+    "holdable": true,
+    "id": "magmarizer",
+    "name": "Magmarizer",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/magmarizer.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "Armor steeped in ill will. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      937
+    ],
+    "holdable": true,
+    "id": "malicious-armor",
+    "name": "Malicious Armor",
+    "pocket": "items",
+    "price": 750,
+    "sellable": true,
+    "sprite": "items/malicious-armor.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A peculiar alloy of several metals. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      1018
+    ],
+    "holdable": true,
+    "id": "metal-alloy",
+    "name": "Metal Alloy",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/metal-alloy.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A special metallic film that boosts the power of Steel-type moves. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      208,
+      212
+    ],
+    "holdable": true,
+    "id": "metal-coat",
+    "name": "Metal Coat",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/metal-coat.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A round stone, pure white, like an egg. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      113
+    ],
+    "holdable": true,
+    "id": "oval-stone",
+    "name": "Oval Stone",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/oval-stone.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A block of peat, rich and dark. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      901
+    ],
+    "holdable": true,
+    "id": "peat-block",
+    "name": "Peat Block",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/peat-block.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A mysterious scale that shines in rainbow colors. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      350
+    ],
+    "holdable": true,
+    "id": "prism-scale",
+    "name": "Prism Scale",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/prism-scale.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A protective item of some sort. It is extremely stiff and heavy. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      464
+    ],
+    "holdable": true,
+    "id": "protector",
+    "name": "Protector",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/protector.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A curved claw, wickedly sharp. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      461
+    ],
+    "holdable": true,
+    "id": "razor-claw",
+    "name": "Razor Claw",
+    "pocket": "items",
+    "price": 5000,
+    "sellable": true,
+    "sprite": "items/razor-claw.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A fang that gleams with a keen edge. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      472,
+      903
+    ],
+    "holdable": true,
+    "id": "razor-fang",
+    "name": "Razor Fang",
+    "pocket": "items",
+    "price": 5000,
+    "sellable": true,
+    "sprite": "items/razor-fang.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A cloth soaked with the spirits of the departed. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      477
+    ],
+    "holdable": true,
+    "id": "reaper-cloth",
+    "name": "Reaper Cloth",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/reaper-cloth.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A sachet filled with a perfume so sweet its scent lingers. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      683
+    ],
+    "holdable": true,
+    "id": "sachet",
+    "name": "Sachet",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/sachet.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A scroll recording the secrets of a dark technique. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      892
+    ],
+    "holdable": true,
+    "id": "scroll-of-darkness",
+    "name": "Scroll of Darkness",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/scroll-of-darkness.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A sweet apple. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      842
+    ],
+    "holdable": true,
+    "id": "sweet-apple",
+    "name": "Sweet Apple",
+    "pocket": "items",
+    "price": 2200,
+    "sellable": true,
+    "sprite": "items/sweet-apple.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "An apple heavy with sweet syrup. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      1011
+    ],
+    "holdable": true,
+    "id": "syrupy-apple",
+    "name": "Syrupy Apple",
+    "pocket": "items",
+    "price": 500,
+    "sellable": true,
+    "sprite": "items/syrupy-apple.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A sour apple. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      841
+    ],
+    "holdable": true,
+    "id": "tart-apple",
+    "name": "Tart Apple",
+    "pocket": "items",
+    "price": 2200,
+    "sellable": true,
+    "sprite": "items/tart-apple.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": true,
+    "description": "A plain, ordinary teacup. Use it on the right Pokemon and it will evolve.",
+    "evolves": [
+      1013
+    ],
+    "holdable": true,
+    "id": "unremarkable-teacup",
+    "name": "Unremarkable Teacup",
+    "pocket": "items",
+    "price": 400,
+    "sellable": true,
+    "sprite": "items/unremarkable-teacup.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A transparent device packed with all sorts of data, made by Silph Co. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      233
+    ],
+    "holdable": true,
+    "id": "up-grade",
+    "name": "Up-Grade",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/up-grade.png"
+  },
+  {
+    "category": "evolution-item",
+    "consumable": false,
+    "description": "A soft, sweet treat made of whipped cream. Certain Pokemon evolve when they level up holding it.",
+    "evolves": [
+      685
+    ],
+    "holdable": true,
+    "id": "whipped-dream",
+    "name": "Whipped Dream",
+    "pocket": "items",
+    "price": 2000,
+    "sellable": true,
+    "sprite": "items/whipped-dream.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone that sparkles like a pair of eyes. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      475,
+      478
+    ],
+    "holdable": true,
+    "id": "dawn-stone",
+    "name": "Dawn Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/dawn-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone that holds shadows as dark as can be. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      429,
+      430,
+      609,
+      681,
+      867
+    ],
+    "holdable": true,
+    "id": "dusk-stone",
+    "name": "Dusk Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/dusk-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone, colored orange, with fire seeming to burn inside it. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      59,
+      136,
+      514,
+      952
+    ],
+    "holdable": true,
+    "id": "fire-stone",
+    "name": "Fire Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/fire-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone, as cold to the touch as ice. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      28,
+      38,
+      471,
+      555,
+      740,
+      975
+    ],
+    "holdable": true,
+    "id": "ice-stone",
+    "name": "Ice Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/ice-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone with an unmistakable leaf pattern. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      45,
+      71,
+      101,
+      103,
+      275,
+      470,
+      512
+    ],
+    "holdable": true,
+    "id": "leaf-stone",
+    "name": "Leaf Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/leaf-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone, as black as the night sky. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      31,
+      34,
+      36,
+      40,
+      197,
+      301,
+      518
+    ],
+    "holdable": true,
+    "id": "moon-stone",
+    "name": "Moon Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/moon-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone that shines with a dazzling light. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      407,
+      468,
+      573,
+      671
+    ],
+    "holdable": true,
+    "id": "shiny-stone",
+    "name": "Shiny Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/shiny-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone that burns as red as the evening sun. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      182,
+      192,
+      196,
+      547,
+      549,
+      695
+    ],
+    "holdable": true,
+    "id": "sun-stone",
+    "name": "Sun Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/sun-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone with a thunderbolt pattern printed on it. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      26,
+      135,
+      462,
+      476,
+      604,
+      738,
+      939
+    ],
+    "holdable": true,
+    "id": "thunder-stone",
+    "name": "Thunder Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/thunder-stone.png"
+  },
+  {
+    "category": "evolution-stone",
+    "consumable": true,
+    "description": "A peculiar stone, a clear light blue, the color of a deep pool. It makes certain species of Pokemon evolve.",
+    "evolves": [
+      62,
+      91,
+      121,
+      134,
+      272,
+      516
+    ],
+    "holdable": true,
+    "id": "water-stone",
+    "name": "Water Stone",
+    "pocket": "items",
+    "price": 3000,
+    "sellable": true,
+    "sprite": "items/water-stone.png"
+  },
+  {
     "category": "key-stone",
     "consumable": false,
     "description": "A stone that holds a hidden power. It responds to a Mega Stone, letting one Pokemon per side change form once per battle.",
@@ -13,22 +660,326 @@
   },
   {
     "baseSpecies": [
-      3
+      460
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Venusaur change into Mega Venusaur in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Abomasnow change into Mega Abomasnow in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "venusaurite",
+    "id": "abomasite",
     "introducedIn": "xy",
     "megaForms": [
-      "venusaur-mega"
+      "abomasnow-mega"
     ],
-    "name": "Venusaurite",
+    "name": "Abomasite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/venusaurite.png"
+    "sprite": "items/abomasite.png"
+  },
+  {
+    "baseSpecies": [
+      359
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Absol change into Mega Absol in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "absolite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "absol-mega"
+    ],
+    "name": "Absolite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/absolite.png"
+  },
+  {
+    "baseSpecies": [
+      359
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Absol change into Mega Absol Z in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "absolite-z",
+    "introducedIn": "za",
+    "megaForms": [
+      "absol-mega-z"
+    ],
+    "name": "Absolite Z",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/absolite-z.png"
+  },
+  {
+    "baseSpecies": [
+      142
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Aerodactyl change into Mega Aerodactyl in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "aerodactylite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "aerodactyl-mega"
+    ],
+    "name": "Aerodactylite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/aerodactylite.png"
+  },
+  {
+    "baseSpecies": [
+      306
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Aggron change into Mega Aggron in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "aggronite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "aggron-mega"
+    ],
+    "name": "Aggronite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/aggronite.png"
+  },
+  {
+    "baseSpecies": [
+      65
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Alakazam change into Mega Alakazam in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "alakazite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "alakazam-mega"
+    ],
+    "name": "Alakazite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/alakazite.png"
+  },
+  {
+    "baseSpecies": [
+      334
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Altaria change into Mega Altaria in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "altarianite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "altaria-mega"
+    ],
+    "name": "Altarianite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/altarianite.png"
+  },
+  {
+    "baseSpecies": [
+      181
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Ampharos change into Mega Ampharos in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "ampharosite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "ampharos-mega"
+    ],
+    "name": "Ampharosite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/ampharosite.png"
+  },
+  {
+    "baseSpecies": [
+      531
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Audino change into Mega Audino in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "audinite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "audino-mega"
+    ],
+    "name": "Audinite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/audinite.png"
+  },
+  {
+    "baseSpecies": [
+      354
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Banette change into Mega Banette in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "banettite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "banette-mega"
+    ],
+    "name": "Banettite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/banettite.png"
+  },
+  {
+    "baseSpecies": [
+      689
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Barbaracle change into Mega Barbaracle in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "barbaracite",
+    "introducedIn": "za",
+    "megaForms": [
+      "barbaracle-mega"
+    ],
+    "name": "Barbaracite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/barbaracite.png"
+  },
+  {
+    "baseSpecies": [
+      998
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Baxcalibur change into Mega Baxcalibur in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "baxcalibrite",
+    "introducedIn": "za",
+    "megaForms": [
+      "baxcalibur-mega"
+    ],
+    "name": "Baxcalibrite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/baxcalibrite.png"
+  },
+  {
+    "baseSpecies": [
+      15
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Beedrill change into Mega Beedrill in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "beedrillite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "beedrill-mega"
+    ],
+    "name": "Beedrillite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/beedrillite.png"
+  },
+  {
+    "baseSpecies": [
+      9
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Blastoise change into Mega Blastoise in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "blastoisinite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "blastoise-mega"
+    ],
+    "name": "Blastoisinite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/blastoisinite.png"
+  },
+  {
+    "baseSpecies": [
+      257
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Blaziken change into Mega Blaziken in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "blazikenite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "blaziken-mega"
+    ],
+    "name": "Blazikenite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/blazikenite.png"
+  },
+  {
+    "baseSpecies": [
+      323
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Camerupt change into Mega Camerupt in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "cameruptite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "camerupt-mega"
+    ],
+    "name": "Cameruptite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/cameruptite.png"
+  },
+  {
+    "baseSpecies": [
+      609
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Chandelure change into Mega Chandelure in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "chandelurite",
+    "introducedIn": "za",
+    "megaForms": [
+      "chandelure-mega"
+    ],
+    "name": "Chandelurite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/chandelurite.png"
   },
   {
     "baseSpecies": [
@@ -70,98 +1021,402 @@
   },
   {
     "baseSpecies": [
-      9
+      652
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Blastoise change into Mega Blastoise in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Chesnaught change into Mega Chesnaught in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "blastoisinite",
+    "id": "chesnaughtite",
+    "introducedIn": "za",
+    "megaForms": [
+      "chesnaught-mega"
+    ],
+    "name": "Chesnaughtite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/chesnaughtite.png"
+  },
+  {
+    "baseSpecies": [
+      358
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Chimecho change into Mega Chimecho in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "chimechite",
+    "introducedIn": "za",
+    "megaForms": [
+      "chimecho-mega"
+    ],
+    "name": "Chimechite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/chimechite.png"
+  },
+  {
+    "baseSpecies": [
+      36
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Clefable change into Mega Clefable in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "clefablite",
+    "introducedIn": "za",
+    "megaForms": [
+      "clefable-mega"
+    ],
+    "name": "Clefablite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/clefablite.png"
+  },
+  {
+    "baseSpecies": [
+      740
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Crabominable change into Mega Crabominable in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "crabominite",
+    "introducedIn": "za",
+    "megaForms": [
+      "crabominable-mega"
+    ],
+    "name": "Crabominite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/crabominite.png"
+  },
+  {
+    "baseSpecies": [
+      491
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Darkrai change into Mega Darkrai in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "darkranite",
+    "introducedIn": "za",
+    "megaForms": [
+      "darkrai-mega"
+    ],
+    "name": "Darkranite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/darkranite.png"
+  },
+  {
+    "baseSpecies": [
+      655
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Delphox change into Mega Delphox in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "delphoxite",
+    "introducedIn": "za",
+    "megaForms": [
+      "delphox-mega"
+    ],
+    "name": "Delphoxite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/delphoxite.png"
+  },
+  {
+    "baseSpecies": [
+      719
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Diancie change into Mega Diancie in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "diancite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "diancie-mega"
+    ],
+    "name": "Diancite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/diancite.png"
+  },
+  {
+    "baseSpecies": [
+      691
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Dragalge change into Mega Dragalge in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "dragalgite",
+    "introducedIn": "za",
+    "megaForms": [
+      "dragalge-mega"
+    ],
+    "name": "Dragalgite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/dragalgite.png"
+  },
+  {
+    "baseSpecies": [
+      149
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Dragonite change into Mega Dragonite in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "dragoninite",
+    "introducedIn": "za",
+    "megaForms": [
+      "dragonite-mega"
+    ],
+    "name": "Dragoninite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/dragoninite.png"
+  },
+  {
+    "baseSpecies": [
+      780
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Drampa change into Mega Drampa in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "drampanite",
+    "introducedIn": "za",
+    "megaForms": [
+      "drampa-mega"
+    ],
+    "name": "Drampanite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/drampanite.png"
+  },
+  {
+    "baseSpecies": [
+      604
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Eelektross change into Mega Eelektross in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "eelektrossite",
+    "introducedIn": "za",
+    "megaForms": [
+      "eelektross-mega"
+    ],
+    "name": "Eelektrossite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/eelektrossite.png"
+  },
+  {
+    "baseSpecies": [
+      500
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Emboar change into Mega Emboar in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "emboarite",
+    "introducedIn": "za",
+    "megaForms": [
+      "emboar-mega"
+    ],
+    "name": "Emboarite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/emboarite.png"
+  },
+  {
+    "baseSpecies": [
+      530
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Excadrill change into Mega Excadrill in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "excadrite",
+    "introducedIn": "za",
+    "megaForms": [
+      "excadrill-mega"
+    ],
+    "name": "Excadrite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/excadrite.png"
+  },
+  {
+    "baseSpecies": [
+      870
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Falinks change into Mega Falinks in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "falinksite",
+    "introducedIn": "za",
+    "megaForms": [
+      "falinks-mega"
+    ],
+    "name": "Falinksite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/falinksite.png"
+  },
+  {
+    "baseSpecies": [
+      160
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Feraligatr change into Mega Feraligatr in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "feraligite",
+    "introducedIn": "za",
+    "megaForms": [
+      "feraligatr-mega"
+    ],
+    "name": "Feraligite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/feraligite.png"
+  },
+  {
+    "baseSpecies": [
+      670
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Floette change into Mega Floette in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "floettite",
+    "introducedIn": "za",
+    "megaForms": [
+      "floette-mega"
+    ],
+    "name": "Floettite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/floettite.png"
+  },
+  {
+    "baseSpecies": [
+      478
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Froslass change into Mega Froslass in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "froslassite",
+    "introducedIn": "za",
+    "megaForms": [
+      "froslass-mega"
+    ],
+    "name": "Froslassite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/froslassite.png"
+  },
+  {
+    "baseSpecies": [
+      475
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Gallade change into Mega Gallade in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "galladite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "gallade-mega"
+    ],
+    "name": "Galladite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/galladite.png"
+  },
+  {
+    "baseSpecies": [
+      445
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Garchomp change into Mega Garchomp in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "garchompite",
     "introducedIn": "xy",
     "megaForms": [
-      "blastoise-mega"
+      "garchomp-mega"
     ],
-    "name": "Blastoisinite",
+    "name": "Garchompite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/blastoisinite.png"
+    "sprite": "items/garchompite.png"
   },
   {
     "baseSpecies": [
-      15
+      445
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Beedrill change into Mega Beedrill in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Garchomp change into Mega Garchomp Z in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "beedrillite",
-    "introducedIn": "oras",
+    "id": "garchompite-z",
+    "introducedIn": "za",
     "megaForms": [
-      "beedrill-mega"
+      "garchomp-mega-z"
     ],
-    "name": "Beedrillite",
+    "name": "Garchompite Z",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/beedrillite.png"
+    "sprite": "items/garchompite-z.png"
   },
   {
     "baseSpecies": [
-      18
+      282
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Pidgeot change into Mega Pidgeot in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Gardevoir change into Mega Gardevoir in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "pidgeotite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "pidgeot-mega"
-    ],
-    "name": "Pidgeotite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/pidgeotite.png"
-  },
-  {
-    "baseSpecies": [
-      65
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Alakazam change into Mega Alakazam in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "alakazite",
+    "id": "gardevoirite",
     "introducedIn": "xy",
     "megaForms": [
-      "alakazam-mega"
+      "gardevoir-mega"
     ],
-    "name": "Alakazite",
+    "name": "Gardevoirite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/alakazite.png"
-  },
-  {
-    "baseSpecies": [
-      80
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Slowbro change into Mega Slowbro in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "slowbronite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "slowbro-mega"
-    ],
-    "name": "Slowbronite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/slowbronite.png"
+    "sprite": "items/gardevoirite.png"
   },
   {
     "baseSpecies": [
@@ -184,41 +1439,98 @@
   },
   {
     "baseSpecies": [
-      115
+      362
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Kangaskhan change into Mega Kangaskhan in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Glalie change into Mega Glalie in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "kangaskhanite",
-    "introducedIn": "xy",
+    "id": "glalitite",
+    "introducedIn": "oras",
     "megaForms": [
-      "kangaskhan-mega"
+      "glalie-mega"
     ],
-    "name": "Kangaskhanite",
+    "name": "Glalitite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/kangaskhanite.png"
+    "sprite": "items/glalitite.png"
   },
   {
     "baseSpecies": [
-      127
+      970
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Pinsir change into Mega Pinsir in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Glimmora change into Mega Glimmora in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "pinsirite",
-    "introducedIn": "xy",
+    "id": "glimmoranite",
+    "introducedIn": "za",
     "megaForms": [
-      "pinsir-mega"
+      "glimmora-mega"
     ],
-    "name": "Pinsirite",
+    "name": "Glimmoranite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/pinsirite.png"
+    "sprite": "items/glimmoranite.png"
+  },
+  {
+    "baseSpecies": [
+      768
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Golisopod change into Mega Golisopod in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "golisopite",
+    "introducedIn": "za",
+    "megaForms": [
+      "golisopod-mega"
+    ],
+    "name": "Golisopite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/golisopite.png"
+  },
+  {
+    "baseSpecies": [
+      623
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Golurk change into Mega Golurk in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "golurkite",
+    "introducedIn": "za",
+    "megaForms": [
+      "golurk-mega"
+    ],
+    "name": "Golurkite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/golurkite.png"
+  },
+  {
+    "baseSpecies": [
+      658
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Greninja change into Mega Greninja in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "greninjite",
+    "introducedIn": "za",
+    "megaForms": [
+      "greninja-mega"
+    ],
+    "name": "Greninjite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/greninjite.png"
   },
   {
     "baseSpecies": [
@@ -241,117 +1553,41 @@
   },
   {
     "baseSpecies": [
-      142
+      701
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Aerodactyl change into Mega Aerodactyl in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Hawlucha change into Mega Hawlucha in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "aerodactylite",
-    "introducedIn": "xy",
+    "id": "hawluchanite",
+    "introducedIn": "za",
     "megaForms": [
-      "aerodactyl-mega"
+      "hawlucha-mega"
     ],
-    "name": "Aerodactylite",
+    "name": "Hawluchanite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/aerodactylite.png"
+    "sprite": "items/hawluchanite.png"
   },
   {
     "baseSpecies": [
-      150
+      485
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Mewtwo change into Mega Mewtwo X in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Heatran change into Mega Heatran in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "mewtwonite-x",
-    "introducedIn": "xy",
+    "id": "heatranite",
+    "introducedIn": "za",
     "megaForms": [
-      "mewtwo-mega-x"
+      "heatran-mega"
     ],
-    "name": "Mewtwonite X",
+    "name": "Heatranite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/mewtwonite-x.png"
-  },
-  {
-    "baseSpecies": [
-      150
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Mewtwo change into Mega Mewtwo Y in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "mewtwonite-y",
-    "introducedIn": "xy",
-    "megaForms": [
-      "mewtwo-mega-y"
-    ],
-    "name": "Mewtwonite Y",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/mewtwonite-y.png"
-  },
-  {
-    "baseSpecies": [
-      181
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Ampharos change into Mega Ampharos in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "ampharosite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "ampharos-mega"
-    ],
-    "name": "Ampharosite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/ampharosite.png"
-  },
-  {
-    "baseSpecies": [
-      208
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Steelix change into Mega Steelix in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "steelixite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "steelix-mega"
-    ],
-    "name": "Steelixite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/steelixite.png"
-  },
-  {
-    "baseSpecies": [
-      212
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Scizor change into Mega Scizor in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "scizorite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "scizor-mega"
-    ],
-    "name": "Scizorite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/scizorite.png"
+    "sprite": "items/heatranite.png"
   },
   {
     "baseSpecies": [
@@ -393,345 +1629,22 @@
   },
   {
     "baseSpecies": [
-      248
+      115
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Tyranitar change into Mega Tyranitar in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Kangaskhan change into Mega Kangaskhan in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "tyranitarite",
+    "id": "kangaskhanite",
     "introducedIn": "xy",
     "megaForms": [
-      "tyranitar-mega"
+      "kangaskhan-mega"
     ],
-    "name": "Tyranitarite",
+    "name": "Kangaskhanite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/tyranitarite.png"
-  },
-  {
-    "baseSpecies": [
-      254
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Sceptile change into Mega Sceptile in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "sceptilite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "sceptile-mega"
-    ],
-    "name": "Sceptilite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/sceptilite.png"
-  },
-  {
-    "baseSpecies": [
-      257
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Blaziken change into Mega Blaziken in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "blazikenite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "blaziken-mega"
-    ],
-    "name": "Blazikenite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/blazikenite.png"
-  },
-  {
-    "baseSpecies": [
-      260
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Swampert change into Mega Swampert in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "swampertite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "swampert-mega"
-    ],
-    "name": "Swampertite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/swampertite.png"
-  },
-  {
-    "baseSpecies": [
-      282
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Gardevoir change into Mega Gardevoir in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "gardevoirite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "gardevoir-mega"
-    ],
-    "name": "Gardevoirite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/gardevoirite.png"
-  },
-  {
-    "baseSpecies": [
-      302
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Sableye change into Mega Sableye in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "sablenite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "sableye-mega"
-    ],
-    "name": "Sablenite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/sablenite.png"
-  },
-  {
-    "baseSpecies": [
-      303
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Mawile change into Mega Mawile in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "mawilite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "mawile-mega"
-    ],
-    "name": "Mawilite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/mawilite.png"
-  },
-  {
-    "baseSpecies": [
-      306
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Aggron change into Mega Aggron in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "aggronite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "aggron-mega"
-    ],
-    "name": "Aggronite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/aggronite.png"
-  },
-  {
-    "baseSpecies": [
-      308
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Medicham change into Mega Medicham in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "medichamite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "medicham-mega"
-    ],
-    "name": "Medichamite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/medichamite.png"
-  },
-  {
-    "baseSpecies": [
-      310
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Manectric change into Mega Manectric in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "manectite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "manectric-mega"
-    ],
-    "name": "Manectite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/manectite.png"
-  },
-  {
-    "baseSpecies": [
-      319
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Sharpedo change into Mega Sharpedo in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "sharpedonite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "sharpedo-mega"
-    ],
-    "name": "Sharpedonite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/sharpedonite.png"
-  },
-  {
-    "baseSpecies": [
-      323
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Camerupt change into Mega Camerupt in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "cameruptite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "camerupt-mega"
-    ],
-    "name": "Cameruptite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/cameruptite.png"
-  },
-  {
-    "baseSpecies": [
-      334
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Altaria change into Mega Altaria in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "altarianite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "altaria-mega"
-    ],
-    "name": "Altarianite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/altarianite.png"
-  },
-  {
-    "baseSpecies": [
-      354
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Banette change into Mega Banette in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "banettite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "banette-mega"
-    ],
-    "name": "Banettite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/banettite.png"
-  },
-  {
-    "baseSpecies": [
-      359
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Absol change into Mega Absol in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "absolite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "absol-mega"
-    ],
-    "name": "Absolite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/absolite.png"
-  },
-  {
-    "baseSpecies": [
-      362
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Glalie change into Mega Glalie in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "glalitite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "glalie-mega"
-    ],
-    "name": "Glalitite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/glalitite.png"
-  },
-  {
-    "baseSpecies": [
-      373
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Salamence change into Mega Salamence in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "salamencite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "salamence-mega"
-    ],
-    "name": "Salamencite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/salamencite.png"
-  },
-  {
-    "baseSpecies": [
-      376
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Metagross change into Mega Metagross in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "metagrossite",
-    "introducedIn": "oras",
-    "megaForms": [
-      "metagross-mega"
-    ],
-    "name": "Metagrossite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/metagrossite.png"
+    "sprite": "items/kangaskhanite.png"
   },
   {
     "baseSpecies": [
@@ -792,25 +1705,6 @@
   },
   {
     "baseSpecies": [
-      445
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Garchomp change into Mega Garchomp in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "garchompite",
-    "introducedIn": "xy",
-    "megaForms": [
-      "garchomp-mega"
-    ],
-    "name": "Garchompite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/garchompite.png"
-  },
-  {
-    "baseSpecies": [
       448
     ],
     "category": "mega-stone",
@@ -830,79 +1724,271 @@
   },
   {
     "baseSpecies": [
-      460
+      448
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Abomasnow change into Mega Abomasnow in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Lucario change into Mega Lucario Z in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "abomasite",
+    "id": "lucarionite-z",
+    "introducedIn": "za",
+    "megaForms": [
+      "lucario-mega-z"
+    ],
+    "name": "Lucarionite Z",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/lucarionite-z.png"
+  },
+  {
+    "baseSpecies": [
+      801
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Magearna change form in battle, if its Trainer carries a Key Stone. Which form it takes follows the Pokemon: Mega Magearna, Mega Magearna (Original Color).",
+    "holdable": true,
+    "id": "magearnite",
+    "introducedIn": "za",
+    "megaForms": [
+      "magearna-mega",
+      "magearna-mega-original"
+    ],
+    "name": "Magearnite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/magearnite.png"
+  },
+  {
+    "baseSpecies": [
+      687
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Malamar change into Mega Malamar in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "malamarite",
+    "introducedIn": "za",
+    "megaForms": [
+      "malamar-mega"
+    ],
+    "name": "Malamarite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/malamarite.png"
+  },
+  {
+    "baseSpecies": [
+      310
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Manectric change into Mega Manectric in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "manectite",
     "introducedIn": "xy",
     "megaForms": [
-      "abomasnow-mega"
+      "manectric-mega"
     ],
-    "name": "Abomasite",
+    "name": "Manectite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/abomasite.png"
+    "sprite": "items/manectite.png"
   },
   {
     "baseSpecies": [
-      475
+      303
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Gallade change into Mega Gallade in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Mawile change into Mega Mawile in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "galladite",
-    "introducedIn": "oras",
+    "id": "mawilite",
+    "introducedIn": "xy",
     "megaForms": [
-      "gallade-mega"
+      "mawile-mega"
     ],
-    "name": "Galladite",
+    "name": "Mawilite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/galladite.png"
+    "sprite": "items/mawilite.png"
   },
   {
     "baseSpecies": [
-      531
+      308
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Audino change into Mega Audino in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Medicham change into Mega Medicham in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "audinite",
-    "introducedIn": "oras",
+    "id": "medichamite",
+    "introducedIn": "xy",
     "megaForms": [
-      "audino-mega"
+      "medicham-mega"
     ],
-    "name": "Audinite",
+    "name": "Medichamite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/audinite.png"
+    "sprite": "items/medichamite.png"
   },
   {
     "baseSpecies": [
-      719
+      154
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Diancie change into Mega Diancie in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Meganium change into Mega Meganium in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "diancite",
-    "introducedIn": "oras",
+    "id": "meganiumite",
+    "introducedIn": "za",
     "megaForms": [
-      "diancie-mega"
+      "meganium-mega"
     ],
-    "name": "Diancite",
+    "name": "Meganiumite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/diancite.png"
+    "sprite": "items/meganiumite.png"
+  },
+  {
+    "baseSpecies": [
+      678
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Meowstic change form in battle, if its Trainer carries a Key Stone. Which form it takes follows the Pokemon: Mega Meowstic (Male), Mega Meowstic (Female).",
+    "holdable": true,
+    "id": "meowsticite",
+    "introducedIn": "za",
+    "megaForms": [
+      "meowstic-mega-male",
+      "meowstic-mega-female"
+    ],
+    "name": "Meowsticite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/meowsticite.png"
+  },
+  {
+    "baseSpecies": [
+      376
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Metagross change into Mega Metagross in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "metagrossite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "metagross-mega"
+    ],
+    "name": "Metagrossite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/metagrossite.png"
+  },
+  {
+    "baseSpecies": [
+      150
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Mewtwo change into Mega Mewtwo X in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "mewtwonite-x",
+    "introducedIn": "xy",
+    "megaForms": [
+      "mewtwo-mega-x"
+    ],
+    "name": "Mewtwonite X",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/mewtwonite-x.png"
+  },
+  {
+    "baseSpecies": [
+      150
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Mewtwo change into Mega Mewtwo Y in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "mewtwonite-y",
+    "introducedIn": "xy",
+    "megaForms": [
+      "mewtwo-mega-y"
+    ],
+    "name": "Mewtwonite Y",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/mewtwonite-y.png"
+  },
+  {
+    "baseSpecies": [
+      18
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Pidgeot change into Mega Pidgeot in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "pidgeotite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "pidgeot-mega"
+    ],
+    "name": "Pidgeotite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/pidgeotite.png"
+  },
+  {
+    "baseSpecies": [
+      127
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Pinsir change into Mega Pinsir in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "pinsirite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "pinsir-mega"
+    ],
+    "name": "Pinsirite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/pinsirite.png"
+  },
+  {
+    "baseSpecies": [
+      668
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Pyroar change into Mega Pyroar in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "pyroarite",
+    "introducedIn": "za",
+    "megaForms": [
+      "pyroar-mega"
+    ],
+    "name": "Pyroarite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/pyroarite.png"
   },
   {
     "baseSpecies": [
@@ -944,326 +2030,79 @@
   },
   {
     "baseSpecies": [
-      36
+      302
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Clefable change into Mega Clefable in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Sableye change into Mega Sableye in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "clefablite",
-    "introducedIn": "za",
+    "id": "sablenite",
+    "introducedIn": "oras",
     "megaForms": [
-      "clefable-mega"
+      "sableye-mega"
     ],
-    "name": "Clefablite",
+    "name": "Sablenite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/clefablite.png"
+    "sprite": "items/sablenite.png"
   },
   {
     "baseSpecies": [
-      71
+      373
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Victreebel change into Mega Victreebel in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Salamence change into Mega Salamence in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "victreebelite",
-    "introducedIn": "za",
+    "id": "salamencite",
+    "introducedIn": "oras",
     "megaForms": [
-      "victreebel-mega"
+      "salamence-mega"
     ],
-    "name": "Victreebelite",
+    "name": "Salamencite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/victreebelite.png"
+    "sprite": "items/salamencite.png"
   },
   {
     "baseSpecies": [
-      121
+      254
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Starmie change into Mega Starmie in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Sceptile change into Mega Sceptile in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "starminite",
-    "introducedIn": "za",
+    "id": "sceptilite",
+    "introducedIn": "oras",
     "megaForms": [
-      "starmie-mega"
+      "sceptile-mega"
     ],
-    "name": "Starminite",
+    "name": "Sceptilite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/starminite.png"
+    "sprite": "items/sceptilite.png"
   },
   {
     "baseSpecies": [
-      149
+      212
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Dragonite change into Mega Dragonite in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Scizor change into Mega Scizor in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "dragoninite",
-    "introducedIn": "za",
+    "id": "scizorite",
+    "introducedIn": "xy",
     "megaForms": [
-      "dragonite-mega"
+      "scizor-mega"
     ],
-    "name": "Dragoninite",
+    "name": "Scizorite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/dragoninite.png"
-  },
-  {
-    "baseSpecies": [
-      154
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Meganium change into Mega Meganium in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "meganiumite",
-    "introducedIn": "za",
-    "megaForms": [
-      "meganium-mega"
-    ],
-    "name": "Meganiumite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/meganiumite.png"
-  },
-  {
-    "baseSpecies": [
-      160
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Feraligatr change into Mega Feraligatr in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "feraligite",
-    "introducedIn": "za",
-    "megaForms": [
-      "feraligatr-mega"
-    ],
-    "name": "Feraligite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/feraligite.png"
-  },
-  {
-    "baseSpecies": [
-      227
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Skarmory change into Mega Skarmory in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "skarmorite",
-    "introducedIn": "za",
-    "megaForms": [
-      "skarmory-mega"
-    ],
-    "name": "Skarmorite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/skarmorite.png"
-  },
-  {
-    "baseSpecies": [
-      358
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Chimecho change into Mega Chimecho in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "chimechite",
-    "introducedIn": "za",
-    "megaForms": [
-      "chimecho-mega"
-    ],
-    "name": "Chimechite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/chimechite.png"
-  },
-  {
-    "baseSpecies": [
-      359
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Absol change into Mega Absol Z in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "absolite-z",
-    "introducedIn": "za",
-    "megaForms": [
-      "absol-mega-z"
-    ],
-    "name": "Absolite Z",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/absolite-z.png"
-  },
-  {
-    "baseSpecies": [
-      398
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Staraptor change into Mega Staraptor in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "staraptite",
-    "introducedIn": "za",
-    "megaForms": [
-      "staraptor-mega"
-    ],
-    "name": "Staraptite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/staraptite.png"
-  },
-  {
-    "baseSpecies": [
-      445
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Garchomp change into Mega Garchomp Z in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "garchompite-z",
-    "introducedIn": "za",
-    "megaForms": [
-      "garchomp-mega-z"
-    ],
-    "name": "Garchompite Z",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/garchompite-z.png"
-  },
-  {
-    "baseSpecies": [
-      448
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Lucario change into Mega Lucario Z in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "lucarionite-z",
-    "introducedIn": "za",
-    "megaForms": [
-      "lucario-mega-z"
-    ],
-    "name": "Lucarionite Z",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/lucarionite-z.png"
-  },
-  {
-    "baseSpecies": [
-      478
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Froslass change into Mega Froslass in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "froslassite",
-    "introducedIn": "za",
-    "megaForms": [
-      "froslass-mega"
-    ],
-    "name": "Froslassite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/froslassite.png"
-  },
-  {
-    "baseSpecies": [
-      485
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Heatran change into Mega Heatran in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "heatranite",
-    "introducedIn": "za",
-    "megaForms": [
-      "heatran-mega"
-    ],
-    "name": "Heatranite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/heatranite.png"
-  },
-  {
-    "baseSpecies": [
-      491
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Darkrai change into Mega Darkrai in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "darkranite",
-    "introducedIn": "za",
-    "megaForms": [
-      "darkrai-mega"
-    ],
-    "name": "Darkranite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/darkranite.png"
-  },
-  {
-    "baseSpecies": [
-      500
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Emboar change into Mega Emboar in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "emboarite",
-    "introducedIn": "za",
-    "megaForms": [
-      "emboar-mega"
-    ],
-    "name": "Emboarite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/emboarite.png"
-  },
-  {
-    "baseSpecies": [
-      530
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Excadrill change into Mega Excadrill in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "excadrite",
-    "introducedIn": "za",
-    "megaForms": [
-      "excadrill-mega"
-    ],
-    "name": "Excadrite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/excadrite.png"
+    "sprite": "items/scizorite.png"
   },
   {
     "baseSpecies": [
@@ -1286,407 +2125,6 @@
   },
   {
     "baseSpecies": [
-      560
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Scrafty change into Mega Scrafty in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "scraftinite",
-    "introducedIn": "za",
-    "megaForms": [
-      "scrafty-mega"
-    ],
-    "name": "Scraftinite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/scraftinite.png"
-  },
-  {
-    "baseSpecies": [
-      604
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Eelektross change into Mega Eelektross in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "eelektrossite",
-    "introducedIn": "za",
-    "megaForms": [
-      "eelektross-mega"
-    ],
-    "name": "Eelektrossite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/eelektrossite.png"
-  },
-  {
-    "baseSpecies": [
-      609
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Chandelure change into Mega Chandelure in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "chandelurite",
-    "introducedIn": "za",
-    "megaForms": [
-      "chandelure-mega"
-    ],
-    "name": "Chandelurite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/chandelurite.png"
-  },
-  {
-    "baseSpecies": [
-      623
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Golurk change into Mega Golurk in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "golurkite",
-    "introducedIn": "za",
-    "megaForms": [
-      "golurk-mega"
-    ],
-    "name": "Golurkite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/golurkite.png"
-  },
-  {
-    "baseSpecies": [
-      652
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Chesnaught change into Mega Chesnaught in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "chesnaughtite",
-    "introducedIn": "za",
-    "megaForms": [
-      "chesnaught-mega"
-    ],
-    "name": "Chesnaughtite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/chesnaughtite.png"
-  },
-  {
-    "baseSpecies": [
-      655
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Delphox change into Mega Delphox in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "delphoxite",
-    "introducedIn": "za",
-    "megaForms": [
-      "delphox-mega"
-    ],
-    "name": "Delphoxite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/delphoxite.png"
-  },
-  {
-    "baseSpecies": [
-      658
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Greninja change into Mega Greninja in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "greninjite",
-    "introducedIn": "za",
-    "megaForms": [
-      "greninja-mega"
-    ],
-    "name": "Greninjite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/greninjite.png"
-  },
-  {
-    "baseSpecies": [
-      668
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Pyroar change into Mega Pyroar in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "pyroarite",
-    "introducedIn": "za",
-    "megaForms": [
-      "pyroar-mega"
-    ],
-    "name": "Pyroarite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/pyroarite.png"
-  },
-  {
-    "baseSpecies": [
-      670
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Floette change into Mega Floette in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "floettite",
-    "introducedIn": "za",
-    "megaForms": [
-      "floette-mega"
-    ],
-    "name": "Floettite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/floettite.png"
-  },
-  {
-    "baseSpecies": [
-      678
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Meowstic change form in battle, if its Trainer carries a Key Stone. Which form it takes follows the Pokemon: Mega Meowstic (Male), Mega Meowstic (Female).",
-    "holdable": true,
-    "id": "meowsticite",
-    "introducedIn": "za",
-    "megaForms": [
-      "meowstic-mega-male",
-      "meowstic-mega-female"
-    ],
-    "name": "Meowsticite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/meowsticite.png"
-  },
-  {
-    "baseSpecies": [
-      687
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Malamar change into Mega Malamar in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "malamarite",
-    "introducedIn": "za",
-    "megaForms": [
-      "malamar-mega"
-    ],
-    "name": "Malamarite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/malamarite.png"
-  },
-  {
-    "baseSpecies": [
-      689
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Barbaracle change into Mega Barbaracle in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "barbaracite",
-    "introducedIn": "za",
-    "megaForms": [
-      "barbaracle-mega"
-    ],
-    "name": "Barbaracite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/barbaracite.png"
-  },
-  {
-    "baseSpecies": [
-      691
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Dragalge change into Mega Dragalge in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "dragalgite",
-    "introducedIn": "za",
-    "megaForms": [
-      "dragalge-mega"
-    ],
-    "name": "Dragalgite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/dragalgite.png"
-  },
-  {
-    "baseSpecies": [
-      701
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Hawlucha change into Mega Hawlucha in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "hawluchanite",
-    "introducedIn": "za",
-    "megaForms": [
-      "hawlucha-mega"
-    ],
-    "name": "Hawluchanite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/hawluchanite.png"
-  },
-  {
-    "baseSpecies": [
-      718
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Zygarde change into Mega Zygarde in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "zygardite",
-    "introducedIn": "za",
-    "megaForms": [
-      "zygarde-mega"
-    ],
-    "name": "Zygardite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/zygardite.png"
-  },
-  {
-    "baseSpecies": [
-      740
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Crabominable change into Mega Crabominable in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "crabominite",
-    "introducedIn": "za",
-    "megaForms": [
-      "crabominable-mega"
-    ],
-    "name": "Crabominite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/crabominite.png"
-  },
-  {
-    "baseSpecies": [
-      768
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Golisopod change into Mega Golisopod in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "golisopite",
-    "introducedIn": "za",
-    "megaForms": [
-      "golisopod-mega"
-    ],
-    "name": "Golisopite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/golisopite.png"
-  },
-  {
-    "baseSpecies": [
-      780
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Drampa change into Mega Drampa in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "drampanite",
-    "introducedIn": "za",
-    "megaForms": [
-      "drampa-mega"
-    ],
-    "name": "Drampanite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/drampanite.png"
-  },
-  {
-    "baseSpecies": [
-      801
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Magearna change form in battle, if its Trainer carries a Key Stone. Which form it takes follows the Pokemon: Mega Magearna, Mega Magearna (Original Color).",
-    "holdable": true,
-    "id": "magearnite",
-    "introducedIn": "za",
-    "megaForms": [
-      "magearna-mega",
-      "magearna-mega-original"
-    ],
-    "name": "Magearnite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/magearnite.png"
-  },
-  {
-    "baseSpecies": [
-      807
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Zeraora change into Mega Zeraora in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "zeraorite",
-    "introducedIn": "za",
-    "megaForms": [
-      "zeraora-mega"
-    ],
-    "name": "Zeraorite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/zeraorite.png"
-  },
-  {
-    "baseSpecies": [
-      870
-    ],
-    "category": "mega-stone",
-    "consumable": false,
-    "description": "A stone that lets Falinks change into Mega Falinks in battle, if its Trainer carries a Key Stone.",
-    "holdable": true,
-    "id": "falinksite",
-    "introducedIn": "za",
-    "megaForms": [
-      "falinks-mega"
-    ],
-    "name": "Falinksite",
-    "pocket": "items",
-    "price": 0,
-    "sellable": false,
-    "sprite": "items/falinksite.png"
-  },
-  {
-    "baseSpecies": [
       952
     ],
     "category": "mega-stone",
@@ -1706,22 +2144,155 @@
   },
   {
     "baseSpecies": [
-      970
+      560
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Glimmora change into Mega Glimmora in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Scrafty change into Mega Scrafty in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "glimmoranite",
+    "id": "scraftinite",
     "introducedIn": "za",
     "megaForms": [
-      "glimmora-mega"
+      "scrafty-mega"
     ],
-    "name": "Glimmoranite",
+    "name": "Scraftinite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/glimmoranite.png"
+    "sprite": "items/scraftinite.png"
+  },
+  {
+    "baseSpecies": [
+      319
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Sharpedo change into Mega Sharpedo in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "sharpedonite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "sharpedo-mega"
+    ],
+    "name": "Sharpedonite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/sharpedonite.png"
+  },
+  {
+    "baseSpecies": [
+      227
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Skarmory change into Mega Skarmory in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "skarmorite",
+    "introducedIn": "za",
+    "megaForms": [
+      "skarmory-mega"
+    ],
+    "name": "Skarmorite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/skarmorite.png"
+  },
+  {
+    "baseSpecies": [
+      80
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Slowbro change into Mega Slowbro in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "slowbronite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "slowbro-mega"
+    ],
+    "name": "Slowbronite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/slowbronite.png"
+  },
+  {
+    "baseSpecies": [
+      398
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Staraptor change into Mega Staraptor in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "staraptite",
+    "introducedIn": "za",
+    "megaForms": [
+      "staraptor-mega"
+    ],
+    "name": "Staraptite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/staraptite.png"
+  },
+  {
+    "baseSpecies": [
+      121
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Starmie change into Mega Starmie in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "starminite",
+    "introducedIn": "za",
+    "megaForms": [
+      "starmie-mega"
+    ],
+    "name": "Starminite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/starminite.png"
+  },
+  {
+    "baseSpecies": [
+      208
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Steelix change into Mega Steelix in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "steelixite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "steelix-mega"
+    ],
+    "name": "Steelixite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/steelixite.png"
+  },
+  {
+    "baseSpecies": [
+      260
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Swampert change into Mega Swampert in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "swampertite",
+    "introducedIn": "oras",
+    "megaForms": [
+      "swampert-mega"
+    ],
+    "name": "Swampertite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/swampertite.png"
   },
   {
     "baseSpecies": [
@@ -1746,21 +2317,97 @@
   },
   {
     "baseSpecies": [
-      998
+      248
     ],
     "category": "mega-stone",
     "consumable": false,
-    "description": "A stone that lets Baxcalibur change into Mega Baxcalibur in battle, if its Trainer carries a Key Stone.",
+    "description": "A stone that lets Tyranitar change into Mega Tyranitar in battle, if its Trainer carries a Key Stone.",
     "holdable": true,
-    "id": "baxcalibrite",
-    "introducedIn": "za",
+    "id": "tyranitarite",
+    "introducedIn": "xy",
     "megaForms": [
-      "baxcalibur-mega"
+      "tyranitar-mega"
     ],
-    "name": "Baxcalibrite",
+    "name": "Tyranitarite",
     "pocket": "items",
     "price": 0,
     "sellable": false,
-    "sprite": "items/baxcalibrite.png"
+    "sprite": "items/tyranitarite.png"
+  },
+  {
+    "baseSpecies": [
+      3
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Venusaur change into Mega Venusaur in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "venusaurite",
+    "introducedIn": "xy",
+    "megaForms": [
+      "venusaur-mega"
+    ],
+    "name": "Venusaurite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/venusaurite.png"
+  },
+  {
+    "baseSpecies": [
+      71
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Victreebel change into Mega Victreebel in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "victreebelite",
+    "introducedIn": "za",
+    "megaForms": [
+      "victreebel-mega"
+    ],
+    "name": "Victreebelite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/victreebelite.png"
+  },
+  {
+    "baseSpecies": [
+      807
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Zeraora change into Mega Zeraora in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "zeraorite",
+    "introducedIn": "za",
+    "megaForms": [
+      "zeraora-mega"
+    ],
+    "name": "Zeraorite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/zeraorite.png"
+  },
+  {
+    "baseSpecies": [
+      718
+    ],
+    "category": "mega-stone",
+    "consumable": false,
+    "description": "A stone that lets Zygarde change into Mega Zygarde in battle, if its Trainer carries a Key Stone.",
+    "holdable": true,
+    "id": "zygardite",
+    "introducedIn": "za",
+    "megaForms": [
+      "zygarde-mega"
+    ],
+    "name": "Zygardite",
+    "pocket": "items",
+    "price": 0,
+    "sellable": false,
+    "sprite": "items/zygardite.png"
   }
 ]

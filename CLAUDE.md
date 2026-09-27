@@ -85,7 +85,8 @@ tools/run_tests.sh -- --require-data     # pendings become failures
 
 # Data pipelines (committed output)
 python tools/build_species.py            # 1025 species, moves, learnsets, abilities, typechart
-python tools/build_megas.py              # 97 Mega forms
+python tools/build_megas.py              # 97 Mega forms + the Mega Stone items
+python tools/build_items.py --apply      # the 40 evolution items
 
 # Data audits (read-only; build_species.py already APPLIES the evolution pass)
 python tools/fix_evolutions.py           # the 73-edge rework; --apply, --verify, --markdown
@@ -196,6 +197,17 @@ tile in the manifest.
 
 Each of these has already cost real time. Do not rediscover them.
 
+**A plain `build_megas.py` run used to ERASE nine owner decisions.**
+`data/mega_ability_overrides.json` is authoritative (DATA_CONTRACT §11.5, and CLAUDE.md lists
+Heatran = `earth-eater` as locked), but folding it in was opt-in behind
+`--apply-owner-overrides`, so a plain rebuild shipped all nine Champions-uncovered Megas as
+`abilities: []` / `abilityStatus: pending-owner` — silently, with every check still passing.
+It also never emitted `abilityNote`, so the *recorded reasoning* for each decision existed only
+as a hand-edit in `megas.json` and died on any rebuild. Overrides are now applied by default
+(`--no-owner-overrides` inspects the pre-decision state) and the note is generated from the
+overrides file. **The general rule: if a file is authoritative, the default path must apply it.
+An authoritative input that the default rebuild ignores is a data-loss bug, not a safety flag.**
+
 **GDScript `Packed*Array` is a VALUE type.** `(dict["k"] as PackedStringArray).append(x)`
 appends to a throwaway copy and the stored array never changes — silently, with no error.
 `Array` and `Dictionary` *are* references, so a function that fills both looks half-working,
@@ -211,6 +223,14 @@ Post-generator corrections belong **inside the build**: the override tables
 `fix_evolutions.apply_table()` call — never in the emitted JSON, and never as a "remember to
 re-run X afterwards" note. **After any data rebuild:** `git status --short -- data/`, and treat
 anything you did not mean to change as a regression.
+
+**`data/items.json` has TWO owners and they must agree on row order.**
+`build_megas.py` writes the Mega Stones and the Key Stone; `build_items.py` writes the 40
+evolution items. Each preserves the other's rows, and both sort with
+`build_items.sort_rows()` — without that shared order the file flip-flops depending on which
+ran last and neither tool is idempotent in the presence of the other. Run either in any order;
+the bytes must not change. Nothing in the engine loads `items.json` yet (`DataRegistry` has no
+item accessor), so `tests/test_items.gd` is the only thing that would ever notice a break.
 
 **An "idempotent" tool is not idempotent until you re-run it and check.** `fix_evolutions.py`
 claimed idempotence in its docstring and was wrong for 25 of its 73 rows: the already-applied
@@ -261,12 +281,6 @@ bytes, and the offset is **language-specific** (that value is for the English RO
 - Integration landed: `data/maps/` carries the 9 Twinleaf→Oreburgh maps and `Boot.tscn`,
   `Overworld.tscn` and `Battle.tscn` all exist. The vertical slice boots. Remaining work is
   tracked in `HANDOFF.md` §4.
-- **`data/items.json` has no evolution items.** It holds 93 entries: 92 Mega Stones and the Key
-  Stone. The evolution data references 40 distinct items (23 `item`, 17 `heldItem`) and **none
-  of them exist**, so 23 species that the evolution rework unblocked are still unobtainable and
-  every one of the 67 `use-item` evolutions is dead. `tools/check_reachability.py` reports the
-  exact list (`NEEDS_ITEM`). Required minimum is listed in `docs/research/evolution-audit.md`
-  §6.1. This is the single highest-value data gap left.
 - **Vulpix → Ninetales is an Ice Stone evolution, not Fire Stone** — a veekun per-version-group
   dedupe artifact where the Alolan row won (evolution-audit.md §6.2). Owner decision: add a Fire
   Stone route back, or accept it. Meowth → Persian is friendship rather than L28 for the same

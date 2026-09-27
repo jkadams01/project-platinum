@@ -21,13 +21,14 @@ graph and separates the reasons:
                   party that is not itself reachable.
     NOT_IN_GAME   nothing in its line is obtainable. EXPECTED for a slice.
 
-Exit status is 0 only when BROKEN_EVO is empty: that bucket is the regression
-this file guards. NEEDS_ITEM and NEEDS_FRIEND are reported and do not fail, so
-this can be wired into CI now and stay useful while items.json is unfinished.
+Exit status is 0 only when BROKEN_EVO and NEEDS_ITEM are both empty. Both were
+non-empty and are now closed -- 17 and 23 species respectively -- so both are
+defended rather than merely reported. NEEDS_FRIEND is reported and does not fail:
+it depends on which areas are built, so it will move on its own as maps land.
 
     python tools/check_reachability.py
-    python tools/check_reachability.py --list        # name every species, bucket by bucket
-    python tools/check_reachability.py --strict      # also fail on NEEDS_ITEM
+    python tools/check_reachability.py --list                  # every species, by bucket
+    python tools/check_reachability.py --allow-missing-items   # tolerate NEEDS_ITEM
 
 Performability rules are imported from fix_evolutions, not restated, so the two
 files cannot drift.
@@ -254,9 +255,12 @@ def main(argv):
             print()
 
     failed = bool(buckets[BROKEN_EVO])
-    if '--strict' in argv and buckets[NEEDS_ITEM]:
+    if buckets[NEEDS_ITEM] and '--allow-missing-items' not in argv:
         failed = True
-        print('--strict: NEEDS_ITEM is not empty.')
+        print('NEEDS_ITEM is not empty: %d species are blocked by an item that does'
+              % len(buckets[NEEDS_ITEM]))
+        print('not exist in data/items.json. Run `python tools/build_items.py --apply`,')
+        print('or pass --allow-missing-items if that is genuinely expected.')
     print('RESULT: %s' % ('FAIL' if failed else 'PASS'))
     return 1 if failed else 0
 
