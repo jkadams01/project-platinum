@@ -16,9 +16,14 @@ works here works there.
 `scenes/Title.tscn` is the main scene. **CAMPAIGN** loads `scenes/Boot.tscn` unchanged;
 **CUSTOM BATTLE** loads `scenes/CustomBattle.tscn`.
 
+```bash
+tools/run_game.sh                    # title screen
+tools/run_game.sh --custom           # skip the title, straight into the builder
 ```
-godot --path .                       # title screen
-```
+
+From inside the Godot editor, **F5** runs the main scene, which is the title.
+Launching the Godot binary on its own opens the Project Manager and then the
+*editor*, not the game -- that is the usual reason it seems not to run.
 
 ---
 

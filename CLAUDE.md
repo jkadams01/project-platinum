@@ -84,6 +84,13 @@ Verify with `python -c "from PIL import Image; print('ok')"`. Without it you get
 ## Commands
 
 ```bash
+# Run the game. `godot --path <dir>` RUNS a project; launching the binary with no
+# arguments opens the Project Manager, and picking the project there opens the
+# EDITOR. From inside the editor, F5 runs the main scene (the title screen).
+tools/run_game.sh                        # title: CAMPAIGN or CUSTOM BATTLE
+tools/run_game.sh --custom               # straight into Custom Battle mode
+tools/run_game.sh --campaign             # straight into Twinleaf Town
+
 # Godot test suite — exits nonzero on failure
 tools/run_tests.sh
 tools/run_tests.sh -- --filter=battle
