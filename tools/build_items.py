@@ -22,6 +22,18 @@ What comes from where:
   * evolves                 -- derived from data/species.json, so the file says
                                what each item is actually for
 
+IT ALSO BUILDS THE HELD BATTLE ITEMS (category `held-item`). Those are NOT derived
+from anything -- there is no data file that says the game wants a Leftovers -- so
+the HELD table below is authored, the same status as the DESIGN table. What
+justifies each row is that the rosters already reference it: 23 boss slots hold a
+Sitrus Berry, 22 hold Leftovers, 21 a Life Orb, and 56 ordinary trainers hold a
+Sitrus Berry, all of which did nothing at all before this family existed.
+
+`tier` mirrors DATA_CONTRACT 4 for abilities: 1 = src/battle/items.gd implements
+it, 3 = the row exists so a roster can reference it but nothing reads it yet. The
+builder UI shows the tier, so an item that does nothing says so before it is
+chosen rather than after the battle.
+
 MERGE, NOT OVERWRITE. Mega Stone and Key Stone rows are preserved untouched, and
 tools/build_megas.py preserves these rows in turn. Both tools sort the file with
 `sort_rows()` so the result is byte-identical whichever ran last.
@@ -44,7 +56,94 @@ ITEMS = os.path.join(ROOT, 'data', 'items.json')
 VEEKUN_ITEMS = os.path.join(HERE, '.cache', 'veekun', 'items.csv')
 
 ## Categories this script owns. Rows in any other category are left alone.
-OURS = ('evolution-stone', 'evolution-item')
+OURS = ('evolution-stone', 'evolution-item', 'held-item')
+
+# ---------------------------------------------------------------------------
+# HELD BATTLE ITEMS -- id: (name, tier, hook, consumable, description)
+#
+# `hook` names the seam src/battle/items.gd uses, the way abilities.json names
+# the seam an ability uses. It is documentation, not dispatch: items.gd keys on
+# the id. Keep the two in step -- a row claiming tier 1 that items.gd does not
+# implement is a lie the builder UI will repeat.
+# ---------------------------------------------------------------------------
+HELD = {
+    'leftovers': (
+        'Leftovers', 1, 'onTurnEnd', False,
+        'Restores a little of the holder HP at the end of every turn.'),
+    'black-sludge': (
+        'Black Sludge', 1, 'onTurnEnd', False,
+        'Restores HP to a Poison-type holder each turn, and hurts any other holder.'),
+    'flame-orb': (
+        'Flame Orb', 1, 'onTurnEnd', False,
+        'Burns the holder at the end of the turn.'),
+    'life-orb': (
+        'Life Orb', 1, 'onDamageCalc', False,
+        'Boosts the power of moves, at the cost of some HP each time one lands.'),
+    'expert-belt': (
+        'Expert Belt', 1, 'onDamageCalc', False,
+        'Boosts the power of super effective moves.'),
+    'muscle-band': (
+        'Muscle Band', 1, 'onDamageCalc', False,
+        'Slightly boosts the power of physical moves.'),
+    'wise-glasses': (
+        'Wise Glasses', 1, 'onDamageCalc', False,
+        'Slightly boosts the power of special moves.'),
+    'choice-band': (
+        'Choice Band', 1, 'onDamageCalc', False,
+        'Boosts Attack, but allows only the first move chosen.'),
+    'choice-specs': (
+        'Choice Specs', 1, 'onDamageCalc', False,
+        'Boosts Sp. Atk, but allows only the first move chosen.'),
+    'choice-scarf': (
+        'Choice Scarf', 1, 'onSpeed', False,
+        'Boosts Speed, but allows only the first move chosen.'),
+    'assault-vest': (
+        'Assault Vest', 1, 'onDamageCalc', False,
+        'Boosts Sp. Def, but forbids status moves.'),
+    'rocky-helmet': (
+        'Rocky Helmet', 1, 'onContactHit', False,
+        'Hurts attackers that make contact.'),
+    'focus-sash': (
+        'Focus Sash', 1, 'onFatalHit', True,
+        'Holds on with 1 HP against a hit that would knock the holder out from full '
+        'health. Used up.'),
+    'sitrus-berry': (
+        'Sitrus Berry', 1, 'onLowHp', True,
+        'Restores a quarter of the holder HP when it falls to half. Eaten.'),
+    'oran-berry': (
+        'Oran Berry', 1, 'onLowHp', True,
+        'Restores 10 HP when the holder HP falls to half. Eaten.'),
+    'shuca-berry': (
+        'Shuca Berry', 1, 'onEffectiveness', True,
+        'Weakens a super effective Ground-type hit. Eaten.'),
+    'black-belt': (
+        'Black Belt', 1, 'onDamageCalc', False,
+        'Boosts Fighting-type moves.'),
+    'charcoal': (
+        'Charcoal', 1, 'onDamageCalc', False,
+        'Boosts Fire-type moves.'),
+    'magnet': (
+        'Magnet', 1, 'onDamageCalc', False,
+        'Boosts Electric-type moves.'),
+    'mystic-water': (
+        'Mystic Water', 1, 'onDamageCalc', False,
+        'Boosts Water-type moves.'),
+    'sharp-beak': (
+        'Sharp Beak', 1, 'onDamageCalc', False,
+        'Boosts Flying-type moves.'),
+    'silk-scarf': (
+        'Silk Scarf', 1, 'onDamageCalc', False,
+        'Boosts Normal-type moves.'),
+    'lucky-egg': (
+        'Lucky Egg', 1, 'onExp', False,
+        'The holder earns more EXP. Points from a battle.'),
+    # Tier 3 on purpose: two boss slots reference it, but it exists to trigger a
+    # Paradox ability (Protosynthesis / Quark Drive) and the engine has neither.
+    # Shipping it as tier 1 would be the lie the tier field exists to prevent.
+    'booster-energy': (
+        'Booster Energy', 3, 'none', True,
+        'Meant to rouse a Paradox Pokemon. Nothing in the engine reads it yet.'),
+}
 
 ## Roles, which decide category/consumable:
 ##   stone  a classic evolution stone, used on the Pokemon and consumed
@@ -228,6 +327,29 @@ def build(species):
     return rows, problems
 
 
+def build_held(costs):
+    """The held battle items as contract rows. Authored, not derived; see HELD."""
+    rows = []
+    for item_id in sorted(HELD):
+        name, tier, hook, consumable, description = HELD[item_id]
+        price = costs.get(item_id, 0)
+        rows.append({
+            'id': item_id,
+            'name': name,
+            'category': 'held-item',
+            'pocket': 'items',
+            'price': price,
+            'sellable': price > 0,
+            'holdable': True,
+            'consumable': consumable,
+            'description': description,
+            'hook': hook,
+            'tier': tier,
+            'sprite': 'items/%s.png' % item_id,
+        })
+    return rows
+
+
 def merge(new_rows):
     """New rows plus every row this script does not own, in canonical order."""
     container, existing = None, []
@@ -251,17 +373,28 @@ def merge(new_rows):
 def main(argv):
     species = load(SPECIES)
     rows, problems = build(species)
+    held = build_held(veekun_costs())
+    rows = rows + held
 
     print('=' * 74)
-    print('EVOLUTION ITEMS')
+    print('ITEMS THIS TOOL OWNS')
     print('=' * 74)
     by_cat = {}
     for r in rows:
         by_cat.setdefault(r['category'], []).append(r)
     for cat in sorted(by_cat):
         print('  %-18s %d' % (cat, len(by_cat[cat])))
-    holds = [r for r in rows if not r['consumable']]
+    holds = [r for r in rows if not r['consumable'] and r['category'] != 'held-item']
     print('  %-18s %d (hold-and-level; not consumed)' % ('of which held', len(holds)))
+    print()
+    print('=' * 74)
+    print('HELD BATTLE ITEMS')
+    print('=' * 74)
+    inert = [r for r in held if r['tier'] != 1]
+    print('  %-18s %d' % ('implemented', len(held) - len(inert)))
+    for r in inert:
+        print('  %-18s %s (tier %d -- nothing reads it yet)'
+              % ('data only', r['id'], r['tier']))
     print()
 
     if problems:
@@ -271,8 +404,8 @@ def main(argv):
         return 1
 
     payload, merged, replaced = merge(rows)
-    print('merged: %d rows total (%d new/replaced, %d preserved)'
-          % (len(merged), replaced or len(rows), len(merged) - len(rows)))
+    print('merged: %d rows total (%d written by this tool, %d preserved, %d replaced)'
+          % (len(merged), len(rows), len(merged) - len(rows), replaced))
 
     if '--apply' not in argv:
         print('dry run: data/items.json untouched (pass --apply to write)')

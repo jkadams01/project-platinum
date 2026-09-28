@@ -42,13 +42,17 @@ extends RefCounted
 ## fights. A team edited by hand cannot get into that state: the pickers only ever
 ## offer legal choices.
 ##
-## ITEMS ARE NEVER INVALID, ONLY INERT.
-## The engine reads a held `item` in exactly two places: `mega.gd` matches it
-## against the stone of an eligible form, and `exp.gd` looks for `lucky-egg`.
-## There is no Life Orb, no Leftovers and no Choice Band. So the picker offers the
-## stones a species can use ([method item_choices]) and nothing else, while an item
-## that arrived with a roster is kept and simply does nothing -- which is what
-## `oran-berry` on Roark Roggenrola already does in the campaign today.
+## ITEMS: THE STONES FOR THIS SPECIES, THEN EVERYTHING THE ENGINE ACTS ON.
+## `src/battle/items.gd` implements the held battle items -- Leftovers, Life Orb,
+## the Choice trio, the berries, Focus Sash, Assault Vest, Rocky Helmet and the
+## type boosters -- so [method item_choices] offers a species Mega Stones first and
+## then every holdable item in `data/items.json`. A Mega Stone is offered only to
+## the species it belongs to, because it is meaningless anywhere else; the rest are
+## offered to everything, because they work on everything.
+##
+## An item the ENGINE does not read is still selectable and still kept when a
+## roster brings one in, but it is marked. [method item_is_live] is what the slot
+## editor asks to draw that mark.
 ##
 ## FORMAT IS SINGLES ONLY AND [method validate] SAYS SO OUT LOUD.
 ## `battle_engine.gd` keeps one active Pokemon per side (`sides[side]["active"]`
@@ -61,6 +65,7 @@ const Stats := preload("res://src/battle/stats.gd")
 const Mega := preload("res://src/battle/mega.gd")
 const Deps := preload("res://src/battle/deps.gd")
 const PartyBuilder := preload("res://src/systems/party_builder.gd")
+const Items := preload("res://src/battle/items.gd")
 
 const MAX_SLOTS := 6
 const MAX_MOVES := 4
@@ -167,18 +172,29 @@ static func legal_abilities(species_id: int) -> PackedStringArray:
 	return out
 
 
-## Held items worth offering for this species: the Mega Stone of every form it
-## has. See the header for why this is not the whole item table.
+## The Mega Stones this species can use, and nothing else. Kept separate from
+## [method item_choices] because a stone is the one item whose legality depends on
+## who is holding it.
 ##
 ## A stoneless form (Mega Rayquaza, gated on knowing Dragon Ascent instead) has no
 ## stone to offer, so it is skipped here and works through its move.
-static func item_choices(species_id: int) -> PackedStringArray:
+static func stone_choices(species_id: int) -> PackedStringArray:
 	var out := PackedStringArray()
 	for form: Variant in Mega.forms_for(species_id):
 		if form is Dictionary and (form as Dictionary).get("stone", null) != null:
 			var stone := String((form as Dictionary)["stone"]).to_lower()
 			if not stone.is_empty() and not out.has(stone):
 				out.append(stone)
+	return out
+
+
+## Everything this species may sensibly be given: its own Mega Stones first, then
+## every holdable battle item. See the header.
+static func item_choices(species_id: int) -> PackedStringArray:
+	var out := stone_choices(species_id)
+	for id: String in Items.holdable_ids():
+		if not out.has(id):
+			out.append(id)
 	return out
 
 
@@ -317,6 +333,10 @@ static func advise_slot(slot: Dictionary) -> PackedStringArray:
 	if not ability.is_empty() and not legal_abilities(species).has(ability):
 		out.append("%s cannot have %s" % [_species_name(species), pretty(ability)])
 
+	# A Mega Stone belonging to somebody else is the one item worth complaining
+	# about: it looks like it will do something and never will. A plain unknown item
+	# is reported the same way, while an item the engine simply has not implemented
+	# is left to the slot editor inert marker rather than nagged about here.
 	var item := String(slot.get("item", ""))
 	if not item.is_empty() and not item_choices(species).has(item):
 		out.append("%s does nothing for %s" % [pretty(item), _species_name(species)])
@@ -328,13 +348,17 @@ static func advise_slot(slot: Dictionary) -> PackedStringArray:
 	return out
 
 
-## True when this slot holds an item the engine will actually act on -- a Mega
-## Stone the species can use. The slot editor marks anything else as inert.
+## True when this slot holds an item the engine will actually act on: a Mega Stone
+## this species can use, or an implemented battle item. The slot editor marks
+## anything else inert, which is how a roster item nothing reads stays visible
+## instead of looking like it works.
 static func item_is_live(slot: Dictionary) -> bool:
 	var item := String(slot.get("item", ""))
 	if item.is_empty():
 		return false
-	return item_choices(int(slot.get("species", 0))).has(item)
+	if stone_choices(int(slot.get("species", 0))).has(item):
+		return true
+	return Items.implemented(item)
 
 
 ## "rock-slide" -> "Rock Slide". A copy of `ui_kit.pretty()` on purpose: this file

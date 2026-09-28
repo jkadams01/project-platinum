@@ -34,6 +34,7 @@ const Deps := preload("res://src/battle/deps.gd")
 const Mega := preload("res://src/battle/mega.gd")
 const Abilities := preload("res://src/battle/abilities/registry.gd")
 const MultiHit := preload("res://src/battle/multi_hit.gd")
+const Items := preload("res://src/battle/items.gd")
 
 signal message(text: String)
 signal turn_resolved(turn: int)
@@ -311,6 +312,13 @@ func submit_action(side: int, action: Dictionary) -> bool:
 				return false
 			if int((moves[idx] as Dictionary).get("pp", 0)) <= 0:
 				return false
+			# A Choice item locks the holder into one move, and an Assault Vest
+			# forbids status moves. Refusing SILENTLY is the trap: the move menu
+			# would look frozen, so the reason is said before the refusal.
+			var blocked := Items.blocks_move(active(side), moves[idx])
+			if not blocked.is_empty():
+				_say(blocked)
+				return false
 			# A Mega request rides along with the move (DATA_CONTRACT 11.2: it
 			# resolves before the move, it is not an action of its own). An
 			# illegal request is dropped and the move still stands, rather than
@@ -508,6 +516,13 @@ func _use_move(side: int, move: Dictionary) -> void:
 
 	move["pp"] = maxi(int(move.get("pp", 0)) - 1, 0)
 
+	# A Choice item locks in on the move that is actually USED, not the one that
+	# was submitted: a mon that flinched or was frozen solid above never committed
+	# to anything, and locking it there would strand it for the rest of the battle.
+	# `Status.clear_volatiles()` drops the lock on switch, which is where the games
+	# drop it too.
+	Items.note_move_used(attacker, String(move.get("slug", "")))
+
 	# Using anything other than a protection move breaks the consecutive-use chain,
 	# so Protect is cheap again next turn. Kept here -- on the USE, not at end of
 	# turn -- because that is the event the games key it to.
@@ -613,7 +628,15 @@ func _use_move(side: int, move: Dictionary) -> void:
 			_say("It doesn't affect %s..." % Stats.display_name(defender))
 			return
 
-		var dealt := -Stats.apply_hp_delta(defender, -int(hit["damage"]))
+		# Focus Sash is consulted BEFORE the damage lands, because it changes how
+		# much lands: from full HP a fatal hit leaves exactly 1.
+		var incoming := int(hit["damage"])
+		var sash := Items.survive_fatal(defender, incoming)
+		incoming = int(sash["damage"])
+
+		var dealt := -Stats.apply_hp_delta(defender, -incoming)
+		for m: String in (sash["messages"] as Array):
+			_say(m)
 		total_dealt += dealt
 		landed += 1
 		if bool(hit["crit"]):
@@ -636,6 +659,23 @@ func _use_move(side: int, move: Dictionary) -> void:
 		})
 		for m: String in (taken.get("messages", []) as Array):
 			_say(m)
+
+		# The berry that softened this hit is eaten here rather than inside the
+		# damage formula -- see Items.damage_mods(). Once per hit, like the berry.
+		for m: String in (Items.consume_resist_berry(defender, String(move.get("type", "")),
+				float(hit["effectiveness"]))["messages"] as Array):
+			_say(m)
+
+		# Rocky Helmet, after the ability contact hooks, so a Rough Skin + Helmet
+		# defender charges both and in the order the games use.
+		var helmet := Items.contact_punish(attacker, defender, move)
+		if int(helmet["hp_delta"]) != 0:
+			Stats.apply_hp_delta(attacker, int(helmet["hp_delta"]))
+			for m: String in (helmet["messages"] as Array):
+				_say(m)
+
+		# A Sitrus or Oran Berry fires the moment the holder drops to half.
+		_eat_low_hp_berry(defender)
 
 		# onAfterHit, per hit, with `ko` true only when THIS hit fainted the target.
 		# Firing it from the damage path is what keeps eelevate's snowball to DIRECT
@@ -660,6 +700,26 @@ func _use_move(side: int, move: Dictionary) -> void:
 
 	# Recoil ONCE, from the SUMMED damage (hook order step 9).
 	_apply_recoil(side, move, total_dealt)
+
+	# Life Orb is charged the same way and for the same reason: once per move, not
+	# once per hit, or a five-hit Skill Link Pin Missile would cost half the user.
+	var orb := Items.recoil(active(side), total_dealt)
+	if int(orb["hp_delta"]) != 0:
+		Stats.apply_hp_delta(active(side), int(orb["hp_delta"]))
+		for m: String in (orb["messages"] as Array):
+			_say(m)
+		_eat_low_hp_berry(active(side))
+
+
+## Sitrus / Oran, wherever the holder HP just dropped. Safe to call on anything:
+## a mon with no berry, a full-HP mon and a fainted one all no-op.
+func _eat_low_hp_berry(mon: Dictionary) -> void:
+	var berry := Items.low_hp_trigger(mon)
+	if int(berry["hp_delta"]) == 0:
+		return
+	Stats.apply_hp_delta(mon, int(berry["hp_delta"]))
+	for m: String in (berry["messages"] as Array):
+		_say(m)
 
 
 ## Recoil, computed from the TOTAL damage the move dealt and charged once.
@@ -1084,6 +1144,20 @@ func _end_of_turn() -> void:
 		var tick := Status.end_of_turn(mon)
 		for m: String in (tick["messages"] as Array):
 			_say(m)
+
+		# Held items resolve after the status tick, in the same Speed order: a
+		# Leftovers holder that just took burn damage heals afterwards, which is
+		# what makes Leftovers worth holding on a burned Pokemon.
+		if Stats.is_fainted(mon):
+			continue
+		var held := Items.end_of_turn(mon)
+		if int(held["hp_delta"]) != 0:
+			Stats.apply_hp_delta(mon, int(held["hp_delta"]))
+		if not String(held["status"]).is_empty():
+			Status.apply(mon, String(held["status"]))
+		for m: String in (held["messages"] as Array):
+			_say(m)
+		_eat_low_hp_berry(mon)
 	_check_faints()
 
 

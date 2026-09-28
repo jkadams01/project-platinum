@@ -32,6 +32,7 @@ const Stats := preload("res://src/battle/stats.gd")
 const Status := preload("res://src/battle/status.gd")
 const Deps := preload("res://src/battle/deps.gd")
 const Abilities := preload("res://src/battle/abilities/registry.gd")
+const Items := preload("res://src/battle/items.gd")
 
 const MIN_ROLL := 85
 const MAX_ROLL := 100
@@ -129,9 +130,27 @@ static func compute(attacker: Dictionary, defender: Dictionary, move: Dictionary
 		"hits": int(ctx.get("hits", 1)),
 		"hit_plan_by": String(ctx.get("hit_plan_by", "")),
 	})
-	var atk_mult := float(ctx.get("atk_mult", 1.0)) * float(mods["atk_mult"])
-	var power_mult := float(ctx.get("power_mult", 1.0)) * float(mods["power_mult"])
-	var damage_mult := float(ctx.get("damage_mult", 1.0)) * float(mods["damage_mult"])
+	# Held items fold in the same way, and compose with the ability mods rather
+	# than replacing them: a Choice Band Garchomp with Sand Force gets both.
+	# `def_mult` is item-only (Assault Vest); abilities have no equivalent, so it
+	# is not in the ability contract.
+	#
+	# PURE. Items.damage_mods() never consumes -- ai.gd scores every legal move
+	# through Damage.average() each turn, and a berry eaten by thinking about a
+	# move would be a spectacular bug. The engine consumes separately, after a hit
+	# actually lands.
+	var item_mods := Items.damage_mods(attacker, defender, move, {
+		"category": category,
+		"move_type": move_type,
+		"effectiveness": eff,
+	})
+	var atk_mult := float(ctx.get("atk_mult", 1.0)) * float(mods["atk_mult"]) \
+		* float(item_mods["atk_mult"])
+	var power_mult := float(ctx.get("power_mult", 1.0)) * float(mods["power_mult"]) \
+		* float(item_mods["power_mult"])
+	var damage_mult := float(ctx.get("damage_mult", 1.0)) * float(mods["damage_mult"]) \
+		* float(item_mods["damage_mult"])
+	var def_mult := float(item_mods["def_mult"])
 	result["atkMult"] = atk_mult
 	result["powerMult"] = power_mult
 	result["damageMult"] = damage_mult
@@ -144,6 +163,8 @@ static func compute(attacker: Dictionary, defender: Dictionary, move: Dictionary
 	var d := Stats.effective_stat(defender, def_key, false, crit)
 	if not is_equal_approx(atk_mult, 1.0):
 		a = maxi(1, floori(float(a) * atk_mult))
+	if not is_equal_approx(def_mult, 1.0):
+		d = maxi(1, floori(float(d) * def_mult))
 
 	var weather := String(ctx.get("weather", ""))
 	if weather == "sandstorm" and category == "special" \

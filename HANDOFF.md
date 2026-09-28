@@ -295,6 +295,21 @@ Making the other three real is an engine job, not a builder job:
 When it lands, `format` goes into DATA_CONTRACT 13 **first**, and
 `BattleSpec.IMPLEMENTED_FORMATS` is the single switch that unlocks it in the builder.
 
+### f) ~~Held items did nothing~~ — DONE 2026-09-27
+
+`src/battle/items.gd` implements the held items, and `tools/build_items.py` builds them into
+`data/items.json` as the `held-item` family (DATA_CONTRACT 14).
+
+**This was a campaign bug, not a sandbox feature.** The rosters already handed these out and
+none of them did anything: 23 boss slots hold a Sitrus Berry, 22 Leftovers, 21 a Life Orb,
+14 an Expert Belt, 10 Black Sludge, 10 a Focus Sash, 8 an Assault Vest — and 56 ordinary
+trainers hold a Sitrus Berry. Every designed fight was being played without the items it was
+authored with.
+
+Still open: **Booster Energy** (2 boss slots) is tier 3 on purpose — it needs Protosynthesis
+or Quark Drive, which the ability layer does not implement. Either implement the two Paradox
+abilities or accept that those two slots hold a dead item; owner call.
+
 ### d) Known smaller gaps
 
 - ~~`population-bomb` has `effectId: null`~~ — DONE 2026-09-26, see §2.

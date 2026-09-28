@@ -100,7 +100,7 @@ tools/run_tests.sh -- --require-data     # pendings become failures
 # Data pipelines (committed output)
 python tools/build_species.py            # 1025 species, moves, learnsets, abilities, typechart
 python tools/build_megas.py              # 97 Mega forms + the Mega Stone items
-python tools/build_items.py --apply      # the 40 evolution items
+python tools/build_items.py --apply      # the 40 evolution items + held battle items
 
 # Data audits (read-only; build_species.py already APPLIES the evolution pass)
 python tools/fix_evolutions.py           # the 73-edge rework; --apply, --verify, --markdown
@@ -129,7 +129,7 @@ script gates on the class cache existing instead of on its exit status.
 ```
 src/
   autoload/   Logger, DataRegistry, EventBus, GameState, SaveSystem, SceneRouter
-  battle/     battle_engine, damage, turn_order, status, stats, exp, mega, ai
+  battle/     battle_engine, damage, turn_order, status, stats, exp, mega, ai, items
   battle/abilities/   one file per ability + registry.gd
   overworld/  map_loader, player, collision, encounters, traversal, warps
   systems/    level caps, badges
@@ -202,6 +202,14 @@ Volkner `raichunite-y` **and** `raichunite-x`.
 stoneless Mega (`stone: null`, `requiresMove: "dragon-ascent"`) — `can_mega_evolve()` branches
 on that. Cynthia uses `garchompite`, **not** `garchompite-z`.
 
+**Held items** — `src/battle/items.gd` implements the items the rosters actually hand
+out: Leftovers, Black Sludge, Flame Orb, Life Orb, Expert Belt, Muscle Band, Wise Glasses,
+Choice Band/Specs/Scarf, Assault Vest, Rocky Helmet, Focus Sash, Sitrus/Oran/Shuca Berry,
+the six type boosters and the Lucky Egg. `data/items.json` `tier` says which are real
+(DATA_CONTRACT 14.1) and the builder shows it. **Booster Energy is deliberately tier 3**:
+two boss slots reference it, but it needs a Paradox ability the engine does not have, and
+shipping it as working would be the lie the tier field exists to prevent.
+
 **Tilesets** — Platinum ground (grass/sand/snow/`dun_*`) + White 2 props (cliff edge strips,
 32×64 trees, doors/fences) + HeartGold roads. White 2 assets get a **×1.08 value / ×1.04
 saturation** lift at import to close a measured 12% tonal gap. Provenance is recorded per
@@ -242,11 +250,12 @@ anything you did not mean to change as a regression.
 
 **`data/items.json` has TWO owners and they must agree on row order.**
 `build_megas.py` writes the Mega Stones and the Key Stone; `build_items.py` writes the 40
-evolution items. Each preserves the other's rows, and both sort with
-`build_items.sort_rows()` — without that shared order the file flip-flops depending on which
-ran last and neither tool is idempotent in the presence of the other. Run either in any order;
-the bytes must not change. Nothing in the engine loads `items.json` yet (`DataRegistry` has no
-item accessor), so `tests/test_items.gd` is the only thing that would ever notice a break.
+evolution items **and the held battle items**. Each preserves the other's rows, and both sort
+with `build_items.sort_rows()` — without that shared order the file flip-flops depending on
+which ran last and neither tool is idempotent in the presence of the other. Run either in any
+order; the bytes must not change. `src/battle/items.gd` now loads the file (`DataRegistry`
+still has no item accessor), and `tests/test_items.gd` plus `tests/test_held_items.gd` are
+what notice a break.
 
 **An "idempotent" tool is not idempotent until you re-run it and check.** `fix_evolutions.py`
 claimed idempotence in its docstring and was wrong for 25 of its 73 rows: the already-applied

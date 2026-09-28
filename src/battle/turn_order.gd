@@ -21,6 +21,7 @@ extends RefCounted
 
 const Stats := preload("res://src/battle/stats.gd")
 const Status := preload("res://src/battle/status.gd")
+const Items := preload("res://src/battle/items.gd")
 
 const BRACKET_RUN := 30
 const BRACKET_ITEM := 20
@@ -31,7 +32,10 @@ const BRACKET_MOVE := 0
 ## Effective Speed: stat stages, then paralysis.
 static func effective_speed(mon: Dictionary) -> int:
 	var spe := Stats.effective_stat(mon, "spe")
-	return maxi(1, floori(float(spe) * Status.speed_mult(mon)))
+	# Paralysis and a Choice Scarf compose: the scarf multiplies the stat, the
+	# status divides it, and the order does not matter because both are floats
+	# applied before the single floor.
+	return maxi(1, floori(float(spe) * Status.speed_mult(mon) * Items.speed_mult(mon)))
 
 
 static func bracket_of(action: Dictionary) -> int:

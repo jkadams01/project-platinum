@@ -205,11 +205,21 @@ func test_advisories_do_not_block() -> void:
 	is_false(notes.is_empty(), "but it must be reported")
 	is_true(String(notes[0]).contains("cannot learn"), "with the reason: %s" % notes[0])
 
+	# An Oran Berry used to be inert -- src/battle/items.gd implements it now, so
+	# the same roster item that Roark Roggenrola carries actually heals.
+	var berry := _duel_spec()
+	(berry["player"]["slots"] as Array)[0]["item"] = "oran-berry"
+	is_true(Spec.validate(berry).is_empty(), "a held berry does not block")
+	is_true(Spec.item_is_live((berry["player"]["slots"] as Array)[0]),
+		"and is live, because the engine reads it")
+
+	# Booster Energy is the honest counter-example: two boss slots reference it,
+	# but it needs a Paradox ability the engine does not have, so it is tier 3.
 	var inert := _duel_spec()
-	(inert["player"]["slots"] as Array)[0]["item"] = "oran-berry"
-	is_true(Spec.validate(inert).is_empty(), "a held berry does not block")
+	(inert["player"]["slots"] as Array)[0]["item"] = "booster-energy"
+	is_true(Spec.validate(inert).is_empty(), "an unimplemented item still does not block")
 	is_false(Spec.item_is_live((inert["player"]["slots"] as Array)[0]),
-		"and is marked inert, because the engine never reads it")
+		"but it is marked inert rather than pretending to work")
 
 
 func test_build_mon_uses_the_slot() -> void:

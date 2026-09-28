@@ -547,3 +547,55 @@ sides then play themselves while the log still pages one line at a time.
 Battle mode carries the choice in its own spec and **refuses to start** a non-single
 matchup rather than silently playing it as a single. When multi-slot support lands, the
 field belongs here first.
+
+---
+
+## 14. `data/items.json` — items
+
+An array of rows. **Three tools own disjoint slices of this file and each preserves
+the others**: `build_megas.py` writes the 92 Mega Stones and the Key Stone,
+`build_items.py` writes the 40 evolution items *and* the held battle items. Both sort
+with `build_items.sort_rows()` (category, then id), so the committed bytes are the same
+whichever ran last.
+
+```jsonc
+{
+  "id": "leftovers",
+  "name": "Leftovers",
+  "category": "held-item",        // held-item | mega-stone | key-stone
+                                  // | evolution-item | evolution-stone
+  "pocket": "items",
+  "price": 4000, "sellable": true,
+  "holdable": true, "consumable": false,
+  "description": "Restores a little of the holder HP at the end of every turn.",
+  "hook": "onTurnEnd",            // held-item only; see below
+  "tier": 1,                      // held-item only; 1 = implemented, 3 = data only
+  "sprite": "items/leftovers.png"
+}
+```
+
+An evolution row carries `evolves: [dex...]` instead of `hook`/`tier`, derived from
+`data/species.json` so it cannot drift from the evolution edges.
+
+### 14.1 Held battle items
+
+`tier` means exactly what it means for abilities (§4): **1** = `src/battle/items.gd`
+implements it, **3** = the row exists so a roster can reference the item but nothing
+reads it yet. `hook` names the seam, as documentation — `items.gd` dispatches on the
+id, not on this field.
+
+`tests/test_held_items.gd` checks the two against each other in both directions. A row
+claiming `tier: 1` that the engine does not implement is a lie the builder UI repeats
+to the player, which is the failure the field exists to prevent.
+
+Implemented hooks: `onTurnEnd` (Leftovers, Black Sludge, Flame Orb), `onDamageCalc`
+(Life Orb, Expert Belt, Muscle Band, Wise Glasses, the Choice pair, Assault Vest, the
+six type boosters), `onSpeed` (Choice Scarf), `onContactHit` (Rocky Helmet),
+`onFatalHit` (Focus Sash), `onLowHp` (Sitrus, Oran), `onEffectiveness` (Shuca) and
+`onExp` (Lucky Egg, read by `exp.gd`).
+
+**A Choice item locks its holder into the move it actually used** — set in `_use_move`,
+not at submission, so a Pokémon that flinched or was frozen solid never commits. The
+lock lives in `volatile`, which `Status.clear_volatiles()` already clears on a switch.
+`Items.blocks_move()` is what `submit_action`, `ai.gd` and the move menu all ask, so
+the three never disagree about what is legal.

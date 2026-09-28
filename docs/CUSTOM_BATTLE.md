@@ -114,13 +114,33 @@ exist for imported rosters and hand-edited presets, and they are shown rather th
 corrected, because sanitising an authored roster on import is the kind of quiet data loss
 this project has already been bitten by.
 
-### Held items are Mega Stones or nothing
+### Held items
 
-The engine reads a held item in exactly two places: `mega.gd` matches it against an eligible
-form's stone, and `exp.gd` looks for `lucky-egg`. There is no Life Orb, no Leftovers, no
-Choice Band. So the picker offers the stones a species can actually use and nothing else,
-while an item that arrived with a roster (Roark's Roggenrola holds an Oran Berry) is kept
-and marked **`(inert)`** in the slot editor.
+The picker offers the species' own Mega Stones first — they are the only items whose
+legality depends on the holder — then the 24 held battle items, each with its description
+and whether the engine actually reads it:
+
+```
+> Leftovers                                             works
+  HELD ITEM   hook: onTurnEnd
+  Restores a little of the holder HP at the end of every turn.
+```
+
+Implemented: Leftovers, Black Sludge, Flame Orb, Life Orb, Expert Belt, Muscle Band, Wise
+Glasses, Choice Band/Specs/Scarf, Assault Vest, Rocky Helmet, Focus Sash, Sitrus/Oran/Shuca
+Berry, the six type boosters, and the Lucky Egg.
+
+**Booster Energy reads `no effect`, and means it.** Two boss slots hold one, but it exists
+to rouse a Paradox Pokémon and the engine has no Protosynthesis or Quark Drive. The row
+exists so a roster can reference it; the tier says it does nothing. Anything in that state
+is marked **`(inert)`** in the slot editor too.
+
+A Choice item locks the holder into the first move it *uses* — the move menu dims the rest
+and says why, and the AI will not pick one it cannot use. Switching out clears the lock.
+An Assault Vest forbids status moves the same way.
+
+The 40 evolution items are holdable but are deliberately **not** offered: a Razor Claw does
+nothing in a battle, and listing them would bury 24 real choices under 40 dead ones.
 
 ---
 

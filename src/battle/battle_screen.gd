@@ -72,6 +72,8 @@ var _exited: bool = false
 ## logs something in practice, but "resolve, log nothing, return to ACTION" would
 ## recurse without bound in watch mode, so it is counted rather than trusted.
 var _auto_turns: int = 0
+## The last message the engine emitted, so a refused action can show its reason.
+var _refusal: String = ""
 
 const AUTO_TURN_LIMIT := 8
 
@@ -254,9 +256,16 @@ func _queue(lines: PackedStringArray) -> void:
 ## `struggle` kind, but `resolve_turn()` falls back to `auto_action()` for any side
 ## that submitted nothing, and that returns Struggle when no move has PP left.
 func _resolve(action: Dictionary) -> void:
-	if not action.is_empty() and not bool(engine.submit_action(0, action)):
-		_box.show_lines(PackedStringArray(["That cannot be done right now."]))
-		return
+	if not action.is_empty():
+		# The engine says WHY it refused (a Choice lock, an Assault Vest, a
+		# trapping ability) through its `message` signal, which fires inside
+		# submit_action(). Printing the generic line over the top of that would
+		# throw away the only useful half of the refusal.
+		_refusal = ""
+		if not bool(engine.submit_action(0, action)):
+			_box.show_lines(PackedStringArray([_refusal if not _refusal.is_empty()
+				else "That cannot be done right now."]))
+			return
 	var r: Dictionary = engine.resolve_turn()
 	_log = PackedStringArray(r.get("log", []))
 	_enter_state(State.DONE if bool(r.get("over", false)) else State.RESOLVING)
@@ -311,6 +320,7 @@ func _auto_advance(state_now: State) -> void:
 # --------------------------------------------------------------------------
 
 func _on_engine_message(text: String) -> void:
+	_refusal = text
 	# Messages produced outside a resolve_turn() (a refused switch, say) still have
 	# to reach the player.
 	if state == State.MOVES or state == State.PARTY or state == State.ACTION:

@@ -20,6 +20,7 @@ signal chosen(move_index: int, mega: bool)
 signal cancelled()
 
 const UI := preload("res://src/ui/ui_kit.gd")
+const Items := preload("res://src/battle/items.gd")
 
 const SLOT_W := 118.0
 const SLOT_H := 22.0
@@ -94,7 +95,10 @@ func refresh() -> void:
 		frame.visible = true
 		var m: Dictionary = _moves[i]
 		var pp := int(m.get("pp", 0))
-		var out_of_pp := pp <= 0
+		# A move a held item forbids is dimmed exactly like one with no PP, and for
+		# the same reason: submit_action() refuses it, so offering it as selectable
+		# would stall the turn on a keypress that looks legal.
+		var out_of_pp := pp <= 0 or not Items.allows_move(_mon(), m)
 		var selected := i == index
 		frame.color = UI.ACCENT if selected else UI.EDGE
 		var body := frame.get_node_or_null("Inner") as ColorRect
@@ -132,11 +136,20 @@ func _first_usable() -> int:
 	return 0
 
 
+## The Pokemon whose moves are on screen, or {} before bind().
+func _mon() -> Dictionary:
+	return {} if engine == null else (engine.active(0) as Dictionary)
+
+
 func _confirm() -> void:
 	if index < 0 or index >= _moves.size():
 		return
 	if int((_moves[index] as Dictionary).get("pp", 0)) <= 0:
 		EventBus.dialogue_requested.emit(PackedStringArray(["There is no PP left for that move!"]))
+		return
+	var blocked := Items.blocks_move(_mon(), _moves[index])
+	if not blocked.is_empty():
+		EventBus.dialogue_requested.emit(PackedStringArray([blocked]))
 		return
 	chosen.emit(index, mega_armed)
 

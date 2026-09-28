@@ -34,6 +34,7 @@ const TextPrompt := preload("res://src/ui/text_prompt.gd")
 const Spec := preload("res://src/custom/battle_spec.gd")
 const Stats := preload("res://src/battle/stats.gd")
 const Bosses := preload("res://src/systems/bosses.gd")
+const BattleItems := preload("res://src/battle/items.gd")
 const Deps := preload("res://src/battle/deps.gd")
 
 enum State { TEAMS, SLOT, PICK, PROMPT }
@@ -465,15 +466,26 @@ func _activate_field(field: String) -> void:
 			_open_pick("ability", {"title": "ABILITY", "items": abilities,
 				"details": true, "selected": String(slot.get("ability", ""))})
 		"item":
-			var stones := Spec.item_choices(species)
-			if stones.is_empty():
-				_note("%s has no Mega Stone. (Held items other than stones do nothing yet.)"
-					% Spec.species_name(species))
-				return
-			var items: Array = [{"id": "", "label": "(none)", "note": ""}]
-			for s: String in stones:
-				items.append({"id": s, "label": UI.pretty(s), "note": "mega"})
-			_open_pick("item", {"title": "HELD ITEM", "items": items,
+			var stones := Spec.stone_choices(species)
+			var items: Array = [{"id": "", "label": "(none)", "note": "",
+				"detail": "", "effect": "Hold nothing."}]
+			# The species own Mega Stones first: they are the only items whose
+			# legality depends on the holder, so burying them in an alphabetical
+			# list of thirty would make a Mega hard to find.
+			for stone: String in stones:
+				items.append({"id": stone, "label": UI.pretty(stone), "note": "mega",
+					"detail": "MEGA STONE", "search": "mega stone",
+					"effect": "Lets %s Mega Evolve, with a Key Stone on this side."
+						% Spec.species_name(species)})
+			for id: String in BattleItems.holdable_ids():
+				items.append({
+					"id": id, "label": BattleItems.display_name(id),
+					"note": "works" if BattleItems.implemented(id) else "no effect",
+					"detail": item_status(id),
+					"effect": BattleItems.describe(id),
+					"search": String(BattleItems.row(id).get("category", "")),
+				})
+			_open_pick("item", {"title": "HELD ITEM", "items": items, "details": true,
 				"selected": String(slot.get("item", ""))})
 		_:
 			var move_index := _move_index(field)
@@ -535,6 +547,17 @@ static func ability_note(row: Dictionary) -> String:
 			return "inert"
 		_:
 			return "no effect"
+
+
+## Whether the engine reads this item, said plainly. Mirrors the ability tier
+## line: a held item that does nothing has to admit it before it is chosen, not
+## after the battle it was supposed to change.
+static func item_status(item_id: String) -> String:
+	if BattleItems.implemented(item_id):
+		var hook := String(BattleItems.row(item_id).get("hook", ""))
+		return "HELD ITEM%s" % ("" if hook.is_empty() or hook == "none"
+			else "   hook: " + hook)
+	return "NOT IMPLEMENTED -- it does nothing in battle yet"
 
 
 static func ability_status(row: Dictionary) -> String:

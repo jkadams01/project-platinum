@@ -27,6 +27,7 @@ const Stats := preload("res://src/battle/stats.gd")
 const Status := preload("res://src/battle/status.gd")
 const Damage := preload("res://src/battle/damage.gd")
 const Abilities := preload("res://src/battle/abilities/registry.gd")
+const Items := preload("res://src/battle/items.gd")
 
 const SCORE_IMMUNE := -1000.0
 const KO_BONUS := 60.0
@@ -80,6 +81,13 @@ static func score_moves(me: Dictionary, foe: Dictionary, weather: String = "") -
 static func score_move(me: Dictionary, foe: Dictionary, move: Dictionary,
 		weather: String = "") -> float:
 	if int(move.get("pp", 0)) <= 0:
+		return SCORE_IMMUNE - 1.0
+	# A held item can forbid a move outright -- a Choice lock, or an Assault Vest
+	# against status moves. Scored below an immunity rather than skipped, so the
+	# AI reaches for it only when there is literally nothing else, exactly as the
+	# no-PP case does. Without this the AI picks a move the engine then refuses
+	# and the side wastes its turn.
+	if not Items.allows_move(me, move):
 		return SCORE_IMMUNE - 1.0
 
 	var category := String(move.get("category", "status"))
