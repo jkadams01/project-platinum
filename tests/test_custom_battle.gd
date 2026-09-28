@@ -625,6 +625,81 @@ func test_the_move_picker_shows_the_detail_of_the_highlighted_row() -> void:
 		"a detail picker still shows %d rows" % picker.ROWS_WITH_DETAIL)
 
 
+func test_the_species_picker_shows_base_stats() -> void:
+	if not _have_data():
+		pending("data/species.json is not built")
+		return
+	var sp: Dictionary = DataRegistry.get_species(GARCHOMP)
+	var line := TeamBuilder.base_stat_line(sp)
+	is_true(line.contains("HP 108"), "HP: %s" % line)
+	is_true(line.contains("ATK 130"), "Attack: %s" % line)
+	is_true(line.contains("SPE 102"), "Speed: %s" % line)
+	# The total is what separates a Bidoof from a Garchomp at a glance.
+	is_true(line.contains("BST 600"), "and the total: %s" % line)
+	eq(TeamBuilder.base_stat_line({}), "", "an unknown species contributes nothing")
+
+	var blurb := TeamBuilder.species_blurb(sp)
+	is_true(blurb.begins_with("Dragon/Ground"),
+		"both types are capitalised, not just the first: %s" % blurb)
+	is_true(blurb.contains("Sand Veil"), "its normal ability: %s" % blurb)
+	is_true(blurb.contains("Rough Skin (hidden)"),
+		"and the hidden one, marked as hidden: %s" % blurb)
+
+	var builder := TeamBuilder.new()
+	builder.spec = _duel_spec()
+	_adopt(builder)
+	builder.debug_focus(0, 0)
+	builder.debug_edit_field("species")
+	var picker: Control = builder._picker
+	picker.filter("garchomp")
+	is_true(String(picker.current().get("detail", "")).contains("BST 600"),
+		"and the picker row carries it")
+
+
+func test_the_ability_picker_says_whether_an_ability_works() -> void:
+	if not _have_data():
+		pending("data/abilities.json is not built")
+		return
+	# The slug is what species.abilities holds; a by-id-only lookup would make
+	# every caller scan the table.
+	var rough: Dictionary = DataRegistry.get_ability_by_name("rough-skin")
+	is_false(rough.is_empty(), "abilities are reachable by slug")
+	eq(String(rough.get("name", "")), "Rough Skin", "and it is the right row")
+	is_true(DataRegistry.get_ability_by_name("Rough Skin").has("id"),
+		"the display name works too, like get_move_by_name")
+	is_true(DataRegistry.get_ability_by_name("no-such-ability").is_empty(),
+		"and an unknown slug is empty, not a half-row")
+
+	is_true(TeamBuilder.ability_text(rough).length() > 10,
+		"the description comes from the data: %s" % TeamBuilder.ability_text(rough))
+
+	# DATA_CONTRACT 4 tier: 1 implemented, 2 declared but inert, 3 data only.
+	# In a battle sandbox, picking an ability that silently does nothing is a bad
+	# surprise, so the row says which it is.
+	eq(TeamBuilder.ability_note({"tier": 1}), "works", "tier 1")
+	eq(TeamBuilder.ability_note({"tier": 2}), "inert", "tier 2")
+	eq(TeamBuilder.ability_note({"tier": 3}), "no effect", "tier 3")
+	is_true(TeamBuilder.ability_status({"tier": 1, "hook": "onContactHit"})
+		.contains("IMPLEMENTED"), "tier 1 says so")
+	is_true(TeamBuilder.ability_status({"tier": 1, "hook": "onContactHit"})
+		.contains("onContactHit"), "and names the engine seam it uses")
+	is_true(TeamBuilder.ability_status({"tier": 2}).contains("nothing in battle"),
+		"tier 2 is honest about doing nothing")
+	is_true(TeamBuilder.ability_status({"tier": 3}).contains("nothing in battle"),
+		"and so is tier 3")
+	eq(TeamBuilder.ability_text({"text": ""}), "(no description in the data)",
+		"a missing description is stated rather than left blank")
+
+	# Stench is tier 3 in the data and Skuntank has it -- a real end-to-end case.
+	var stench: Dictionary = DataRegistry.get_ability_by_name("stench")
+	if stench.is_empty():
+		pending("stench is not in data/abilities.json")
+		return
+	eq(int(stench.get("tier", 0)), 3, "stench is data only")
+	is_true(TeamBuilder.ability_status(stench).contains("DATA ONLY"),
+		"so the picker warns before it is chosen")
+
+
 func test_builder_refuses_an_unplayable_start() -> void:
 	if not _have_data():
 		pending("data/species.json is not built")

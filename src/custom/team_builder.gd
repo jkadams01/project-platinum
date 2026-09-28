@@ -421,7 +421,7 @@ func _activate_field(field: String) -> void:
 	match field:
 		"species":
 			_open_pick("species", {
-				"title": "SPECIES", "items": _species_items(),
+				"title": "SPECIES", "items": _species_items(), "details": true,
 				"selected": species if species > 0 else null,
 				"footer": "up/down move  enter pick  esc back  filter: no. name type"})
 			return
@@ -449,11 +449,21 @@ func _activate_field(field: String) -> void:
 			_open_pick("nature", {"title": "NATURE", "items": natures,
 				"selected": String(slot.get("nature", "hardy"))})
 		"ability":
-			var abilities: Array = [{"id": "", "label": "(default)", "note": ""}]
-			for a: String in Spec.legal_abilities(species):
-				abilities.append({"id": a, "label": UI.pretty(a), "note": ""})
+			var first := Spec.legal_abilities(species)
+			var abilities: Array = [{"id": "", "label": "(default)",
+				"note": "", "detail": "",
+				"effect": "Use the first ability this species has: %s." % (
+					UI.pretty(String(first[0])) if not first.is_empty() else "none")}]
+			for a: String in first:
+				var row: Dictionary = _ability_data(a)
+				abilities.append({
+					"id": a, "label": UI.pretty(a),
+					"note": ability_note(row),
+					"detail": ability_status(row),
+					"effect": ability_text(row),
+				})
 			_open_pick("ability", {"title": "ABILITY", "items": abilities,
-				"selected": String(slot.get("ability", ""))})
+				"details": true, "selected": String(slot.get("ability", ""))})
 		"item":
 			var stones := Spec.item_choices(species)
 			if stones.is_empty():
@@ -502,6 +512,49 @@ func _nature_note(nature: String) -> String:
 	if pair.size() != 2 or pair[0] == pair[1]:
 		return "neutral"
 	return "+%s -%s" % [String(pair[0]).to_upper(), String(pair[1]).to_upper()]
+
+
+func _ability_data(slug: String) -> Dictionary:
+	var reg := Deps.registry()
+	if reg == null or not reg.has_method("get_ability_by_name"):
+		return {}
+	return reg.get_ability_by_name(slug)
+
+
+## DATA_CONTRACT 4 `tier`: 1 = the engine implements it, 2 = declared but inert,
+## 3 = data only. In a battle sandbox that is the single most important thing about
+## an ability, so it goes on the row and not just in the detail line -- picking
+## Stench to test a flinch strategy and getting nothing is a bad way to find out.
+static func ability_note(row: Dictionary) -> String:
+	if row.is_empty():
+		return ""
+	match int(row.get("tier", 3)):
+		1:
+			return "works"
+		2:
+			return "inert"
+		_:
+			return "no effect"
+
+
+static func ability_status(row: Dictionary) -> String:
+	if row.is_empty():
+		return ""
+	var hook := String(row.get("hook", "none"))
+	match int(row.get("tier", 3)):
+		1:
+			return "IMPLEMENTED%s" % ("" if hook == "none" else "   hook: " + hook)
+		2:
+			return "DECLARED BUT INERT -- it does nothing in battle yet"
+		_:
+			return "DATA ONLY -- it does nothing in battle yet"
+
+
+static func ability_text(row: Dictionary) -> String:
+	if row.is_empty():
+		return ""
+	var text := String(row.get("text", ""))
+	return text if not text.is_empty() else "(no description in the data)"
 
 
 func _move_data(slug: String) -> Dictionary:
@@ -594,11 +647,49 @@ func _species_items() -> Array:
 			"id": int(id),
 			"label": "%d %s" % [int(id), String(sp.get("name", "?"))],
 			"note": type_note(types),
-			# The note abbreviates a dual type to DRA/GRO to fit 70 pixels; the
+			# The note abbreviates a dual type to DRA/GRO to fit the column; the
 			# full names live here so `dragon` and `ground` still find it.
 			"search": String(" ").join(PackedStringArray(types)).to_lower(),
+			"detail": base_stat_line(sp),
+			"effect": species_blurb(sp),
 		})
 	return _species_cache
+
+
+## The six base stats and their total, for the detail line under the list.
+##
+## BASE stats, not the stats at this level: the level is set on the slot, not in
+## this picker, and a level-1 stat line would make every species look identical.
+## The total is what actually separates a Bidoof from a Garchomp at a glance.
+static func base_stat_line(sp: Dictionary) -> String:
+	var stats: Dictionary = sp.get("stats", {})
+	if stats.is_empty():
+		return ""
+	var total := 0
+	var parts := PackedStringArray()
+	for key: String in ["hp", "atk", "def", "spa", "spd", "spe"]:
+		var v := int(stats.get(key, 0))
+		total += v
+		parts.append("%s %d" % [key.to_upper(), v])
+	return "%s   BST %d" % [String(" ").join(parts), total]
+
+
+## The prose line under a species: what it is and what it can have.
+static func species_blurb(sp: Dictionary) -> String:
+	# Capitalise each type, not the joined string: String.capitalize() only
+	# touches the first letter and leaves "Dragon/ground".
+	var types := PackedStringArray()
+	for t: Variant in (sp.get("types", []) as Array):
+		types.append(String(t).capitalize())
+	var out := String("/").join(types)
+	var abilities := PackedStringArray()
+	for slug: Variant in (sp.get("abilities", []) as Array):
+		abilities.append(Spec.pretty(String(slug)))
+	if sp.get("hiddenAbility", null) != null and not String(sp["hiddenAbility"]).is_empty():
+		abilities.append("%s (hidden)" % Spec.pretty(String(sp["hiddenAbility"])))
+	if not abilities.is_empty():
+		out += ".   " + String(", ").join(abilities)
+	return out + "."
 
 
 ## Types as the narrow right-hand column can draw them: one type in full, two

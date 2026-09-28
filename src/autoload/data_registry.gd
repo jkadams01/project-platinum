@@ -77,6 +77,7 @@ var _moves: Dictionary = {}        # int move id -> Dictionary
 var _moves_by_name: Dictionary = {}# String slug -> Dictionary
 var _learnsets: Dictionary = {}    # int dex id -> Dictionary
 var _abilities: Dictionary = {}    # int ability id -> Dictionary
+var _abilities_by_slug: Dictionary = {}# String slug -> Dictionary
 var _typechart: Dictionary = {}    # String atk -> Dictionary(String def -> float)
 var _caps: Array = []              # Array[Dictionary], ascending by index
 var _post_game_cap: int = 100
@@ -228,6 +229,14 @@ func get_ability(id: int) -> Dictionary:
 	return _abilities.get(id, {})
 
 
+## Look an ability up by its lowercase hyphenated slug ("rough-skin"), the form
+## `species.abilities` and the engine registry both use. Also accepts the display
+## name ("Rough Skin"). Mirrors [method get_move_by_name]: everything downstream
+## holds slugs, and a by-id-only accessor forces every caller to scan the table.
+func get_ability_by_name(ability_name: String) -> Dictionary:
+	return _abilities_by_slug.get(_slug(ability_name), {})
+
+
 func ability_count() -> int:
 	return _abilities.size()
 
@@ -361,6 +370,7 @@ func _clear() -> void:
 	_moves_by_name.clear()
 	_learnsets.clear()
 	_abilities.clear()
+	_abilities_by_slug.clear()
 	_typechart.clear()
 	_caps.clear()
 	_sources.clear()
@@ -499,6 +509,9 @@ func _load_abilities(dir_path: String) -> void:
 			continue
 		var d: Dictionary = _intify(r) as Dictionary
 		_abilities[int(d.get("id", 0))] = d
+		var slug := _slug(String(d.get("slug", d.get("name", ""))))
+		if not slug.is_empty():
+			_abilities_by_slug[slug] = d
 
 
 func _load_typechart(dir_path: String) -> void:
