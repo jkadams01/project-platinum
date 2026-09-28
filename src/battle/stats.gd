@@ -148,7 +148,27 @@ static func effective_stat(mon: Dictionary, key: String, ignore_negative: bool =
 	var stage := get_stage(mon, key)
 	if (stage < 0 and ignore_negative) or (stage > 0 and ignore_positive):
 		stage = 0
-	return maxi(1, floori(float(raw) * stage_mult(stage)))
+	return maxi(1, floori(float(raw) * stage_mult(stage) * stat_mult(mon, key)))
+
+
+## A flat multiplier on one stat, held in `volatile.statMult` and applied by
+## [method effective_stat] on top of the stage curve.
+##
+## STAGES ARE NOT THE RIGHT TOOL FOR EVERY BOOST. A stat stage is a -6..+6 step on
+## a fixed curve, it is what Swords Dance and Intimidate move, and it is visible to
+## Haze and to a critical hit. Protosynthesis multiplying the bearer's best stat by
+## 1.3 is none of those things, and forcing it into a stage would round to the
+## wrong number AND make a crit ignore it.
+##
+## Living in `volatile` means `Status.clear_volatiles()` already drops it on a
+## switch, which is the duration the Paradox abilities want. Anything else needing
+## a non-stage multiplier (Flower Gift, Slow Start) reuses this rather than
+## inventing a second mechanism.
+static func stat_mult(mon: Dictionary, key: String) -> float:
+	var table: Variant = (mon.get("volatile", {}) as Dictionary).get("statMult", null)
+	if not (table is Dictionary):
+		return 1.0
+	return float((table as Dictionary).get(key, 1.0))
 
 
 # --------------------------------------------------------------------------

@@ -77,6 +77,7 @@ Those say so rather than showing an empty line: the hole is real and worth seein
 | **Format** | single / double / triple / rotation — **only single is playable**, see below |
 | **Watch mode** | both sides play themselves from `ai.gd`; the log still pages one line at a time |
 | **Seed** | pin the RNG, or leave it on `auto` for a fresh one each battle |
+| **Weather** | the sky the battle starts under. No move sets weather in this engine, so this is the only way to test sun/rain damage, Mega Sol or Protosynthesis |
 | **Award EXP** | off by default — a mid-battle level-up makes a rematch not a rematch |
 | **Foe AI** | 0-10 (`trainer.ai`). Below 3 it just picks its best damaging move; at 3+ it switches out of bad matchups |
 | **Key Stones** | per side, on by default. Mega Evolution **without** granting the save a Key Stone |
@@ -130,10 +131,15 @@ Implemented: Leftovers, Black Sludge, Flame Orb, Life Orb, Expert Belt, Muscle B
 Glasses, Choice Band/Specs/Scarf, Assault Vest, Rocky Helmet, Focus Sash, Sitrus/Oran/Shuca
 Berry, the six type boosters, and the Lucky Egg.
 
-**Booster Energy reads `no effect`, and means it.** Two boss slots hold one, but it exists
-to rouse a Paradox Pokémon and the engine has no Protosynthesis or Quark Drive. The row
-exists so a roster can reference it; the tier says it does nothing. Anything in that state
-is marked **`(inert)`** in the slot editor too.
+**Booster Energy works**, through Protosynthesis and Quark Drive: it raises the holder's
+best stat by 1.3 (1.5 if that stat is Speed) and lasts until it leaves the field. An item
+the engine does *not* read — an evolution item a preset happens to carry, say — is still
+kept and marked **`(inert)`** in the slot editor.
+
+Protosynthesis is also roused by harsh sunlight, which is what the **Weather** option in
+`Tab` is for: no move in this engine sets weather, so starting the battle in the sun is the
+only way to test it. Quark Drive wants Electric Terrain and this engine has no terrain
+system, so today only the item rouses it.
 
 A Choice item locks the holder into the first move it *uses* — the move menu dims the rest
 and says why, and the AI will not pick one it cannot use. Switching out clears the lock.

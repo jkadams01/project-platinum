@@ -77,6 +77,11 @@ var outcome: String = ""          ## "" | "win" | "loss" | "run"
 var kind: String = "wild"
 var weather: String = ""
 var weather_turns: int = 0
+## THERE IS NO TERRAIN SYSTEM. The field exists so the onFieldChange hook has a
+## real key to read and Quark Drive is written against the rule it actually has.
+## Nothing sets it yet, so today only a Booster Energy can rouse Quark Drive --
+## recorded in HANDOFF.md rather than hidden behind a hook that reads "".
+var terrain: String = ""
 var level_cap: int = -1           ## -1 = ask GameState every time
 ## Overrides `GameState.has_key_stone()` for side 0 when not null, so a fight
 ## can be given (or denied) Mega Evolution without touching the save.
@@ -905,11 +910,48 @@ func _refresh_field() -> void:
 		mons.append(active(side))
 	var r := Abilities.field_refresh(mons, weather, weather_turns)
 	var next := String(r.get("weather", weather))
-	if next == weather:
+	if next != weather:
+		weather = next
+		weather_turns = int(r.get("weather_turns", 0))
+		for m: String in (r.get("messages", []) as Array):
+			_say(m)
+
+	# UNCONDITIONALLY, not only when the weather changed: this runs on every
+	# switch-in and every Mega Evolution, and those are field changes for the
+	# Pokemon even when the sky is the same. The old early return here is what
+	# would have stopped a Booster Energy from ever firing on a lead.
+	#
+	# The weather is settled now, so ask every active Pokemon what it does about
+	# it. This is where the Paradox abilities rouse and fade, and where a Booster
+	# Energy is spent. AFTER the field resolution on purpose: Protosynthesis must
+	# see the sun that Delta Stream or a Mega may have just changed.
+	for side in sides.size():
+		_apply_field_change(active(side))
+
+
+## One Pokemon reaction to the field. The ability decides and returns; the engine
+## is what writes to the mon and what spends the item, so abilities stay stateless.
+func _apply_field_change(mon: Dictionary) -> void:
+	if mon.is_empty() or Stats.is_fainted(mon):
 		return
-	weather = next
-	weather_turns = int(r.get("weather_turns", 0))
-	for m: String in (r.get("messages", []) as Array):
+	var res := Abilities.field_change(mon, {"weather": weather, "terrain": terrain})
+	if res.is_empty():
+		return
+	if not mon.has("volatile"):
+		mon["volatile"] = {}
+	var volatiles: Dictionary = mon["volatile"]
+
+	if bool(res.get("clear", false)):
+		volatiles.erase("statMult")
+		volatiles.erase("paradoxSource")
+	elif res.has("stat_mults"):
+		volatiles["statMult"] = (res["stat_mults"] as Dictionary).duplicate()
+		volatiles["paradoxSource"] = String(res.get("paradox_source", ""))
+
+	if bool(res.get("consume_item", false)):
+		mon["usedItem"] = String(mon.get("item", ""))
+		mon["item"] = ""
+	for m: String in (res.get("messages", []) as Array):
 		_say(m)
 
 
@@ -1132,6 +1174,11 @@ func _end_of_turn() -> void:
 		if weather_turns == 0:
 			_say("The weather cleared up.")
 			weather = ""
+			# The sun going down takes a weather-roused Protosynthesis with it --
+			# but NOT one paid for with a Booster Energy. paradox.gd is what knows
+			# the difference; the engine just has to ask at the moment it changes.
+			for side in sides.size():
+				_apply_field_change(active(side))
 
 	# Residual damage resolves in Speed order, like the games.
 	var rows: Array = []

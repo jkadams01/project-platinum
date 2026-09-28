@@ -691,16 +691,16 @@
   {
     "category": "held-item",
     "consumable": true,
-    "description": "Meant to rouse a Paradox Pokemon. Nothing in the engine reads it yet.",
+    "description": "Rouses a Pokemon with Protosynthesis or Quark Drive, raising its best stat until it leaves the field. Used up.",
     "holdable": true,
-    "hook": "none",
+    "hook": "onFieldEnter",
     "id": "booster-energy",
     "name": "Booster Energy",
     "pocket": "items",
     "price": 0,
     "sellable": false,
     "sprite": "items/booster-energy.png",
-    "tier": 3
+    "tier": 1
   },
   {
     "category": "held-item",

@@ -213,13 +213,16 @@ func test_advisories_do_not_block() -> void:
 	is_true(Spec.item_is_live((berry["player"]["slots"] as Array)[0]),
 		"and is live, because the engine reads it")
 
-	# Booster Energy is the honest counter-example: two boss slots reference it,
-	# but it needs a Paradox ability the engine does not have, so it is tier 3.
+	# Booster Energy USED to be the counter-example here; it works now that
+	# protosynthesis.gd and quark-drive.gd exist. An evolution item is the honest
+	# one: holdable, real, and doing nothing whatever in a battle.
 	var inert := _duel_spec()
-	(inert["player"]["slots"] as Array)[0]["item"] = "booster-energy"
-	is_true(Spec.validate(inert).is_empty(), "an unimplemented item still does not block")
+	(inert["player"]["slots"] as Array)[0]["item"] = "razor-claw"
+	is_true(Spec.validate(inert).is_empty(), "an item with no battle effect does not block")
 	is_false(Spec.item_is_live((inert["player"]["slots"] as Array)[0]),
 		"but it is marked inert rather than pretending to work")
+	is_true(Spec.item_is_live({"species": GARCHOMP, "item": "booster-energy"}),
+		"while Booster Energy is live now that the Paradox abilities exist")
 
 
 func test_build_mon_uses_the_slot() -> void:

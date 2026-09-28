@@ -209,10 +209,11 @@ func _refresh_teams() -> void:
 		"" if Spec.IMPLEMENTED_FORMATS.has(String(spec.get("format", "single")))
 			else " (locked)",
 		"auto" if seed_value == 0 else str(seed_value)]
-	(_settings[1] as Label).text = "EXP %s   WATCH %s   FOE AI %d" % [
+	(_settings[1] as Label).text = "EXP %s   WATCH %s   FOE AI %d   SKY %s" % [
 		"on" if bool(spec.get("awardExp", false)) else "off",
 		"on" if bool(spec.get("watch", false)) else "off",
-		int((spec["foe"] as Dictionary).get("ai", Spec.DEFAULT_AI))]
+		int((spec["foe"] as Dictionary).get("ai", Spec.DEFAULT_AI)),
+		"clear" if String(spec.get("weather", "")).is_empty() else String(spec.get("weather", ""))]
 	(_settings[2] as Label).text = "MEGA  you %s   foe %s" % [
 		"on" if bool((spec["player"] as Dictionary).get("keyStone", true)) else "off",
 		"on" if bool((spec["foe"] as Dictionary).get("keyStone", true)) else "off"]
@@ -745,6 +746,9 @@ func _open_options() -> void:
 			% ("on" if bool(spec.get("watch", false)) else "off"), "note": ""},
 		{"id": "seed", "label": "Seed: %s" % ("auto" if seed_value == 0 else str(seed_value)),
 			"note": "repeatable"},
+		{"id": "weather", "label": "Weather: %s" % (
+			"none" if String(spec.get("weather", "")).is_empty()
+			else String(spec.get("weather", ""))), "note": "starts the battle"},
 		{"id": "exp", "label": "Award EXP: %s"
 			% ("on" if bool(spec.get("awardExp", false)) else "off"), "note": ""},
 		{"id": "ai", "label": "Foe AI: %d" % int(foe.get("ai", Spec.DEFAULT_AI)), "note": "0-10"},
@@ -792,6 +796,13 @@ func _on_option(id: String) -> void:
 			_open_prompt("seed", {"title": "RNG SEED",
 				"text": "" if current == 0 else str(current),
 				"hint": "empty = a new seed each battle", "digits_only": true})
+		"weather":
+			var skies: Array = []
+			for w: String in Spec.WEATHERS:
+				skies.append({"id": w, "label": "none" if w.is_empty() else w.capitalize(),
+					"note": "rouses Protosynthesis" if w == "sun" else ""})
+			_open_pick("weather", {"title": "WEATHER", "items": skies,
+				"searchable": false, "selected": String(spec.get("weather", ""))})
 		"ai":
 			var levels: Array = []
 			for i in 11:
@@ -883,6 +894,11 @@ func _on_picked(id: Variant) -> void:
 				% String(id).capitalize())
 		else:
 			_note("")
+		_enter(State.TEAMS)
+		return
+	if purpose == "weather":
+		spec["weather"] = String(id)
+		_note("Battle starts in %s." % ("clear skies" if String(id).is_empty() else String(id)))
 		_enter(State.TEAMS)
 		return
 	if purpose == "ai":

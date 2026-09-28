@@ -80,6 +80,11 @@ const IMPLEMENTED_FORMATS: Array = ["single"]
 ## How many Pokemon a side sends out at once, once the engine can.
 const FORMAT_ACTIVE: Dictionary = {"single": 1, "double": 2, "triple": 3, "rotation": 3}
 
+## Weather the battle can start under. The engine has no move that sets weather,
+## so this is the only way to get a fight into the sun -- which is what makes
+## Protosynthesis, Mega Sol and the rain/sun damage multipliers testable at all.
+const WEATHERS: Array = ["", "sun", "rain", "sandstorm", "hail", "snow"]
+
 const SPEC_VERSION := 1
 
 
@@ -114,6 +119,7 @@ static func new_spec() -> Dictionary:
 		"seed": 0,
 		"awardExp": false,
 		"watch": false,
+		"weather": "",
 		"player": new_team("You"),
 		"foe": new_team("Foe"),
 	}
@@ -223,6 +229,7 @@ static func normalize(spec: Dictionary) -> Dictionary:
 	out["seed"] = int(spec.get("seed", 0))
 	out["awardExp"] = bool(spec.get("awardExp", false))
 	out["watch"] = bool(spec.get("watch", false))
+	out["weather"] = _one_of(String(spec.get("weather", "")).to_lower(), WEATHERS, "")
 	out["player"] = normalize_team(spec.get("player", {}), "You")
 	out["foe"] = normalize_team(spec.get("foe", {}), "Foe")
 	return out
@@ -453,6 +460,7 @@ static func to_setup(spec: Dictionary, seed_override: int = 0) -> Dictionary:
 		# 100 rather than the campaign cap: the builder set these levels on
 		# purpose and nothing here is progression.
 		"cap": MAX_LEVEL,
+		"weather": String(spec.get("weather", "")),
 		"seed": seed_value,
 		"playerName": String(player.get("name", "You")),
 		"custom": true,

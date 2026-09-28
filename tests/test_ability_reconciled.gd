@@ -152,8 +152,24 @@ func test_all_fourteen_register_and_are_distinct_instances() -> void:
 			# The file's own slug() must agree with the key it is registered under,
 			# or a rename silently points two keys at one file.
 			eq(impl.slug(), slug, "%s's file reports a different slug:" % slug)
-	eq(slugs.size(), THE_FOURTEEN.size(),
-		"registry holds a different number of abilities than the 14:")
+	# NOT an exact count against THE_FOURTEEN. This file is the reconciliation
+	# record for one workflow, and abilities have landed since -- protosynthesis
+	# and quark-drive, for Booster Energy. Freezing the number here would mean
+	# every future ability breaks a test that has nothing to do with it. What
+	# actually has to hold is that the 14 are all present (checked above) and that
+	# EVERY registered slug, old or new, agrees with its own file.
+	is_true(slugs.size() >= THE_FOURTEEN.size(),
+		"the registry lost an ability: %d registered, %d expected at minimum"
+			% [slugs.size(), THE_FOURTEEN.size()])
+	var seen: Dictionary = {}
+	for slug: String in slugs:
+		var other := Abilities.of(slug)
+		check(other != null, "%s resolves to null" % slug)
+		if other != null:
+			eq(other.slug(), slug, "%s's file reports a different slug:" % slug)
+			seen[other.get_instance_id()] = slug
+	eq(seen.size(), slugs.size(),
+		"two slugs share one instance, so a rename points two keys at one file:")
 	# One shared instance per slug, for the life of the process (abilities are
 	# stateless). A second instance would mean per-battle state could leak.
 	check(Abilities.of("shadow-tag") == Abilities.of("shadow-tag"), "instances are not cached")

@@ -136,6 +136,18 @@ func on_field_leave(_ctx: Dictionary) -> Dictionary:
 	return {}
 
 
+## The bearer is on the field and something about the field just changed -- it
+## arrived, the weather turned, or a Mega Evolution swapped its ability. Distinct
+## from [method on_field_enter], which is only for the abilities that OWN a field
+## state (Delta Stream): this one is asked of every active Pokemon.
+##
+## Returns `{stat_mults: Dictionary, paradox_source: String, consume_item: bool,
+## clear: bool, messages: Array}`. The engine writes the result to the mon; the
+## ability stays stateless, exactly as `stat_boosts` already works.
+func on_field_change(_ctx: Dictionary) -> Dictionary:
+	return {}
+
+
 ## The persistent field state this ability owns, e.g. "strong-winds". "" for the
 ## overwhelming majority. Used by `registry.field_impls()` so a field effect is
 ## not tied to who happens to be attacking.

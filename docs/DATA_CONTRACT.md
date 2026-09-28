@@ -80,6 +80,11 @@ Values, beyond `none`: `onBeforeMove`, `onModifyMoveType`, `onDamageCalc`,
 `onSwitchAttempt`, `onFieldEnter`, `onWeatherSet`, `onRedirect`, plus the
 pre-existing `onSwitchIn` / `onTurnEnd`.
 
+`onFieldEnter` covers two different seams in the engine: `on_field_enter()` for the
+abilities that OWN a field state (Delta Stream), and `on_field_change()` for every active
+Pokémon reacting to one (Protosynthesis, Quark Drive). The data field does not
+distinguish them; `registry.gd` does.
+
 ## 5. `data/typechart.json`
 
 `{"electric": {"water": 2.0, "ground": 0.0, "grass": 0.5, ...}}` — attacker → defender →

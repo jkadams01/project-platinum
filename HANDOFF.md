@@ -306,9 +306,15 @@ none of them did anything: 23 boss slots hold a Sitrus Berry, 22 Leftovers, 21 a
 trainers hold a Sitrus Berry. Every designed fight was being played without the items it was
 authored with.
 
-Still open: **Booster Energy** (2 boss slots) is tier 3 on purpose — it needs Protosynthesis
-or Quark Drive, which the ability layer does not implement. Either implement the two Paradox
-abilities or accept that those two slots hold a dead item; owner call.
+~~Still open: Booster Energy~~ — **DONE 2026-09-27.** `protosynthesis.gd` and
+`quark-drive.gd` landed, the item is tier 1, and both boss slots that hold one now do
+something with it.
+
+**Still open, and smaller: there is no terrain system.** Quark Drive is roused by Electric
+Terrain or by a Booster Energy, and only the item works today. The ability is written
+against the real rule and `battle_engine.terrain` exists for the hook to read; nothing sets
+it. Terrain is its own feature (four terrains, damage multipliers, the moves that set them),
+so it is deliberately not smuggled in behind one ability.
 
 ### d) Known smaller gaps
 

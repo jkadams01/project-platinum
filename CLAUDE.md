@@ -130,7 +130,7 @@ script gates on the class cache existing instead of on its exit status.
 src/
   autoload/   Logger, DataRegistry, EventBus, GameState, SaveSystem, SceneRouter
   battle/     battle_engine, damage, turn_order, status, stats, exp, mega, ai, items
-  battle/abilities/   one file per ability + registry.gd
+  battle/abilities/   one file per ability + registry.gd (paradox.gd is a shared base)
   overworld/  map_loader, player, collision, encounters, traversal, warps
   systems/    level caps, badges
   custom/     Custom Battle mode: battle_spec (the data model), team_builder, custom_battle
@@ -206,9 +206,21 @@ on that. Cynthia uses `garchompite`, **not** `garchompite-z`.
 out: Leftovers, Black Sludge, Flame Orb, Life Orb, Expert Belt, Muscle Band, Wise Glasses,
 Choice Band/Specs/Scarf, Assault Vest, Rocky Helmet, Focus Sash, Sitrus/Oran/Shuca Berry,
 the six type boosters and the Lucky Egg. `data/items.json` `tier` says which are real
-(DATA_CONTRACT 14.1) and the builder shows it. **Booster Energy is deliberately tier 3**:
-two boss slots reference it, but it needs a Paradox ability the engine does not have, and
-shipping it as working would be the lie the tier field exists to prevent.
+(DATA_CONTRACT 14.1) and the builder shows it. **Booster Energy works too**, through
+`protosynthesis.gd` / `quark-drive.gd`.
+
+**Paradox abilities** — Protosynthesis and Quark Drive raise the bearer's highest stat by
+1.3 (1.5 for Speed), roused by harsh sun / Electric Terrain or by a Booster Energy. The
+SOURCE is remembered in `volatile.paradoxSource`, because a weather-roused boost ends with
+the weather and an item-roused one lasts until the bearer switches out. **There is no
+terrain system**, so Quark Drive is reachable only through the item today — `terrain` is
+declared on the engine and read by the hook, so the day terrain lands nothing in the
+ability changes.
+
+**`volatile.statMult` is a flat stat multiplier, not a stat stage.** Stages are a -6..+6
+step on a fixed curve, visible to Haze and ignored by a critical hit; a 1.3x on one stat is
+none of those. `Stats.effective_stat()` applies it, so damage and turn order both see it.
+Anything else needing a non-stage multiplier reuses it rather than inventing a second one.
 
 **Tilesets** — Platinum ground (grass/sand/snow/`dun_*`) + White 2 props (cliff edge strips,
 32×64 trees, doors/fences) + HeartGold roads. White 2 assets get a **×1.08 value / ×1.04

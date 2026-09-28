@@ -72,6 +72,10 @@ const IMPLEMENTED: Array = [
 	"assault-vest", "rocky-helmet", "focus-sash", "sitrus-berry", "oran-berry",
 	"shuca-berry", "black-belt", "charcoal", "magnet", "mystic-water",
 	"sharp-beak", "silk-scarf", "lucky-egg",
+	# Read by the ability layer rather than by this file: paradox.gd spends it and
+	# the engine clears the slot. It belongs here because the builder asks THIS
+	# list whether an item does anything.
+	"booster-energy",
 ]
 
 static var _rows: Dictionary = {}      # id -> the data/items.json row

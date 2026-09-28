@@ -31,6 +31,10 @@ const IMPL: Dictionary = {
 	"fire-mane": preload("res://src/battle/abilities/fire_mane.gd"),
 	"mega-sol": preload("res://src/battle/abilities/mega_sol.gd"),
 	"parental-bond": preload("res://src/battle/abilities/parental-bond.gd"),
+	# paradox.gd is the shared base of these two and is deliberately NOT here:
+	# it implements no ability of its own.
+	"protosynthesis": preload("res://src/battle/abilities/protosynthesis.gd"),
+	"quark-drive": preload("res://src/battle/abilities/quark-drive.gd"),
 	"piercing-drill": preload("res://src/battle/abilities/piercing-drill.gd"),
 	"shadow-tag": preload("res://src/battle/abilities/shadow-tag.gd"),
 	"skill-link": preload("res://src/battle/abilities/skill-link.gd"),
@@ -376,6 +380,19 @@ static func field_refresh(active_mons: Array, weather: String,
 		out["weather_turns"] = int(gone.get("weather_turns", 0))
 		out["messages"] = (gone.get("messages", []) as Array).duplicate()
 	return out
+
+
+## onFieldChange -> {stat_mults, paradox_source, consume_item, clear, messages}.
+## Asked of ONE mon, every time the field changes under it. Unlike
+## [method field_refresh] this is not about who owns the weather; it is about what
+## each Pokemon does in response to it.
+static func field_change(mon: Dictionary, ctx: Dictionary = {}) -> Dictionary:
+	var impl := for_mon(mon)
+	if impl == null:
+		return {}
+	var c := ctx.duplicate()
+	c["mon"] = mon
+	return impl.on_field_change(c)
 
 
 ## 16. onWeatherSet. True when any ability on the field stops `weather` from

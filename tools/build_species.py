@@ -82,6 +82,8 @@ ABILITY_HOOK_OVERRIDES = {
     'eelevate':        ('onTypeImmunity', 1),
     'fire-mane':       ('onDamageCalc', 1),
     'aura-guard':      ('onDamageCalc', 1),
+    'protosynthesis':  ('onFieldEnter', 1),
+    'quark-drive':     ('onFieldEnter', 1),
 }
 
 # veekun's `ability_prose` is outdated or truncated for these three.

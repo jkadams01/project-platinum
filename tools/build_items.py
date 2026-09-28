@@ -137,12 +137,10 @@ HELD = {
     'lucky-egg': (
         'Lucky Egg', 1, 'onExp', False,
         'The holder earns more EXP. Points from a battle.'),
-    # Tier 3 on purpose: two boss slots reference it, but it exists to trigger a
-    # Paradox ability (Protosynthesis / Quark Drive) and the engine has neither.
-    # Shipping it as tier 1 would be the lie the tier field exists to prevent.
     'booster-energy': (
-        'Booster Energy', 3, 'none', True,
-        'Meant to rouse a Paradox Pokemon. Nothing in the engine reads it yet.'),
+        'Booster Energy', 1, 'onFieldEnter', True,
+        'Rouses a Pokemon with Protosynthesis or Quark Drive, raising its best stat '
+        'until it leaves the field. Used up.'),
 }
 
 ## Roles, which decide category/consumable:
